@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import {Link} from 'react-router-dom'
 import "./Auth.css"
 import { login, isAuthenticated } from "../../modules/SimpleAuth"
-
+import {Button} from 'react-bootstrap'
 
 class Login extends Component {
 
@@ -64,9 +64,9 @@ class Login extends Component {
                     type="password"
                 />
 
-                <button type="submit">
+                <Button type="submit">
                     Sign in
-              </button>
+              </Button>
               <Link to="/register">Not a member? Click here to sign up!</Link>
             </form>
             </section>
