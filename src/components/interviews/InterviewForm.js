@@ -4,7 +4,7 @@ import APIManager from '../../modules/APIManager'
 import { Button, FormControl, FormLabel, Form, InputGroup } from 'react-bootstrap'
 class NewInterviewForm extends Component {
     state = {
-        company: "1",
+        company: "",
         offer: "",
         position: "",
         date: "",
@@ -32,6 +32,45 @@ class NewInterviewForm extends Component {
                 })
             })
     }
+
+    createInterview = () => {
+        const interview = {
+            company_id: this.state.company,
+            offer: this.state.offer,
+            position: this.state.position,
+            date: this.state.date,
+            review: this.state.review,
+            advice: this.state.advice,
+            interview_type: this.state.interview_type,
+            in_person: this.state.in_person,
+            code_challege: this.state.code_challege
+        }
+
+        if (this.state.company !== "" && this.state.offer !== "" && this.state.position !== "" && this.state.date !== "" && this.state.advice !== "" && this.state.interview_type !== "" && this.state.in_person !== "" && this.state.code_challege !== "") {
+            APIManager.post("interviews", interview)
+            .then(() => {
+                this.props.history.push("/myinterviews")
+            })
+        } else {
+            if (this.state.company === "") {
+                alert('Please select a company.')
+            } else if (this.state.position === "" ) {
+                alert('Please tell us what position you interviewed for.')
+            } else if (this.state.date === "") {
+                alert('Please select a date.')
+            } else if (this.state.interview_type === "") {
+                alert('Please tell use what type of interview you had.')
+            } else if (this.state.in_person === "") {
+                alert('Please tell us if this interview was in person or online/video conference.')
+            } else if (this.state.code_challege === "") {
+                alert('Please tell us if there was a coding challenge in this interview.')
+            } else if (this.state.offer === "") {
+                alert('Please tell us if you received an offer as a result of this interview.')
+            } else if (this.state.advice === "") {
+                alert('Please enter some advice for fellow job hunters.')
+            } 
+        }
+    }
     render() {
 
         return (
@@ -40,11 +79,13 @@ class NewInterviewForm extends Component {
                     <select
                         onChange={this.handleInputChange}
                         id="company">
+                            <option key="0" value="">Select Company</option>
                         {this.state.companies.map((company) => {
                             return <option key={company.id} value={company.id}>{company.name} ({company.city})</option>
                         })}
 
                     </select>
+                    <Link to="/company/new">Don't see your company? Add a new one here!</Link>
 
                     <FormControl
                         id="position"
@@ -117,7 +158,7 @@ class NewInterviewForm extends Component {
                         as="textarea" rows="5" ></FormControl>
 
                 </Form>
-
+                <Button onClick={() => this.createInterview()}>Submit Survey</Button>
             </>
         )
     }
