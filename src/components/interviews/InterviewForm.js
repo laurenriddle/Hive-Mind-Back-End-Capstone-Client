@@ -34,6 +34,8 @@ class NewInterviewForm extends Component {
     }
 
     createInterview = () => {
+
+        // defines the interview object that will be submitted to the DB
         const interview = {
             company_id: this.state.company,
             offer: this.state.offer,
@@ -46,12 +48,16 @@ class NewInterviewForm extends Component {
             code_challege: this.state.code_challege
         }
 
+        // checks to see if the user filled out the entire form
         if (this.state.company !== "" && this.state.offer !== "" && this.state.position !== "" && this.state.date !== "" && this.state.advice !== "" && this.state.interview_type !== "" && this.state.in_person !== "" && this.state.code_challege !== "") {
+            // makes a post to the interviews table
             APIManager.post("interviews", interview)
             .then(() => {
+                // pushes the user to their my interviews page
                 this.props.history.push("/myinterviews")
             })
         } else {
+            // tiggers alerts if the user has not filled out a field in the form
             if (this.state.company === "") {
                 alert('Please select a company.')
             } else if (this.state.position === "" ) {
