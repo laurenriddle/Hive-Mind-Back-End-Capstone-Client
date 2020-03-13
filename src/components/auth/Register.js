@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
-import { register } from "../../modules/SimpleAuth"
+import { register, isAuthenticated } from "../../modules/SimpleAuth"
 import APIManager from "../../modules/APIManager"
 import './Auth.css'
 
@@ -26,6 +26,7 @@ class Register extends Component {
     }
 
     componentDidMount() {
+        // get all cohorts to populate the dropdown
         APIManager.getAll("cohorts")
             .then((cohorts) => this.setState({ cohorts: cohorts }))
     }
@@ -43,14 +44,23 @@ class Register extends Component {
             "is_employed": this.state.employmentStatus,
             "linkedin_profile": this.state.linkedInProfile,
         }
+        
+        // check to see that all fields are filled out
         if (this.state.password === this.state.confirmpassword && this.state.userName !== "" && this.state.firstName !== "" && this.state.lastName !== "" && this.state.email !== "" && this.state.password !== "" && this.state.confirmpassword !== "" && this.state.cohort !== "" && this.state.employmentStatus !== "") {
+
             // Make a fetch call with the object as the body of the POST request
             register(newUser)
                 .then(() => {
+                    // checks to make sure the user is authenticated
+                    if (isAuthenticated()) {
+                    // this function sets the user value in state in hivemind.js to true.
                     this.props.loggedIn()
+                    // push to the home page
                     this.props.history.push("/")
+                    }
                 })
         } else {
+            // these alerts will be triggered if a field is not filled out or the passwords do not match 
             if (this.state.userName === "") {
                 alert('Please provide a username.')
             } else if (this.state.firstName === "") {

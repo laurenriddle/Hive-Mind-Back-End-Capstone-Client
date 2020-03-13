@@ -20,16 +20,18 @@ class Login extends Component {
     // Simplistic handler for login submit
     handleLogin = (evt) => {
         evt.preventDefault()
-
+        // define object to send to DB
         const credentials = {
             "username": this.state.username,
             "password": this.state.password
         }
-
+        // calls login function from simple auth in modules folder
         login(credentials)
             .then(() => {
+                // checks to see if the user is authenticated
                 if (isAuthenticated()) {
-                    // This function sets the user to true in the main app file so that the navbar will render.
+
+                    // This function sets the user to true in the main app file.
                     this.props.loggedIn()
 
                     // push the user to home
