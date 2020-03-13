@@ -39,10 +39,11 @@ class Login extends Component {
 
         return (
             <section className="login-page-container">
-            <form onSubmit={this.handleLogin}>
-                <h1>Hive Mind</h1>
+            <form className="login-form" onSubmit={this.handleLogin}>
+                <h1 className="login-header">Hive Mind</h1>
                 <input
                     id="username"
+                    className="login-input"
                     label="Username"
                     onChange={this.handleInputChange}
 
@@ -52,6 +53,7 @@ class Login extends Component {
                 <input
                     id="password"
                     label="Password"
+                    className="login-input"
                     onChange={this.handleInputChange}
                     type="password"
                 />
