@@ -131,46 +131,52 @@ class EditInterviewForm extends Component {
                         type="text"></FormControl>
 
                     <FormLabel>Was this interview in person?</FormLabel>
-                    <InputGroup >
-                        <FormControl
+                    <fieldset>
+                        <input
+                            checked={this.state.in_person === true || this.state.in_person === "True"}
                             id="in_person"
                             onChange={this.handleInputChange}
-                            type="radio" name="inperson" value="True"></FormControl>
+                            type="radio" name="inperson" value="True"></input>
                         <FormLabel>Yes</FormLabel>
-                        <FormControl
+                        <input
+                            checked={this.state.in_person === false || this.state.in_person === "False"}
                             id="in_person"
                             onChange={this.handleInputChange}
-                            type="radio" name="inperson" value="False"></FormControl>
+                            type="radio" name="inperson" value="False"></input>
                         <FormLabel>No</FormLabel>
-                    </InputGroup>
+                    </fieldset>
 
                     <FormLabel>Was there a code challenge?</FormLabel>
-                    <InputGroup>
-                        <FormControl
+                    <fieldset>
+                        <input
+                            checked={this.state.code_challege === true || this.state.code_challege === "True"}
                             id="code_challege"
                             onChange={this.handleInputChange}
-                            type="radio" name="codechallenge" value="True"></FormControl>
+                            type="radio" name="codechallenge" value="True"></input>
                         <FormLabel>Yes</FormLabel>
-                        <FormControl
+                        <input
+                            checked={this.state.code_challege === false || this.state.code_challege === "False"}
                             id="code_challege"
                             onChange={this.handleInputChange}
-                            type="radio" name="codechallenge" value="False"></FormControl>
+                            type="radio" name="codechallenge" value="False"></input>
                         <FormLabel>No</FormLabel>
-                    </InputGroup>
+                    </fieldset>
 
                     <FormLabel>Did you recieve and offer from this company as a result of this interview?</FormLabel>
-                    <InputGroup>
-                        <FormControl
+                    <fieldset>
+                        <input
+                            checked={this.state.offer === true || this.state.offer === "True"}
                             id="offer"
                             onChange={this.handleInputChange}
-                            type="radio" name="offer" value="True"></FormControl>
+                            type="radio" name="offer" value="True"></input>
                         <FormLabel>Yes</FormLabel>
-                        <FormControl
+                        <input
+                            checked={this.state.offer === false || this.state.offer === "False"}
                             id="offer"
                             onChange={this.handleInputChange}
-                            type="radio" name="offer" value="False"></FormControl>
+                            type="radio" name="offer" value="False"></input>
                         <FormLabel>No</FormLabel>
-                    </InputGroup>
+                    </fieldset>
                     <FormControl
                         value={this.state.review}
                         id="review"
