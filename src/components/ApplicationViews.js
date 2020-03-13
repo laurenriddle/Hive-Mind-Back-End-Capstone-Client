@@ -1,6 +1,7 @@
 import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Login from "./auth/Login";
+import Register from "./auth/Register"
 // import Register from "./auth/Register";
 import { isAuthenticated } from "../modules/SimpleAuth";
 export default class ApplicationViews extends Component {
@@ -20,8 +21,8 @@ export default class ApplicationViews extends Component {
             }
           }}
         />
-        {/* <Route
-          exact path="/Register" render={props => {
+        <Route
+          exact path="/register" render={props => {
             if (isAuthenticated()) {
               return <Redirect to='/' />
             } else {
@@ -29,8 +30,8 @@ export default class ApplicationViews extends Component {
                 {...props} {...this.props} loggedIn={this.props.loggedIn} />
             }
 
-          }} */}
-        {/* /> */}
+          }}
+         /> 
 
       </React.Fragment>
     );

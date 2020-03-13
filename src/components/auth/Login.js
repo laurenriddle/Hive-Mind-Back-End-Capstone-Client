@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import {Link} from 'react-router-dom'
 import "./Auth.css"
 import { login, isAuthenticated } from "../../modules/SimpleAuth"
 
@@ -28,7 +29,10 @@ class Login extends Component {
         login(credentials)
             .then(() => {
                 if (isAuthenticated()) {
+                    // This function sets the user to true in the main app file so that the navbar will render.
                     this.props.loggedIn()
+
+                    // push the user to home
                     this.props.history.push("/")
                 }
             })
@@ -61,6 +65,7 @@ class Login extends Component {
                 <button type="submit">
                     Sign in
               </button>
+              <Link to="/register">Not a member? Click here to sign up!</Link>
             </form>
             </section>
         )

@@ -15,12 +15,18 @@ class HiveMind extends Component {
             user: true
         })
     }
+
+    loggedOut = () => {
+        this.setState({
+            user: false
+        })
+    }
     
       
 
     render() {
        return( <>
-        <Navigation user={this.state.user}/>
+        <Navigation user={this.state.user} loggedOut={this.loggedOut}/>
         <ApplicationViews loggedIn={this.loggedIn}/>
         </>
        )

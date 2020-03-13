@@ -1,7 +1,7 @@
 /* Login Page */
 
 
-.login-page-container {
+.login-page-container, .register-form-container {
     background-image: url('./Lauren_v4.png');
     background-size: cover;
     background-repeat: no-repeat;
@@ -15,7 +15,7 @@
     justify-content: center;
 } */
 
-.login-header {
+.login-header, .register-header {
     font-family: Righteous;
     font-style: normal;
     font-weight: normal;
@@ -23,9 +23,14 @@
     line-height: 31px;
     text-align: center;
     color: #FEDA6A;
-    width: 129px;
-    height: 30px;
+    /* width: 129px; */
+    /* height: 30px; */
 }
 /* .login-input {
 
 } */
+
+
+/* Register Page */
+
+ 

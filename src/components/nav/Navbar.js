@@ -3,10 +3,11 @@ import { Nav, Navbar } from "react-bootstrap"
 import { Link } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Navbar.css"
+import {logout, isAuthenticated} from '../../modules/SimpleAuth'
 
 class Navigation extends Component {
     render() {
-        if (this.props.user === true) {
+        if (isAuthenticated()) {
             return (
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                     <Navbar.Brand href="#home">Hive Mind</Navbar.Brand>
@@ -16,7 +17,10 @@ class Navigation extends Component {
                         <Link className="nav-link link" to="/">Home</Link>
                         <Link className="nav-link link" to="/myinterviews">My Interviews</Link>
                         <Link className="nav-link link" to="/search">Search</Link>                            
-                        <Link className="nav-link link" to="/login">Logout</Link>                            
+                        <Link className="nav-link link" to="/login" onClick={() => {
+                            logout()
+                            this.props.loggedOut()
+                        } }>Logout</Link>                            
                         </Nav>
                         
                     </Navbar.Collapse>
