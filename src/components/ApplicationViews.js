@@ -6,6 +6,7 @@ import Register from "./auth/Register"
 import { isAuthenticated } from "../modules/SimpleAuth";
 import Home from "./home/Home";
 import NewInterviewForm  from './interviews/InterviewForm'
+import MyInterviews from "./interviews/MyInterviews";
 export default class ApplicationViews extends Component {
 
   render() {
@@ -50,6 +51,18 @@ export default class ApplicationViews extends Component {
           exact path="/interview/new" render={props => {
             if (isAuthenticated()) {
                 return <NewInterviewForm
+                {...props} {...this.props} />
+            } else {
+                return <Redirect to='/login' />
+              
+            }
+
+          }}
+         /> 
+        <Route
+          exact path="/myinterviews" render={props => {
+            if (isAuthenticated()) {
+                return <MyInterviews
                 {...props} {...this.props} />
             } else {
                 return <Redirect to='/login' />
