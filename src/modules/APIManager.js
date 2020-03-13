@@ -38,7 +38,7 @@ export default {
                 "Content-Type": "application/json",
                 Authorization: `Token ${sessionStorage.getItem("hivemind_token")}`
             }
-        }).then(result => result.json());
+        })
     },
     post(table, newItem) {
         // creates one item in a table

@@ -25,6 +25,20 @@ class MyInterviews extends Component {
             })
     }
 
+    deleteInterview = (id) => {
+        APIManager.delete("interviews", id)
+        .then(() => {
+            APIManager.getAllAuth("interviews?applicant=true")
+            .then((interviews) => {
+                // sets the companies in state
+                this.setState({
+                    interviews: interviews
+                })
+            })
+
+        })
+    }
+
     
     render() {
 
@@ -32,7 +46,7 @@ class MyInterviews extends Component {
             <>
             <Link to="/interview/new"><Button>New Interview</Button></Link>
             {this.state.interviews.map((interview) => {
-                return <InterviewCard {...this.props} key={interview.id} interview={interview}/>
+                return <InterviewCard {...this.props} key={interview.id} interview={interview} deleteInterview={this.deleteInterview}/>
             })}
 
             </>
