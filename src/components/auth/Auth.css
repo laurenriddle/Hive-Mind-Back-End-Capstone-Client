@@ -1,0 +1,8 @@
+/* Login Page */
+
+.login-page-container {
+    background-image: url('./Lauren_v4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
