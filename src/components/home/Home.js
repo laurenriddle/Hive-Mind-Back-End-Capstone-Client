@@ -22,7 +22,7 @@ class Home extends Component {
             <>
                 <h1>Hello, {this.state.first_name}</h1>
                 <Link to="/search"><Button>Search Companies</Button></Link>
-                <Link to="/newinterview"><Button>New Interview</Button></Link>
+                <Link to="/interview/new"><Button>New Interview</Button></Link>
             
             </>
         )
