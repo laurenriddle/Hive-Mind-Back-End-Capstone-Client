@@ -60,7 +60,7 @@ export default {
                 Authorization: `Token ${sessionStorage.getItem("hivemind_token")}`
             },
             body: JSON.stringify(editedItem)
-        }).then(data => data.json());
+        })
     },
     profile_update(route, editedItem) {
         // updates the user information in the applicant table

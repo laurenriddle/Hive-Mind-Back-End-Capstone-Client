@@ -1,5 +1,8 @@
 import { Card } from "react-bootstrap";
 import React, {Component} from 'react'
+import editIcon from './editIcon.png'
+import {faEdit} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class InterviewCard extends Component {
 
@@ -8,7 +11,7 @@ class InterviewCard extends Component {
         return (
             <>
             <Card>
-                <Card.Title>{this.props.interview.company.name} {this.props.interview.date}</Card.Title>
+                <Card.Title>{this.props.interview.company.name} {this.props.interview.date}<button onClick={()=> { this.props.history.push(`/interview/${this.props.interview.id}/edit`)}}><FontAwesomeIcon icon={faEdit}  /></button></Card.Title>
                 <Card.Body>
                     <Card.Text>Position: {this.props.interview.position}</Card.Text>
                     <Card.Text>Interview Type: {this.props.interview.interview_type}</Card.Text>

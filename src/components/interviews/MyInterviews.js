@@ -32,7 +32,7 @@ class MyInterviews extends Component {
             <>
             <Link to="/interview/new"><Button>New Interview</Button></Link>
             {this.state.interviews.map((interview) => {
-                return <InterviewCard key={interview.id} interview={interview}/>
+                return <InterviewCard {...this.props} key={interview.id} interview={interview}/>
             })}
 
             </>
