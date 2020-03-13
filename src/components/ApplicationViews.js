@@ -4,6 +4,7 @@ import Login from "./auth/Login";
 import Register from "./auth/Register"
 // import Register from "./auth/Register";
 import { isAuthenticated } from "../modules/SimpleAuth";
+import Home from "./home/Home";
 export default class ApplicationViews extends Component {
 
   render() {
@@ -28,6 +29,18 @@ export default class ApplicationViews extends Component {
             } else {
               return <Register
                 {...props} {...this.props} loggedIn={this.props.loggedIn} />
+            }
+
+          }}
+         /> 
+        <Route
+          exact path="/" render={props => {
+            if (isAuthenticated()) {
+                return <Home
+                {...props} {...this.props} />
+            } else {
+                return <Redirect to='/login' />
+              
             }
 
           }}

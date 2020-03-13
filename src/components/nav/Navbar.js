@@ -14,10 +14,10 @@ class Navigation extends Component {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                        <Link className="nav-link link" to="/">Home</Link>
-                        <Link className="nav-link link" to="/myinterviews">My Interviews</Link>
-                        <Link className="nav-link link" to="/search">Search</Link>                            
-                        <Link className="nav-link link" to="/login" onClick={() => {
+                        <Link className="nav-link" to="/">Home</Link>
+                        <Link className="nav-link" to="/myinterviews">My Interviews</Link>
+                        <Link className="nav-link" to="/search">Search</Link>                            
+                        <Link className="nav-link" to="/login" onClick={() => {
                             logout()
                             this.props.loggedOut()
                         } }>Logout</Link>                            

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { register, isAuthenticated } from "../../modules/SimpleAuth"
 import APIManager from "../../modules/APIManager"
 import './Auth.css'
+import { Button } from "react-bootstrap"
 
 class Register extends Component {
 
@@ -27,7 +28,7 @@ class Register extends Component {
 
     componentDidMount() {
         // get all cohorts to populate the dropdown
-        APIManager.getAll("cohorts")
+        APIManager.getAllNotAuth("cohorts")
             .then((cohorts) => this.setState({ cohorts: cohorts }))
     }
     handleRegister = event => {
@@ -162,9 +163,9 @@ class Register extends Component {
                     />
 
 
-                    <button type="submit">
+                    <Button type="submit">
                         Register
-                    </button>
+                    </Button>
                 </form>
                 <Link to="/register">Already have an account? Click here to sign in!</Link>
             </section>
