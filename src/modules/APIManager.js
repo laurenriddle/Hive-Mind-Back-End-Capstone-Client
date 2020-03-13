@@ -38,7 +38,7 @@ export default {
                 "Content-Type": "application/json",
                 Authorization: `Token ${sessionStorage.getItem("hivemind_token")}`
             }
-        }).then(result => result.json());
+        })
     },
     post(table, newItem) {
         // creates one item in a table
@@ -60,7 +60,7 @@ export default {
                 Authorization: `Token ${sessionStorage.getItem("hivemind_token")}`
             },
             body: JSON.stringify(editedItem)
-        }).then(data => data.json());
+        })
     },
     profile_update(route, editedItem) {
         // updates the user information in the applicant table
