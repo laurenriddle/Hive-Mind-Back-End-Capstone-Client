@@ -16,20 +16,11 @@ class SearchResults extends Component {
         this.setState(stateToChange)
     }
 
-    componentDidMount() {
-        // // gets all interviews for the specific user
-        // APIManager.getAllAuth("companies")
-        //     .then((companies) => {
-        //         // sets the interviews in state
-        //         this.setState({
-        //             companies: companies
-        //         })
-        //     })
-    }
-
     searchCompanies = (terms) => {
+        // gets all companies whose name matches the name in the search terms in state
         APIManager.getAllAuth(`companies?name=${terms}`)
             .then((companies) => {
+                // sets the companies in state so the result cards can be made
                 this.setState({
                     companies: companies
                 })
