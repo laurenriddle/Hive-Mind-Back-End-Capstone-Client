@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import APIManager from '../../modules/APIManager'
 import { Jumbotron, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-import InterviewCard from '../interviews/InterviewCard'
+import SearchDetailCard from './SearchDetailCard'
 class CompanyDetail extends Component {
     state = {
         company: {},
@@ -47,7 +47,7 @@ class CompanyDetail extends Component {
           </Jumbotron>
           <Link to="/interview/new"><Button>New Survey</Button></Link>
                 {this.state.interviews.map((interview) => {
-                    return <InterviewCard {...this.props} key={interview.id} interview={interview} />
+                    return <SearchDetailCard {...this.props} key={interview.id} interview={interview} user={interview.applicant.user} />
                 })}
                 {this.state.interviews.length === 0 &&
                 <>
