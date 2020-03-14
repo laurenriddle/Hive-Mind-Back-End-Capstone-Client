@@ -1,16 +1,34 @@
 import { Card } from "react-bootstrap";
 import React, {Component} from 'react'
-import {faEdit, faTrash} from '@fortawesome/free-solid-svg-icons'
+import {faEdit, faTrash, faThList} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import APIManager from "../../modules/APIManager";
 
 class InterviewCard extends Component {
+    state = {
+        user: {}
+    }
+    componentDidMount () {
+        APIManager.getAllAuth("applicants")
+        .then((user) => {
+            this.setState({
+                user:user[0]
+            })
+            console.log(this.state.user)
+        })
+    }
 
     render() {
-
         return (
             <>
             <Card>
-                <Card.Title>{this.props.interview.company.name} {this.props.interview.date}<button onClick={()=> { this.props.history.push(`/interview/${this.props.interview.id}/edit`)}}><FontAwesomeIcon icon={faEdit}  /></button><button onClick={()=> this.props.deleteInterview(this.props.interview.id)}><FontAwesomeIcon icon={faTrash}  /></button></Card.Title>
+                <Card.Title>{this.props.interview.company.name} {this.props.interview.date}
+                {this.state.user.id === this.props.interview.applicant.id &&
+                <>
+                <button onClick={()=> { this.props.history.push(`/interview/${this.props.interview.id}/edit`)}}><FontAwesomeIcon icon={faEdit}  /></button><button onClick={()=> this.props.deleteInterview(this.props.interview.id)}><FontAwesomeIcon icon={faTrash}  /></button>
+                </>
+                }
+                </Card.Title>
                 <Card.Body>
                     <Card.Text>Position: {this.props.interview.position}</Card.Text>
                     <Card.Text>Interview Type: {this.props.interview.interview_type}</Card.Text>

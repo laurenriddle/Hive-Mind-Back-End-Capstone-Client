@@ -10,6 +10,7 @@ import MyInterviews from "./interviews/MyInterviews";
 import EditInterviewForm from "./interviews/InterviewEditForm";
 import NewCompanyForm from "./company/CompanyForm";
 import SearchResults from "./search/SearchResults";
+import CompanyDetail from "./search/SearchDetail";
 export default class ApplicationViews extends Component {
 
   render() {
@@ -102,6 +103,18 @@ export default class ApplicationViews extends Component {
           exact path="/search" render={props => {
             if (isAuthenticated()) {
                 return <SearchResults
+                {...props} {...this.props} />
+            } else {
+                return <Redirect to='/login' />
+              
+            }
+
+          }}
+         /> 
+        <Route
+          exact path="/company/:companyId(\d+)" render={props => {
+            if (isAuthenticated()) {
+                return <CompanyDetail
                 {...props} {...this.props} />
             } else {
                 return <Redirect to='/login' />
