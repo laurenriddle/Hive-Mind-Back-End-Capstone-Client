@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Link } from 'react-router-dom'
 import APIManager from '../../modules/APIManager'
-import { Button, FormControl, FormLabel, Form, InputGroup } from 'react-bootstrap'
+import { Button, FormControl, FormLabel, Form } from 'react-bootstrap'
 class EditInterviewForm extends Component {
     state = {
         company: "",
@@ -13,8 +13,7 @@ class EditInterviewForm extends Component {
         interview_type: "",
         in_person: "",
         code_challege: "",
-        companies: [],
-        checked: ""
+        companies: []
     }
 
     handleInputChange = (evt) => {
