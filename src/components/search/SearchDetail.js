@@ -45,13 +45,13 @@ class CompanyDetail extends Component {
               <h1>{this.state.company.name}</h1>
               <p>{this.state.industry.industry}</p>
           </Jumbotron>
+          <Link to="/interview/new"><Button>New Survey</Button></Link>
                 {this.state.interviews.map((interview) => {
                     return <InterviewCard {...this.props} key={interview.id} interview={interview} />
                 })}
                 {this.state.interviews.length === 0 &&
                 <>
                 <h4>It looks like there are no interviews for this company yet. Would you like to add one?</h4>
-                <Link to="/interview/new"><Button>New Interview</Button></Link>
                 </>
             }
 
