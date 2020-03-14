@@ -8,13 +8,15 @@ class InterviewCard extends Component {
     state = {
         user: {}
     }
+
     componentDidMount () {
+        // this gets the current user when the component mounts so that we can conditionally render the edit and delete buttons
         APIManager.getAllAuth("applicants")
         .then((user) => {
+            // set the user in state
             this.setState({
                 user:user[0]
             })
-            console.log(this.state.user)
         })
     }
 
