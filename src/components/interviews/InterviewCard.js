@@ -1,16 +1,36 @@
 import { Card } from "react-bootstrap";
 import React, {Component} from 'react'
-import {faEdit, faTrash} from '@fortawesome/free-solid-svg-icons'
+import {faEdit, faTrash, faThList} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import APIManager from "../../modules/APIManager";
 
 class InterviewCard extends Component {
+    state = {
+        user: {}
+    }
+
+    componentDidMount () {
+        // this gets the current user when the component mounts so that we can conditionally render the edit and delete buttons
+        APIManager.getAllAuth("applicants")
+        .then((user) => {
+            // set the user in state
+            this.setState({
+                user:user[0]
+            })
+        })
+    }
 
     render() {
-
         return (
             <>
             <Card>
-                <Card.Title>{this.props.interview.company.name} {this.props.interview.date}<button onClick={()=> { this.props.history.push(`/interview/${this.props.interview.id}/edit`)}}><FontAwesomeIcon icon={faEdit}  /></button><button onClick={()=> this.props.deleteInterview(this.props.interview.id)}><FontAwesomeIcon icon={faTrash}  /></button></Card.Title>
+                <Card.Title>{this.props.interview.company.name} {this.props.interview.date}
+                {this.state.user.id === this.props.interview.applicant.id &&
+                <>
+                <button onClick={()=> { this.props.history.push(`/interview/${this.props.interview.id}/edit`)}}><FontAwesomeIcon icon={faEdit}  /></button><button onClick={()=> this.props.deleteInterview(this.props.interview.id)}><FontAwesomeIcon icon={faTrash}  /></button>
+                </>
+                }
+                </Card.Title>
                 <Card.Body>
                     <Card.Text>Position: {this.props.interview.position}</Card.Text>
                     <Card.Text>Interview Type: {this.props.interview.interview_type}</Card.Text>

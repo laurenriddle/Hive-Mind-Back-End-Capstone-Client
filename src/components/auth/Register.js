@@ -167,7 +167,7 @@ class Register extends Component {
                         Register
                     </Button>
                 </form>
-                <Link to="/register">Already have an account? Click here to sign in!</Link>
+                <Link to="/login">Already have an account? Click here to sign in!</Link>
             </section>
         )
     }
