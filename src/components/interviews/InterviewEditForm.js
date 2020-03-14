@@ -13,8 +13,7 @@ class EditInterviewForm extends Component {
         interview_type: "",
         in_person: "",
         code_challege: "",
-        companies: [],
-        checked: ""
+        companies: []
     }
 
     handleInputChange = (evt) => {
