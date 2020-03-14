@@ -28,7 +28,7 @@ class NewCompanyForm extends Component {
     }
 
     capitalize_Words = (str) => {
-        // This function takes a string and capitalizes the first letter of each word in the string
+        // This function takes a string (in this case, the company name) and capitalizes the first letter of each word in the string
         return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
     }
 
@@ -43,12 +43,21 @@ class NewCompanyForm extends Component {
 
         // checks to see if the user filled out the entire form
         if (this.state.name !== "" && this.state.industry_id !== "" && this.state.city !== "") {
+            // gets all companies already in the DB
             APIManager.getAllAuth("companies")
                 .then((companies) => {
-                    // checks to see if there is already a company with the name in state
-                    let searchcompanies = companies.find(company => company['name'] === this.capitalize_Words(this.state.name));
+                    // checks to see if there is already a company with the company name that's in state or a name that is close to it.
+                    let searchcompanies = companies.find(company => company['name'].includes(this.capitalize_Words(this.state.name)));
                     if (searchcompanies !== undefined) {
-                        alert('This company already exists')
+
+                        if (window.confirm(`A company with the name of ${searchcompanies.name} already exists. Are you sure you want to create another company called ${this.capitalize_Words(this.state.name)}?`)) {
+                            // makes a post to the companies table
+                            APIManager.post("companies", newcompany)
+                                .then(() => {
+                                    // pushes the user to the new interview page
+                                    this.props.history.push("/interview/new")
+                                })
+                        }
                     } else {
                         // makes a post to the companies table
                         APIManager.post("companies", newcompany)
