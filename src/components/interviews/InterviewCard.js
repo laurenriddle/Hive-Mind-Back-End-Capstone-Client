@@ -1,6 +1,5 @@
 import { Card } from "react-bootstrap";
 import React, {Component} from 'react'
-import editIcon from './editIcon.png'
 import {faEdit, faTrash} from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 

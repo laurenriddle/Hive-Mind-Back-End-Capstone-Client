@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { Link } from 'react-router-dom'
 import APIManager from '../../modules/APIManager'
-import { Button, FormControl, FormLabel, Form, InputGroup } from 'react-bootstrap'
+import { Button, FormControl, FormLabel, Form } from 'react-bootstrap'
 class EditInterviewForm extends Component {
     state = {
         company: "",
