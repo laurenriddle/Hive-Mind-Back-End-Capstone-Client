@@ -15,6 +15,7 @@ class ProfileEditForm extends Component {
         username: "",
         cohort_id: null,
         image: "",
+        aboutme: "",
         cohorts: []
     }
 
@@ -38,7 +39,8 @@ class ProfileEditForm extends Component {
                     last_name: applicant[0].user.last_name,
                     username: applicant[0].user.username,
                     cohort_id: applicant[0].cohort.id,
-                    image: applicant[0].image
+                    image: applicant[0].image,
+                    aboutme: applicant[0].aboutme
                 })
             })
         
@@ -102,83 +104,76 @@ class ProfileEditForm extends Component {
         return (
             <>
                 <Form>
+                    <FormControl
+                        value={this.state.first_name}
+                        id="first_name"
+                        onChange={this.handleInputChange}
+                        type="text"></FormControl>
+
+                    <FormControl
+                        value={this.state.last_name}
+                        id="last_name"
+                        onChange={this.handleInputChange}
+                        type="text"></FormControl>
+
+                    <FormControl
+                        value={this.state.username}
+                        id="username"
+                        onChange={this.handleInputChange}
+                        type="text"></FormControl>
+
+                    <FormControl
+                        value={this.state.email}
+                        id="email"
+                        onChange={this.handleInputChange}
+                        type="text"></FormControl>
+
+                    <FormControl
+                        value={this.state.aboutme}
+                        id="aboutme"
+                        placeholder="Tell everyone a little bit about yourself..."
+                        onChange={this.handleInputChange}
+                        type="text"></FormControl>
+
+                    <FormControl
+                        value={this.state.linkedin_profile}
+                        id="linkedin_profile"
+                        onChange={this.handleInputChange}
+                        type="text"></FormControl>
+
                     <select
                         onChange={this.handleInputChange} value={this.state.cohort_id}
                         id="cohort_id">
-                        <option key="0" value="">Select Company</option>
+                        <option key="0" value="">Select Cohort</option>
                         {this.state.cohorts.map((cohort) => {
-                            return <option key={cohort.id} value={cohort.id}>{cohort.name} ({cohort.city})</option>
+                            return <option key={cohort.id} value={cohort.id}>{cohort.cohort}</option>
                         })}
 
                     </select>
 
+
+                    <FormLabel>Are you currently working somewhere?</FormLabel>
+                    <fieldset>
+                        <input
+                            checked={this.state.is_employed === true || this.state.is_employed === "True"}
+                            id="is_employed"
+                            onChange={this.handleInputChange}
+                            type="radio" name="is_employed" value="True"></input>
+                        <FormLabel>Yes</FormLabel>
+                        <input
+                            checked={this.state.is_employed === false || this.state.is_employed === "False"}
+                            id="is_employed"
+                            onChange={this.handleInputChange}
+                            type="radio" name="is_employed" value="False"></input>
+                        <FormLabel>No</FormLabel>
+                    </fieldset>
                     <FormControl
-                        value={this.state.position}
-                        id="position"
+                        value={this.state.employer}
+                        id="employer"
+                        placeholder="If you are employed, where are you working?"
                         onChange={this.handleInputChange}
-                        placeholder="What position did you apply for?"
                         type="text"></FormControl>
 
-                    <FormControl
-                        value={this.state.date}
-                        id="date"
-                        onChange={this.handleInputChange}
-                        type="date"></FormControl>
-
-                    <FormControl
-                        value={this.state.interview_type}
-                        id="interview_type"
-                        onChange={this.handleInputChange}
-                        placeholder="Interview Type (i.e. second interview - technical, first interview - behavioral)"
-                        type="text"></FormControl>
-
-                    <FormLabel>Was this interview in person?</FormLabel>
-                    <fieldset>
-                        <input
-                            checked={this.state.in_person === true || this.state.in_person === "True"}
-                            id="in_person"
-                            onChange={this.handleInputChange}
-                            type="radio" name="inperson" value="True"></input>
-                        <FormLabel>Yes</FormLabel>
-                        <input
-                            checked={this.state.in_person === false || this.state.in_person === "False"}
-                            id="in_person"
-                            onChange={this.handleInputChange}
-                            type="radio" name="inperson" value="False"></input>
-                        <FormLabel>No</FormLabel>
-                    </fieldset>
-
-                    <FormLabel>Was there a code challenge?</FormLabel>
-                    <fieldset>
-                        <input
-                            checked={this.state.code_challege === true || this.state.code_challege === "True"}
-                            id="code_challege"
-                            onChange={this.handleInputChange}
-                            type="radio" name="codechallenge" value="True"></input>
-                        <FormLabel>Yes</FormLabel>
-                        <input
-                            checked={this.state.code_challege === false || this.state.code_challege === "False"}
-                            id="code_challege"
-                            onChange={this.handleInputChange}
-                            type="radio" name="codechallenge" value="False"></input>
-                        <FormLabel>No</FormLabel>
-                    </fieldset>
-
-                    <FormLabel>Did you recieve and offer from this company as a result of this interview?</FormLabel>
-                    <fieldset>
-                        <input
-                            checked={this.state.offer === true || this.state.offer === "True"}
-                            id="offer"
-                            onChange={this.handleInputChange}
-                            type="radio" name="offer" value="True"></input>
-                        <FormLabel>Yes</FormLabel>
-                        <input
-                            checked={this.state.offer === false || this.state.offer === "False"}
-                            id="offer"
-                            onChange={this.handleInputChange}
-                            type="radio" name="offer" value="False"></input>
-                        <FormLabel>No</FormLabel>
-                    </fieldset>
                     <FormControl
                         value={this.state.review}
                         id="review"

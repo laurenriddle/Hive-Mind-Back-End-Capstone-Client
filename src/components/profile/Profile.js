@@ -27,6 +27,7 @@ class Profile extends Component {
             <>
                 <h1>{this.state.user.first_name} {this.state.user.last_name}</h1>
                 <h3>AKA {this.state.user.username}</h3>
+                <h5>{this.state.applicant.aboutme}</h5>
                 {/* <img src={this.state.applicant.image} alt="user"></img> */}
                 <Button onClick={() => this.props.history.push('/profile/edit')}>Edit</Button>
                 <h5>{this.state.user.email}</h5>
