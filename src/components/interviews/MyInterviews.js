@@ -49,19 +49,7 @@ class MyInterviews extends Component {
             APIManager.delete("interviews", id)
                 .then(() => {
                     // gets all interviews for the specific user
-                    APIManager.getAllAuth("interviews?applicant=true")
-                        .then((interviews) => {
-                            let companies = []
-                            interviews.map((interview) => {
-                                // if the company is not already in the companies array, put it in there
-                                this.pushEntry(companies, interview.company)
-                            })
-                            // sets the interviews and companies in state
-                            this.setState({
-                                interviews: interviews,
-                                companies: companies
-                            })
-                        })
+                   this.getAllInterviews()
 
                 })
         }
