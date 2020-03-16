@@ -7,7 +7,8 @@ import { Button } from 'react-bootstrap'
 import InterviewCard from "./InterviewCard"
 class MyInterviews extends Component {
     state = {
-        interviews: []
+        interviews: [],
+        companies: []
     }
 
     handleInputChange = (evt) => {
@@ -25,6 +26,14 @@ class MyInterviews extends Component {
                     interviews: interviews
                 })
             })
+        // Gets all companies to load filter system
+        APIManager.getAllAuth("companies")
+        .then((companies) => {
+            // sets companies in state
+            this.setState({
+                companies: companies
+            })
+        })
     }
 
     deleteInterview = (id) => {
@@ -51,7 +60,7 @@ class MyInterviews extends Component {
 
         return (
             <>
-                <Link to="/interview/new"><Button>New Interview</Button></Link>
+                <Button onClick={() => this.props.history.push('/interview/new')}>+ New</Button>
                 {this.state.interviews.map((interview) => {
                     return <InterviewCard {...this.props} key={interview.id} interview={interview} deleteInterview={this.deleteInterview} />
                 })}
