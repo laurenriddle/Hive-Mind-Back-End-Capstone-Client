@@ -3,6 +3,9 @@
 import React, { Component } from "react"
 import APIManager from '../../modules/APIManager'
 import { Button } from 'react-bootstrap'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import './Profile.css'
 class Profile extends Component {
     state = {
         applicant: {},
@@ -21,6 +24,7 @@ class Profile extends Component {
                 })
             })
     }
+
     render() {
 
         return (
@@ -28,7 +32,11 @@ class Profile extends Component {
                 <h1>{this.state.user.first_name} {this.state.user.last_name}</h1>
                 <h3>AKA {this.state.user.username}</h3>
                 <h5>{this.state.applicant.aboutme}</h5>
-                {/* <img src={this.state.applicant.image} alt="user"></img> */}
+                { this.state.applicant.image !== null ?
+                <img src={this.state.applicant.image} alt="user"  className="profile-image"></img>
+                :
+                <FontAwesomeIcon icon={faUser}  />
+                }
                 <Button onClick={() => this.props.history.push('/profile/edit')}>Edit</Button>
                 <h5>{this.state.user.email}</h5>
                 <h5>{this.state.cohort.cohort}</h5>

@@ -3,6 +3,9 @@
 import React, { Component } from "react"
 import APIManager from '../../modules/APIManager'
 import { Button, FormControl, FormLabel, Form } from 'react-bootstrap'
+import { cloudName, uploadPreset } from '../../modules/Credentials';
+import "./Profile.css"
+
 class ProfileEditForm extends Component {
     state = {
         linkedin_profile: "",
@@ -13,7 +16,7 @@ class ProfileEditForm extends Component {
         last_name: "",
         username: "",
         cohort_id: null,
-        image: "",
+        image: null,
         aboutme: "",
         cohorts: []
     }
@@ -70,7 +73,7 @@ class ProfileEditForm extends Component {
         }
 
         // checks to see if the user filled out the entire form
-        if (this.state.first_name !== "" && this.state.last_name !== "" && this.state.email !== "" && this.state.username !== "" ) {
+        if (this.state.first_name !== "" && this.state.last_name !== "" && this.state.email !== "" && this.state.username !== "") {
             // makes a put to the applicants table
             APIManager.update_profile("applicants", applicant)
                 .then(() => {
@@ -87,9 +90,26 @@ class ProfileEditForm extends Component {
                 alert('Please enter a username.')
             } else if (this.state.email === "") {
                 alert('Please enter an email.')
-            } 
+            }
         }
     }
+
+    openCloudinaryWidget = () => {
+        let widget = window.cloudinary.createUploadWidget({
+            cloudName: cloudName,
+            uploadPreset: uploadPreset
+        }, (error, result) => {
+            if (!error && result && result.event === "success") {
+                this.setState({
+                    image: result.info.url
+                })
+            }
+        }
+        )
+        widget.open();
+    }
+
+
     render() {
 
         return (
@@ -170,6 +190,12 @@ class ProfileEditForm extends Component {
                         type="text"></FormControl>
 
                 </Form>
+                {this.state.image !== null && 
+                    <img src={this.state.image} alt="user" className="pre-profile-img"></img>
+                }
+                <div className="upload_widget_container">
+                    <Button type="button" id="upload_widget" className="cloudinary-button" onClick={this.openCloudinaryWidget}>Choose File</Button>
+                </div>
                 <Button onClick={() => this.updateProfile()}>Save Changes</Button>
             </>
         )
