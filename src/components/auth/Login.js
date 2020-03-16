@@ -53,6 +53,7 @@ class Login extends Component {
                     id="username"
                     className="login-input"
                     label="Username"
+                    placeholder="Username"
                     onChange={this.handleInputChange}
 
                 />
@@ -62,6 +63,7 @@ class Login extends Component {
                     id="password"
                     label="Password"
                     className="login-input"
+                    placeholder="Password"
                     onChange={this.handleInputChange}
                     type="password"
                 />
