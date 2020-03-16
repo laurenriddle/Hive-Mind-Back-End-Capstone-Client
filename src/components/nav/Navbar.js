@@ -19,6 +19,7 @@ class Navigation extends Component {
                         <Link className="nav-link" to="/">Home</Link>
                         <Link className="nav-link" to="/myinterviews">My Interviews</Link>
                         <Link className="nav-link" to="/search">Search</Link>                            
+                        <Link className="nav-link" to="/profile">Profile</Link>                            
                         <Link className="nav-link" to="/login" onClick={() => {
                             // removes the token from session storage
                             logout()
