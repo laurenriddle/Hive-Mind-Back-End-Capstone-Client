@@ -198,7 +198,7 @@ class EditInterviewForm extends Component {
                         as="textarea" rows="5" ></FormControl>
 
                 </Form>
-                <Button onClick={() => this.updateInterview()}>Submit Survey</Button>
+                <Button onClick={() => this.updateInterview()}>Save Changes</Button>
             </>
         )
     }
