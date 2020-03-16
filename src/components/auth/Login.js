@@ -17,7 +17,7 @@ class Login extends Component {
         this.setState(stateToChange)
     }
 
-    // Simplistic handler for login submit
+    // handles the login process
     handleLogin = (evt) => {
         evt.preventDefault()
         // define object to send to DB
@@ -31,7 +31,7 @@ class Login extends Component {
                 // checks to see if the user is authenticated
                 if (isAuthenticated()) {
 
-                    // This function sets the user to true in the main app file.
+                    // This function sets the user to true in the main app file so that the navbar will render correctly.
                     this.props.loggedIn()
 
                     // push the user to home

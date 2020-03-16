@@ -2,7 +2,6 @@ import { Route, Redirect } from "react-router-dom";
 import React, { Component } from "react";
 import Login from "./auth/Login";
 import Register from "./auth/Register"
-// import Register from "./auth/Register";
 import { isAuthenticated } from "../modules/SimpleAuth";
 import Home from "./home/Home";
 import NewInterviewForm  from './interviews/InterviewForm'
