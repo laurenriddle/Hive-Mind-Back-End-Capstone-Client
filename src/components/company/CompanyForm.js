@@ -48,8 +48,9 @@ class NewCompanyForm extends Component {
                 .then((companies) => {
                     // checks to see if there is already a company with the company name that's in state or a name that is close to it.
                     let searchcompanies = companies.find(company => company['name'].includes(this.capitalize_Words(this.state.name)));
-                    if (searchcompanies !== undefined) {
 
+                    if (searchcompanies !== undefined) {
+                        //  if the search companies function finds a company that matches, it will ask the user if they are sure they want to create another company like it
                         if (window.confirm(`A company with the name of ${searchcompanies.name} already exists. Are you sure you want to create another company called ${this.capitalize_Words(this.state.name)}?`)) {
                             // makes a post to the companies table
                             APIManager.post("companies", newcompany)
@@ -68,7 +69,7 @@ class NewCompanyForm extends Component {
                     }
                 })
         } else {
-            // tiggers alerts if the user has not filled out a field in the form
+            // tiggers alerts if the user has not filled out all fields in the form
             if (this.state.name === "") {
                 alert('Please provide a company name.')
             } else if (this.state.city === "") {
@@ -92,7 +93,7 @@ class NewCompanyForm extends Component {
 
                     <FormControl
                         id="city"
-                        placeholder="City"
+                        placeholder="Enter a city (i.e. Nashville, TN)"
                         onChange={this.handleInputChange}
                         type="text"></FormControl>
                     <select
