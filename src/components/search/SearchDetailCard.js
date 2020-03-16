@@ -1,3 +1,5 @@
+// Purpose: To create the interivew card for the company details page. This is rendered by Search Detail
+
 import { Card } from "react-bootstrap";
 import React, {Component} from 'react'
 import {faEdit, faTrash, faUser} from '@fortawesome/free-solid-svg-icons'
@@ -13,8 +15,9 @@ class SearchDetailCard extends Component {
         // this gets the current user when the component mounts so that we can conditionally render the edit and delete buttons
         APIManager.getAllAuth("applicants")
         .then((user) => {
-            // set the user in state
+            // sets the user in state
             this.setState({
+                // user[0] grabs the first (and only) user in the array
                 user:user[0]
             })
         })

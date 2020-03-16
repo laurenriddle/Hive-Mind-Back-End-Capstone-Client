@@ -1,3 +1,5 @@
+// Purpose: To create the interview edit form and execute the logic associated 
+
 import React, { Component } from "react"
 import { Link } from 'react-router-dom'
 import APIManager from '../../modules/APIManager'
@@ -31,8 +33,11 @@ class EditInterviewForm extends Component {
                     companies: companies
                 })
             })
+        
+        // gets the single interview we want to edit
         APIManager.getOne("interviews", this.props.match.params.interviewId)
             .then((interview) => {
+                // sets the properties of the interview in state
                 this.setState({
                     company: interview.company.id,
                     offer: interview.offer,
@@ -49,7 +54,6 @@ class EditInterviewForm extends Component {
     }
 
     updateInterview = () => {
-
         // defines the interview object that will be submitted to the DB
         const interview = {
             company_id: this.state.company,
@@ -107,7 +111,10 @@ class EditInterviewForm extends Component {
                         })}
 
                     </select>
-                    <Link to="/company/new">Don't see your company? Add a new one here!</Link>
+                    <Link to={{ pathname:"/company/new", state: {
+                        interviewId: this.props.match.params.interviewId
+                    } 
+                    }}>Don't see your company? Add a new one here!</Link>
 
                     <FormControl
                         value={this.state.position}

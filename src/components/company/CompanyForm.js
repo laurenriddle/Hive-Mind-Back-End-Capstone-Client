@@ -1,3 +1,5 @@
+// Purpose: To create the new company form and execute the logic associated 
+
 import React, { Component } from "react"
 import { Link } from 'react-router-dom'
 import APIManager from '../../modules/APIManager'
@@ -43,6 +45,7 @@ class NewCompanyForm extends Component {
 
         // checks to see if the user filled out the entire form
         if (this.state.name !== "" && this.state.industry_id !== "" && this.state.city !== "") {
+
             // gets all companies already in the DB
             APIManager.getAllAuth("companies")
                 .then((companies) => {
@@ -52,7 +55,7 @@ class NewCompanyForm extends Component {
                     if (searchcompanies !== undefined) {
                         //  if the search companies function finds a company that matches, it will ask the user if they are sure they want to create another company like it
                         if (window.confirm(`A company with the name of ${searchcompanies.name} already exists. Are you sure you want to create another company called ${this.capitalize_Words(this.state.name)}?`)) {
-                            // makes a post to the companies table
+                            // if the user confirms, this makes a post to the companies table
                             APIManager.post("companies", newcompany)
                                 .then(() => {
                                     // pushes the user to the new interview page
@@ -63,8 +66,15 @@ class NewCompanyForm extends Component {
                         // makes a post to the companies table
                         APIManager.post("companies", newcompany)
                             .then(() => {
-                                // pushes the user to the new interview page
-                                this.props.history.push("/interview/new")
+                                // checks to see if the user came from the edit form or the new interview form
+                                if (this.props.location.state !== undefined) {
+                                    // pushes the user back to the edit form
+                                    this.props.history.push(`/interview/${this.props.location.state.interviewId}/edit`)
+
+                                } else {
+                                    // pushes the user to the new interview form
+                                    this.props.history.push("/interview/new")
+                                }
                             })
                     }
                 })
@@ -109,7 +119,12 @@ class NewCompanyForm extends Component {
 
                 </Form>
                 <Button onClick={() => this.createCompany()}>Create Company</Button>
-                <Link to="/interview/new">Cancel</Link>
+                {this.props.location.state === undefined ?
+                    <Link to="/interview/new">Cancel</Link>
+                    :
+                    <Link to={`/interview/${this.props.location.state.interviewId}/edit`}>Cancel</Link>
+                }
+
             </>
         )
     }

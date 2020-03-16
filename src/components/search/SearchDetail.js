@@ -1,3 +1,6 @@
+// Purpose: To create the company detail page, where all interivews for that company will be shown, and execute the logic associated 
+
+
 import React, { Component } from "react"
 import APIManager from '../../modules/APIManager'
 import { Jumbotron, Button } from 'react-bootstrap'
@@ -42,7 +45,7 @@ class CompanyDetail extends Component {
             // make a DELETE request to the DB for the selected interview
             APIManager.delete("interviews", id)
                 .then(() => {
-                    // get all interviews again
+                    // get all interviews for this particular company again
                     APIManager.getAllAuth(`interviews?company=${this.props.match.params.companyId}`)
                         .then((interviews) => {
                             // update state with interviews

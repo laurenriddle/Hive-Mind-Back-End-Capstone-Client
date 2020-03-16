@@ -1,3 +1,5 @@
+// Purpose: To render the navbar and application views
+
 import React, { Component } from "react";
 import ApplicationViews from "./ApplicationViews";
 import '../index.css'

@@ -1,3 +1,5 @@
+// Purpose: To create the navbar 
+
 import React, { Component } from "react"
 import { Nav, Navbar } from "react-bootstrap"
 import { Link } from 'react-router-dom'
@@ -18,7 +20,9 @@ class Navigation extends Component {
                         <Link className="nav-link" to="/myinterviews">My Interviews</Link>
                         <Link className="nav-link" to="/search">Search</Link>                            
                         <Link className="nav-link" to="/login" onClick={() => {
+                            // removes the token from session storage
                             logout()
+                            // sets the user in state in the main app file to false so the navbar wont render
                             this.props.loggedOut()
                         } }>Logout</Link>                            
                         </Nav>

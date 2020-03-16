@@ -1,3 +1,5 @@
+// Purpose: To create the register form and execute the logic associated 
+
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import { register, isAuthenticated } from "../../modules/SimpleAuth"
@@ -54,7 +56,7 @@ class Register extends Component {
                 .then(() => {
                     // checks to make sure the user is authenticated
                     if (isAuthenticated()) {
-                    // this function sets the user value in state in hivemind.js to true.
+                    // this function sets the user value in state in hivemind.js to true so that the navbar will render
                     this.props.loggedIn()
                     // push to the home page
                     this.props.history.push("/")
@@ -126,7 +128,7 @@ class Register extends Component {
 
                         <option value="">Select a Cohort</option>
                         {this.state.cohorts.map((cohort) => {
-                            return <option value={cohort.id}>{cohort.cohort}</option>
+                            return <option key={cohort.id} value={cohort.id}>{cohort.cohort}</option>
                         })}
                     </select>
 

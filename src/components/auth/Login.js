@@ -1,3 +1,5 @@
+// Purpose: To create the login form and execute the logic associated 
+
 import React, { Component } from "react"
 import {Link} from 'react-router-dom'
 import "./Auth.css"
