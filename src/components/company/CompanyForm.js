@@ -58,8 +58,14 @@ class NewCompanyForm extends Component {
                             // if the user confirms, this makes a post to the companies table
                             APIManager.post("companies", newcompany)
                                 .then(() => {
-                                    // pushes the user to the new interview page
-                                    this.props.history.push("/interview/new")
+                                    if (this.props.location.state !== undefined) {
+                                        // pushes the user back to the edit form
+                                        this.props.history.push(`/interview/${this.props.location.state.interviewId}/edit`)
+
+                                    } else {
+                                        // pushes the user to the new interview form
+                                        this.props.history.push("/interview/new")
+                                    }
                                 })
                         }
                     } else {
