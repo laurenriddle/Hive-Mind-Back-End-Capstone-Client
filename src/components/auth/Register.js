@@ -197,7 +197,7 @@ class Register extends Component {
                         placeholder="Confirmation Password"
 
                     />
-                    
+
                     {this.state.image !== null &&
                         <img src={this.state.image} alt="user" className="pre-profile-img"></img>
                     }
