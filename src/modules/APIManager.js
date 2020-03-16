@@ -70,10 +70,10 @@ export default {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",
-                Authorization: `Token ${sessionStorage.getItem("bangazon_token")}`
+                Authorization: `Token ${sessionStorage.getItem("hivemind_token")}`
             },
             body: JSON.stringify(editedItem)
-        }).then(data => data.json());
+        })
 
     }
 }

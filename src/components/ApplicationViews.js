@@ -10,6 +10,8 @@ import EditInterviewForm from "./interviews/InterviewEditForm";
 import NewCompanyForm from "./company/CompanyForm";
 import SearchResults from "./search/SearchResults";
 import CompanyDetail from "./search/SearchDetail";
+import Profile from "./profile/Profile";
+import ProfileEditForm from "./profile/ProfileEditForm";
 export default class ApplicationViews extends Component {
 
   render() {
@@ -114,6 +116,30 @@ export default class ApplicationViews extends Component {
           exact path="/company/:companyId(\d+)" render={props => {
             if (isAuthenticated()) {
                 return <CompanyDetail
+                {...props} {...this.props} />
+            } else {
+                return <Redirect to='/login' />
+              
+            }
+
+          }}
+         />
+         <Route
+          exact path="/profile" render={props => {
+            if (isAuthenticated()) {
+                return <Profile
+                {...props} {...this.props} />
+            } else {
+                return <Redirect to='/login' />
+              
+            }
+
+          }}
+         /> 
+         <Route
+          exact path="/profile/edit" render={props => {
+            if (isAuthenticated()) {
+                return <ProfileEditForm
                 {...props} {...this.props} />
             } else {
                 return <Redirect to='/login' />
