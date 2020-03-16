@@ -1,4 +1,4 @@
-// Purpose: To create the navbar 
+// Purpose: To create the navbar component
 
 import React, { Component } from "react"
 import { Nav, Navbar } from "react-bootstrap"
