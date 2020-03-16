@@ -1,3 +1,5 @@
+// Purpose: To create the search results card that will be rendered in the search results component 
+
 import { Card } from "react-bootstrap";
 import React, {Component} from 'react'
 import { Button } from 'react-bootstrap'

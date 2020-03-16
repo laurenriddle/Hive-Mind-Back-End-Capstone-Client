@@ -1,3 +1,6 @@
+// Purpose: To create the company detail page, where all interivews for that company will be shown, and execute the logic associated 
+
+
 import React, { Component } from "react"
 import APIManager from '../../modules/APIManager'
 import { Jumbotron, Button } from 'react-bootstrap'
@@ -16,6 +19,7 @@ class CompanyDetail extends Component {
         this.setState(stateToChange)
     }
 
+    
     componentDidMount () {
         // gets the single company so we can populate the jumbotron
         APIManager.getOne("companies", this.props.match.params.companyId)
@@ -35,6 +39,24 @@ class CompanyDetail extends Component {
             })
         })
     }
+    deleteInterview = (id) => {
+        // confirm the user wants to delete the interview
+        if (window.confirm("Are you sure you want to delete this interview?")) {
+            // make a DELETE request to the DB for the selected interview
+            APIManager.delete("interviews", id)
+                .then(() => {
+                    // get all interviews for this particular company again
+                    APIManager.getAllAuth(`interviews?company=${this.props.match.params.companyId}`)
+                        .then((interviews) => {
+                            // update state with interviews
+                            this.setState({
+                                interviews: interviews
+                            })
+                        })
+
+                })
+        }
+    }
     
 
     render() {
@@ -47,7 +69,7 @@ class CompanyDetail extends Component {
           </Jumbotron>
           <Link to="/interview/new"><Button>New Survey</Button></Link>
                 {this.state.interviews.map((interview) => {
-                    return <SearchDetailCard {...this.props} key={interview.id} interview={interview} user={interview.applicant.user} />
+                    return <SearchDetailCard {...this.props} key={interview.id} interview={interview} user={interview.applicant.user} deleteInterview={this.deleteInterview} />
                 })}
                 {this.state.interviews.length === 0 &&
                 <>

@@ -1,3 +1,5 @@
+// Purpose: To render the navbar and application views
+
 import React, { Component } from "react";
 import ApplicationViews from "./ApplicationViews";
 import '../index.css'
@@ -11,21 +13,21 @@ class HiveMind extends Component {
 
 
     componentDidMount() {
-        // checks to see if there is anyone logged in
+        // checks to see if there is anyone logged in when the app loads
         this.setState({
             user: isAuthenticated()
         })
     }
+    
     loggedIn = () => {
-        // sets the user in state to true
+        // sets the user in state to true so that the navbar will render
         this.setState({
             user: isAuthenticated()
         })
     }
 
     loggedOut = () => {
-        // sets the user in state to false
-
+        // sets the user in state to false so that the navbar will not render
         this.setState({
             user: isAuthenticated()
         })

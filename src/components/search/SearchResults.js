@@ -1,3 +1,5 @@
+// Purpose: To create the search results form component, render result cards, and execute the logic associated 
+
 import React, { Component } from "react"
 import APIManager from '../../modules/APIManager'
 import { Button, FormControl } from 'react-bootstrap'
@@ -7,7 +9,8 @@ import ResultCard from './ResultCard'
 class SearchResults extends Component {
     state = {
         companies: [],
-        searchterms: ""
+        searchterms: "",
+        searched: false
     }
 
     handleInputChange = (evt) => {
@@ -20,9 +23,11 @@ class SearchResults extends Component {
         // gets all companies whose name matches the name in the search terms in state
         APIManager.getAllAuth(`companies?name=${terms}`)
             .then((companies) => {
-                // sets the companies in state so the result cards can be made
+                // sets the companies in state so the result cards with the company names can be made
                 this.setState({
-                    companies: companies
+                    companies: companies,
+                    // this boolean tells the render that the list of companies has been searched so that it can either display the results or a "no search results" header
+                    searched: true
                 })
             })
     }
@@ -37,9 +42,16 @@ class SearchResults extends Component {
                     type="text"
                     placeholder="Enter company name to search..."></FormControl>
                 <Button onClick={() => this.searchCompanies(this.state.searchterms)}><FontAwesomeIcon icon={faSearch} /></Button>
+                {this.state.companies.length === 0 && this.state.searched === true &&
+                    <h2>No search results</h2>
+                }
+
                 {this.state.companies.map((company) => {
+
                     return <ResultCard {...this.props} key={company.id} company={company} />
-                })}
+
+                })
+                }
 
             </>
         )

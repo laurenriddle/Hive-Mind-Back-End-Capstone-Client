@@ -1,3 +1,5 @@
+// Purpose: To create the interview form and execute the logic associated 
+
 import React, { Component } from "react"
 import { Link } from 'react-router-dom'
 import APIManager from '../../modules/APIManager'

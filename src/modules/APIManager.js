@@ -1,8 +1,10 @@
+// Purpose: To house all fetch call functions that will communicate with the DB
+
 const remoteURL = "http://localhost:8000"
 
 export default {
     getAllNotAuth(table) {
-        // gets all items from a table
+        // gets (GET) all items from a table if the user is not authenticated (i.e. not passing the token)
         return fetch(`${remoteURL}/${table}`, {
             method: "GET",
             headers: {
@@ -11,7 +13,7 @@ export default {
         }).then(result => result.json());
     },
     getAllAuth(table) {
-        // gets all items from a table
+        // gets (GET) all items from a table if the user is authenticated (i.e. passing the token)
         return fetch(`${remoteURL}/${table}`, {
             method: "GET",
             headers: {
@@ -21,7 +23,7 @@ export default {
         }).then(result => result.json());
     },
     getOne(table, id) {
-        // gets one item from a table
+        // gets (GET) one item from a table (must be authenticated)
         return fetch(`${remoteURL}/${table}/${id}`, {
             method: "GET",
             headers: {
@@ -31,7 +33,7 @@ export default {
         }).then(result => result.json());
     },
     delete(table, id) {
-        // deltes one item from a table
+        // deletes (DELETE) one item from a table (must be authenticated)
         return fetch(`${remoteURL}/${table}/${id}`, {
             method: "DELETE",
             headers: {
@@ -41,7 +43,7 @@ export default {
         })
     },
     post(table, newItem) {
-        // creates one item in a table
+        // creates (POST) one item in a table (must be authenticated)
         return fetch(`${remoteURL}/${table}`, {
             method: "POST",
             headers: {
@@ -52,7 +54,7 @@ export default {
         }).then(data => data.json());
     },
     update(route, editedItem) {
-        // updates one item in a table
+        // updates (PUT) one item in a table (must be authenticated)
         return fetch(`${remoteURL}/${route}/${editedItem.id}`, {
             method: "PUT",
             headers: {
@@ -62,8 +64,8 @@ export default {
             body: JSON.stringify(editedItem)
         })
     },
-    profile_update(route, editedItem) {
-        // updates the user information in the applicant table
+    update_profile(route, editedItem) {
+        // updates (PUT) the user information in the applicant table (must be authenticated)
         return fetch(`${remoteURL}/${route}/profile_update`, {
             method: "PUT",
             headers: {

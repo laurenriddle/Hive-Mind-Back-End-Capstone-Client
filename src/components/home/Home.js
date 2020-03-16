@@ -1,3 +1,5 @@
+// Purpose: To create the home page 
+
 import React, { Component } from "react"
 import {Link} from 'react-router-dom'
 import APIManager from '../../modules/APIManager'

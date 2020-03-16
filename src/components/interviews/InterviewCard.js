@@ -1,10 +1,12 @@
+// Purpose: To create the card for a single interview that will render on the my interviews page
+
 import { Card } from "react-bootstrap";
 import React, { Component } from 'react'
 import { faEdit, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class InterviewCard extends Component {
-
+// this component creates the card for the my interviews page
 
     render() {
         return (
