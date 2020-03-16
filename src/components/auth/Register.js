@@ -19,7 +19,10 @@ class Register extends Component {
         cohorts: [],
         employmentStatus: "",
         linkedInProfile: "",
-        confirmpassword: ""
+        confirmpassword: "",
+        aboutme: "",
+        employer: "",
+        image: null
     }
 
     handleInputChange = (evt) => {
@@ -46,8 +49,12 @@ class Register extends Component {
             "cohort_id": this.state.cohort,
             "is_employed": this.state.employmentStatus,
             "linkedin_profile": this.state.linkedInProfile,
+            "aboutme": this.state.aboutme,
+            "image": this.state.image,
+            "employer": this.state.employer
+
         }
-        
+
         // check to see that all fields are filled out
         if (this.state.password === this.state.confirmpassword && this.state.userName !== "" && this.state.firstName !== "" && this.state.lastName !== "" && this.state.email !== "" && this.state.password !== "" && this.state.confirmpassword !== "" && this.state.cohort !== "" && this.state.employmentStatus !== "") {
 
@@ -56,10 +63,10 @@ class Register extends Component {
                 .then(() => {
                     // checks to make sure the user is authenticated
                     if (isAuthenticated()) {
-                    // this function sets the user value in state in hivemind.js to true so that the navbar will render
-                    this.props.loggedIn()
-                    // push to the home page
-                    this.props.history.push("/")
+                        // this function sets the user value in state in hivemind.js to true so that the navbar will render
+                        this.props.loggedIn()
+                        // push to the home page
+                        this.props.history.push("/")
                     }
                 })
         } else {
@@ -139,14 +146,24 @@ class Register extends Component {
                         <option value="False">Searching for Opportunities</option>
                     </select>
 
+                    <input
+                        id="employer"
+                        onChange={this.handleInputChange}
+                        placeholder="If you are working somewhere, where are you employed?"
 
+                    />
                     <input
                         id="linkedInProfile"
                         onChange={this.handleInputChange}
                         placeholder="LinkedIn Profile"
 
                     />
+                    <input
+                        id="aboutme"
+                        onChange={this.handleInputChange}
+                        placeholder="Tell everyone a little bit about yourself..."
 
+                    />
 
                     <input
                         id="password"
