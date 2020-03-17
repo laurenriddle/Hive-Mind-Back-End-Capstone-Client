@@ -20,29 +20,29 @@ class CompanyDetail extends Component {
         this.setState(stateToChange)
     }
 
-    
-    componentDidMount () {
+
+    componentDidMount() {
         // gets the single company so we can populate the jumbotron
         APIManager.getOne("companies", this.props.match.params.companyId)
-        .then((company) => {
-            // sets the company and its industry in state
-            this.setState({
-                company: company,
-                industry: company.industry
+            .then((company) => {
+                // sets the company and its industry in state
+                this.setState({
+                    company: company,
+                    industry: company.industry
+                })
             })
-        })
         // gets all of the interviews for the company
         APIManager.getAllAuth(`interviews?company=${this.props.match.params.companyId}`)
-        .then((interviews) => {
-            this.setState({
-                // sets the interviews in state so that they can be used to load the interview cards
-                interviews: interviews,
+            .then((interviews) => {
+                this.setState({
+                    // sets the interviews in state so that they can be used to load the interview cards
+                    interviews: interviews,
+                })
             })
-        })
         // get all favorites relationships and set them in state so that the cards will render the correct buttons
         APIManager.getAllAuth("favorites?applicant=true")
-        .then((favorites) => {
-            // set favorites in state
+            .then((favorites) => {
+                // set favorites in state
                 this.setState({
                     favorites: favorites
                 })
@@ -50,8 +50,7 @@ class CompanyDetail extends Component {
     }
 
     deleteFavorite = (id) => {
-        // confirm the user wants to delete the favorite
-        if (window.confirm("Are you sure you want to delete this favorite?")) {
+        // get the favorite to that you have the relationship ID
             APIManager.getAllAuth(`favorites?interview=${id}&&applicant=true`)
                 .then((relationship) => {
                     // make a DELETE request to the DB for the selected favorite
@@ -63,18 +62,30 @@ class CompanyDetail extends Component {
                         })
 
                 })
+        
+    }
+
+    addFavorite = (id) => {
+        let favorite = {
+            interview_id: id
         }
+        // add the favorite to the user's list
+        APIManager.post(`favorites`, favorite)
+            .then(() => {
+                // gets all favorites for the specific user
+                this.getAllFavorites()
+            })
     }
 
     getAllFavorites = () => {
-       // get all favorites relationships and set them in state so that the cards will render the correct buttons
-       APIManager.getAllAuth("favorites?applicant=true")
-       .then((favorites) => {
-           // set favorites in state
-               this.setState({
-                   favorites: favorites
-               })
-           })
+        // get all favorites relationships and set them in state so that the cards will render the correct buttons
+        APIManager.getAllAuth("favorites?applicant=true")
+            .then((favorites) => {
+                // set favorites in state
+                this.setState({
+                    favorites: favorites
+                })
+            })
     }
 
     deleteInterview = (id) => {
@@ -95,25 +106,25 @@ class CompanyDetail extends Component {
                 })
         }
     }
-    
+
 
     render() {
 
         return (
             <>
-          <Jumbotron>
-              <h1>{this.state.company.name}</h1>
-              <p>{this.state.industry.industry}</p>
-          </Jumbotron>
-          <Link to="/interview/new"><Button>New Survey</Button></Link>
+                <Jumbotron>
+                    <h1>{this.state.company.name}</h1>
+                    <p>{this.state.industry.industry}</p>
+                </Jumbotron>
+                <Link to="/interview/new"><Button>New Survey</Button></Link>
                 {this.state.interviews.map((interview) => {
-                    return <SearchDetailCard favorites={this.state.favorites} {...this.props} key={interview.id} interview={interview} user={interview.applicant.user} deleteInterview={this.deleteInterview} deleteFavorite={this.deleteFavorite}/>
+                    return <SearchDetailCard favorites={this.state.favorites} {...this.props} key={interview.id} interview={interview} user={interview.applicant.user} deleteInterview={this.deleteInterview} deleteFavorite={this.deleteFavorite} addFavorite={this.addFavorite} />
                 })}
                 {this.state.interviews.length === 0 &&
-                <>
-                <h4>It looks like there are no interviews for this company yet. Would you like to add one?</h4>
-                </>
-            }
+                    <>
+                        <h4>It looks like there are no interviews for this company yet. Would you like to add one?</h4>
+                    </>
+                }
 
             </>
         )

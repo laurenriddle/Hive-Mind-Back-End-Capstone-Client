@@ -46,8 +46,7 @@ class MyFavorites extends Component {
     }
 
     deleteFavorite = (id) => {
-        // confirm the user wants to delete the favorite
-        if (window.confirm("Are you sure you want to delete this favorite?")) {
+        // get the favorite so that you have the relationship ID
             APIManager.getAllAuth(`favorites?interview=${id}&&applicant=true`)
                 .then((relationship) => {
                     // make a DELETE request to the DB for the selected favorite
@@ -59,7 +58,7 @@ class MyFavorites extends Component {
                         })
 
                 })
-        }
+        
     }
 
     filterFavorites = (id) => {
