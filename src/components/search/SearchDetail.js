@@ -40,13 +40,41 @@ class CompanyDetail extends Component {
             })
         })
         // get all favorites relationships and set them in state so that the cards will render the correct buttons
-        APIManager.getAllAuth("favorites")
+        APIManager.getAllAuth("favorites?applicant=true")
         .then((favorites) => {
             // set favorites in state
                 this.setState({
                     favorites: favorites
                 })
             })
+    }
+
+    deleteFavorite = (id) => {
+        // confirm the user wants to delete the favorite
+        if (window.confirm("Are you sure you want to delete this favorite?")) {
+            APIManager.getAllAuth(`favorites?interview=${id}&&applicant=true`)
+                .then((relationship) => {
+                    // make a DELETE request to the DB for the selected favorite
+                    APIManager.delete("favorites", relationship[0].id)
+                        .then(() => {
+                            // gets all favorites for the specific user
+                            this.getAllFavorites()
+
+                        })
+
+                })
+        }
+    }
+
+    getAllFavorites = () => {
+       // get all favorites relationships and set them in state so that the cards will render the correct buttons
+       APIManager.getAllAuth("favorites?applicant=true")
+       .then((favorites) => {
+           // set favorites in state
+               this.setState({
+                   favorites: favorites
+               })
+           })
     }
 
     deleteInterview = (id) => {
@@ -79,7 +107,7 @@ class CompanyDetail extends Component {
           </Jumbotron>
           <Link to="/interview/new"><Button>New Survey</Button></Link>
                 {this.state.interviews.map((interview) => {
-                    return <SearchDetailCard favorites={this.state.favorites} {...this.props} key={interview.id} interview={interview} user={interview.applicant.user} deleteInterview={this.deleteInterview} />
+                    return <SearchDetailCard favorites={this.state.favorites} {...this.props} key={interview.id} interview={interview} user={interview.applicant.user} deleteInterview={this.deleteInterview} deleteFavorite={this.deleteFavorite}/>
                 })}
                 {this.state.interviews.length === 0 &&
                 <>

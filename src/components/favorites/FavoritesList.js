@@ -42,23 +42,23 @@ class MyFavorites extends Component {
                     companies: companies
                 })
             })
-       
+
     }
 
     deleteFavorite = (id) => {
         // confirm the user wants to delete the favorite
         if (window.confirm("Are you sure you want to delete this favorite?")) {
             APIManager.getAllAuth(`favorites?interview=${id}&&applicant=true`)
-            .then((relationship) => {
-                // make a DELETE request to the DB for the selected favorite
-                APIManager.delete("favorites", relationship[0].id)
-                    .then(() => {
-                        // gets all favorites for the specific user
-                        this.getAllFavorites()
-    
-                    })
-                
-            })
+                .then((relationship) => {
+                    // make a DELETE request to the DB for the selected favorite
+                    APIManager.delete("favorites", relationship[0].id)
+                        .then(() => {
+                            // gets all favorites for the specific user
+                            this.getAllFavorites()
+
+                        })
+
+                })
         }
     }
 
@@ -75,38 +75,38 @@ class MyFavorites extends Component {
 
     getAllFavorites = () => {
         APIManager.getAllAuth("favorites?applicant=true")
-        .then((interviews) => {
-            let companies = []
-            interviews.map((interview) => {
+            .then((interviews) => {
+                let companies = []
+                interviews.map((interview) => {
 
-                // if the company is not already in the companies array, put it in there
-                this.pushEntry(companies, interview.interview.company)
+                    // if the company is not already in the companies array, put it in there
+                    this.pushEntry(companies, interview.interview.company)
+                })
+                // sets the interviews and companies in state
+                this.setState({
+                    interviews: interviews,
+                    companies: companies
+                })
             })
-            // sets the interviews and companies in state
-            this.setState({
-                interviews: interviews,
-                companies: companies
-            })
-        })
     }
 
     render() {
 
         return (
             <>
-                        <label>Filter by Company:</label>
-                        <ButtonToolbar aria-label="Toolbar with button groups">
-                            <ButtonGroup className="mr-2" aria-label="First group">
-                                <Button onClick={() => this.getAllFavorites()}>All</Button>
-                {this.state.companies.length > 0 &&
-                    <>
+                <label>Filter by Company:</label>
+                <ButtonToolbar aria-label="Toolbar with button groups">
+                    <ButtonGroup className="mr-2" aria-label="First group">
+                        <Button onClick={() => this.getAllFavorites()}>All</Button>
+                        {this.state.companies.length > 0 &&
+                            <>
                                 {this.state.companies.map((company) => {
                                     return <Button key={company.id} onClick={() => this.filterFavorites(company.id)}>{company.name}</Button>
                                 })}
-                    </>
-                }
-                </ButtonGroup>
-            </ButtonToolbar>
+                            </>
+                        }
+                    </ButtonGroup>
+                </ButtonToolbar>
                 {this.state.interviews.map((interview) => {
                     return <SearchDetailCard {...this.props} key={interview.id} interview={interview.interview} favorites={this.state.interviews} deleteFavorite={this.deleteFavorite} user={interview.interview.applicant.user} />
                 })}
