@@ -93,7 +93,7 @@ class MyInterviews extends Component {
                             <ButtonGroup className="mr-2" aria-label="First group">
                                 <Button onClick={() => this.getAllInterviews()}>All</Button>
                                 {this.state.companies.map((company) => {
-                                    return <Button onClick={() => this.filterInterviews(company.id)}>{company.name}</Button>
+                                    return <Button key={company.id} onClick={() => this.filterInterviews(company.id)}>{company.name}</Button>
                                 })}
                             </ButtonGroup>
                         </ButtonToolbar>
