@@ -10,7 +10,8 @@ class CompanyDetail extends Component {
     state = {
         company: {},
         industry: {},
-        interviews: []
+        interviews: [],
+        favorites: []
     }
 
     handleInputChange = (evt) => {
@@ -38,7 +39,16 @@ class CompanyDetail extends Component {
                 interviews: interviews,
             })
         })
+        // get all favorites relationships and set them in state so that the cards will render the correct buttons
+        APIManager.getAllAuth("favorites")
+        .then((favorites) => {
+            // set favorites in state
+                this.setState({
+                    favorites: favorites
+                })
+            })
     }
+
     deleteInterview = (id) => {
         // confirm the user wants to delete the interview
         if (window.confirm("Are you sure you want to delete this interview?")) {
@@ -69,7 +79,7 @@ class CompanyDetail extends Component {
           </Jumbotron>
           <Link to="/interview/new"><Button>New Survey</Button></Link>
                 {this.state.interviews.map((interview) => {
-                    return <SearchDetailCard {...this.props} key={interview.id} interview={interview} user={interview.applicant.user} deleteInterview={this.deleteInterview} />
+                    return <SearchDetailCard favorites={this.state.favorites} {...this.props} key={interview.id} interview={interview} user={interview.applicant.user} deleteInterview={this.deleteInterview} />
                 })}
                 {this.state.interviews.length === 0 &&
                 <>

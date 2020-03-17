@@ -1,7 +1,6 @@
 // Purpose: To create the my favorites page, render the favorites cards, and execute the logic associated 
 
 import React, { Component } from "react"
-import { Link } from 'react-router-dom'
 import APIManager from '../../modules/APIManager'
 import { Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap'
 import SearchDetailCard from "../search/SearchDetailCard"
@@ -9,7 +8,8 @@ import SearchDetailCard from "../search/SearchDetailCard"
 class MyFavorites extends Component {
     state = {
         interviews: [],
-        companies: []
+        companies: [],
+        favorites: []
     }
 
     handleInputChange = (evt) => {
@@ -42,16 +42,24 @@ class MyFavorites extends Component {
                     companies: companies
                 })
             })
+        // get all favorites relationships and set them in state so that the cards will render the correct buttons
+        APIManager.getAllAuth("favorites")
+            .then((favorites) => {
+                // set favorites in state
+                this.setState({
+                    favorites: favorites
+                })
+            })
     }
 
-    deleteFavorite= (id) => {
+    deleteFavorite = (id) => {
         // confirm the user wants to delete the favorite
         if (window.confirm("Are you sure you want to delete this favorite?")) {
             // make a DELETE request to the DB for the selected favorite
             APIManager.delete("interviews", id)
                 .then(() => {
                     // gets all favorites for the specific user
-                   this.getAllFavorites()
+                    this.getAllFavorites()
 
                 })
         }
@@ -94,16 +102,16 @@ class MyFavorites extends Component {
                         <label>Filter by Company:</label>
                         <ButtonToolbar aria-label="Toolbar with button groups">
                             <ButtonGroup className="mr-2" aria-label="First group">
-                                <Button onClick={() => this.getAllInterviews()}>All</Button>
+                                <Button onClick={() => this.getAllFavorites()}>All</Button>
                                 {this.state.companies.map((company) => {
-                                    return <Button key={company.id} onClick={() => this.filterInterviews(company.id)}>{company.name}</Button>
+                                    return <Button key={company.id} onClick={() => this.filterFavorites(company.id)}>{company.name}</Button>
                                 })}
                             </ButtonGroup>
                         </ButtonToolbar>
                     </>
                 }
                 {this.state.interviews.map((interview) => {
-                    return <SearchDetailCard {...this.props} key={interview.id} interview={interview.interview} deleteFavorite={this.deleteFavorite} user={interview.interview.applicant.user} />
+                    return <SearchDetailCard {...this.props} key={interview.id} interview={interview.interview} favorites={this.state.favorites} deleteFavorite={this.deleteFavorite} user={interview.interview.applicant.user} />
                 })}
 
             </>

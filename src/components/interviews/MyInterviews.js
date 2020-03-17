@@ -1,7 +1,6 @@
 // Purpose: To create the my interviews page, render the interview cards, and execute the logic associated 
 
 import React, { Component } from "react"
-import { Link } from 'react-router-dom'
 import APIManager from '../../modules/APIManager'
 import { Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap'
 import InterviewCard from "./InterviewCard"
