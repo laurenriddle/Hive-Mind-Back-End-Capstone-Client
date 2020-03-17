@@ -50,7 +50,7 @@ class SearchDetailCard extends Component {
                         {(this.state.user.id !== this.props.interview.applicant.id && this.isFavorite(this.props.interview.id) === false) &&
                             <button onClick={() => this.props.deleteInterview(this.props.interview.id)}><FontAwesomeIcon icon={faStar} /></button>}
 
-                        {(this.state.user.id !== this.props.interview.applicant.id && this.isFavorite(this.props.interview.id) === true) && <button onClick={() => this.props.deleteInterview(this.props.interview.id)}><FontAwesomeIcon icon={faAddressBook} /></button>
+                        {(this.state.user.id !== this.props.interview.applicant.id && this.isFavorite(this.props.interview.id) === true) && <button onClick={() => this.props.deleteFavorite(this.props.interview.id)}><FontAwesomeIcon icon={faAddressBook} /></button>
                         }
                     </Card.Title>
                     <Card.Body>
