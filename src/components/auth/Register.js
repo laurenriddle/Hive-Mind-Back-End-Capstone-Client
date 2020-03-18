@@ -6,6 +6,8 @@ import { register, isAuthenticated } from "../../modules/SimpleAuth"
 import APIManager from "../../modules/APIManager"
 import './Auth.css'
 import { Button } from "react-bootstrap"
+import { cloudName, uploadPreset } from '../../modules/Credentials';
+import "../profile/Profile.css"
 
 class Register extends Component {
 
@@ -92,6 +94,21 @@ class Register extends Component {
             }
 
         }
+    }
+
+    openCloudinaryWidget = () => {
+        let widget = window.cloudinary.createUploadWidget({
+            cloudName: cloudName,
+            uploadPreset: uploadPreset
+        }, (error, result) => {
+            if (!error && result && result.event === "success") {
+                this.setState({
+                    image: result.info.url
+                })
+            }
+        }
+        )
+        widget.open();
     }
 
 
@@ -181,6 +198,13 @@ class Register extends Component {
 
                     />
 
+                    {this.state.image !== null &&
+                        <img src={this.state.image} alt="user" className="pre-profile-img"></img>
+                    }
+
+                    <div className="upload_widget_container">
+                        <Button type="button" id="upload_widget" className="cloudinary-button" onClick={this.openCloudinaryWidget}>Choose File</Button>
+                    </div>
 
                     <Button type="submit">
                         Register

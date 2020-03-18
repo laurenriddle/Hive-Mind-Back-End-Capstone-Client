@@ -12,13 +12,14 @@ class Navigation extends Component {
         if (isAuthenticated()) {
             return (
                 <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-                    <Navbar.Brand href="#home">Hive Mind</Navbar.Brand>
+                    <Navbar.Brand><Link className="logo" to="/">Hive Mind</Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
-                        <Link className="nav-link" to="/">Home</Link>
+                        
                         <Link className="nav-link" to="/myinterviews">My Interviews</Link>
                         <Link className="nav-link" to="/search">Search</Link>                            
+                        <Link className="nav-link" to="/favorites">Favorites</Link>                            
                         <Link className="nav-link" to="/profile">Profile</Link>                            
                         <Link className="nav-link" to="/login" onClick={() => {
                             // removes the token from session storage

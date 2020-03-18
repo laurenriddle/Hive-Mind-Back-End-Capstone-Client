@@ -1,0 +1,8 @@
+.logo {
+    color: white;
+}
+
+.logo:hover {
+    color: rgba(255, 255, 255, 0.733);
+    text-decoration: none;
+}
