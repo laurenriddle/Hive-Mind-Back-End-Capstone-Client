@@ -42,7 +42,14 @@ class SearchDetailCard extends Component {
         return (
             <>
                 <Card>
-                    <Card.Title><Link to={`/profile/${this.props.interview.applicant.id}`}><FontAwesomeIcon icon={faUser} /></Link>{this.props.user.first_name} {this.props.user.last_name} {this.props.interview.date}
+                    <Card.Title>
+                        {this.state.user.id !== this.props.interview.applicant.id &&
+                            <Link to={`/profile/${this.props.interview.applicant.id}`}><FontAwesomeIcon icon={faUser} /></Link>
+                        }
+                        {this.state.user.id === this.props.interview.applicant.id &&
+                            <Link to={`/profile`}><FontAwesomeIcon icon={faUser} /></Link>
+                        }
+                        {this.props.user.first_name} {this.props.user.last_name} {this.props.interview.date}
                         {this.state.user.id === this.props.interview.applicant.id &&
                             <>
                                 <button onClick={() => { this.props.history.push(`/interview/${this.props.interview.id}/edit`) }}><FontAwesomeIcon icon={faEdit} /></button><button onClick={() => this.props.deleteInterview(this.props.interview.id)}><FontAwesomeIcon icon={faTrash} /></button>
