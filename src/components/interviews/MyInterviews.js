@@ -29,7 +29,7 @@ class MyInterviews extends Component {
         APIManager.getAllAuth("interviews?applicant=true")
             .then((interviews) => {
                 let companies = []
-                interviews.map((interview) => {
+                interviews.forEach((interview) => {
                     // if the company is not already in the companies array, put it in there
                     this.pushEntry(companies, interview.company)
                 })
@@ -69,7 +69,7 @@ class MyInterviews extends Component {
         APIManager.getAllAuth("interviews?applicant=true")
             .then((interviews) => {
                 let companies = []
-                interviews.map((interview) => {
+                interviews.forEach((interview) => {
                     // if the company is not already in the companies array, put it in there
                     this.pushEntry(companies, interview.company)
                 })
