@@ -63,7 +63,7 @@ class MyFavorites extends Component {
 
     filterFavorites = (id) => {
         // gets all favorites for the company that was picked
-        APIManager.getAllAuth(`favorites?applicant=true&&interview=${id}`)
+        APIManager.getAllAuth(`favorites?applicant=true&&interview__company_id=${id}`)
             .then((interviews) => {
                 // sets the favorites in state
                 this.setState({
