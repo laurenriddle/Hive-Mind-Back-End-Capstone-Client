@@ -13,6 +13,7 @@ import CompanyDetail from "./search/SearchDetail";
 import Profile from "./profile/Profile";
 import ProfileEditForm from "./profile/ProfileEditForm";
 import MyFavorites from "./favorites/FavoritesList";
+import GenericProfile from "./profile/GenericUserProfilePage";
 export default class ApplicationViews extends Component {
 
   render() {
@@ -153,6 +154,18 @@ export default class ApplicationViews extends Component {
           exact path="/favorites" render={props => {
             if (isAuthenticated()) {
                 return <MyFavorites
+                {...props} {...this.props} />
+            } else {
+                return <Redirect to='/login' />
+              
+            }
+
+          }}
+         /> 
+         <Route
+          exact path="/profile/:profileId(\d+)" render={props => {
+            if (isAuthenticated()) {
+                return <GenericProfile
                 {...props} {...this.props} />
             } else {
                 return <Redirect to='/login' />
