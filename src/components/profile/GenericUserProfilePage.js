@@ -14,7 +14,8 @@ class GenericProfile extends Component {
         user: {},
         cohort: {},
         interviews: [],
-        favorites: []
+        favorites: [],
+        loggedInUserId: null,
     }
 
     componentDidMount() {
@@ -29,36 +30,44 @@ class GenericProfile extends Component {
                 })
             })
         APIManager.getAllAuth(`interviews?review=${this.props.match.params.profileId}`)
-        .then((interviews) => {
-            // sets the applicant in state so it can be displayed on the profile page
-            this.setState({
-                interviews: interviews
+            .then((interviews) => {
+                // sets the applicant in state so it can be displayed on the profile page
+                this.setState({
+                    interviews: interviews
+                })
             })
-        })
-         // get all favorites relationships and set them in state so that the cards will render the correct buttons
-         APIManager.getAllAuth("favorites?applicant=true")
-         .then((favorites) => {
-             // set favorites in state
-             this.setState({
-                 favorites: favorites
-             })
-         })
+        // get all favorites relationships and set them in state so that the cards will render the correct buttons
+        APIManager.getAllAuth("favorites?applicant=true")
+            .then((favorites) => {
+                // set favorites in state
+                this.setState({
+                    favorites: favorites
+                })
+            })
+        //  gets current logged in user
+        APIManager.getAllAuth("applicants")
+            .then((applicant) => {
+                // sets the applicant in state so it can be displayed on the profile page
+                this.setState({
+                    loggedInUserId: applicant[0].user.id,
+                })
+            })
     }
 
     deleteFavorite = (id) => {
         // get the favorite to that you have the relationship ID
-            APIManager.getAllAuth(`favorites?interview=${id}&&applicant=true`)
-                .then((relationship) => {
-                    // make a DELETE request to the DB for the selected favorite
-                    APIManager.delete("favorites", relationship[0].id)
-                        .then(() => {
-                            // gets all favorites for the specific user
-                            this.getAllFavorites()
+        APIManager.getAllAuth(`favorites?interview=${id}&&applicant=true`)
+            .then((relationship) => {
+                // make a DELETE request to the DB for the selected favorite
+                APIManager.delete("favorites", relationship[0].id)
+                    .then(() => {
+                        // gets all favorites for the specific user
+                        this.getAllFavorites()
 
-                        })
+                    })
 
-                })
-        
+            })
+
     }
 
     addFavorite = (id) => {
@@ -116,7 +125,9 @@ class GenericProfile extends Component {
                         :
                         <FontAwesomeIcon icon={faUser} />
                     }
-                    <Button onClick={() => this.props.history.push('/profile/edit')}>Edit</Button>
+                    {this.state.user.id === this.state.loggedInUserId &&
+                        <Button onClick={() => this.props.history.push('/profile/edit')}>Edit</Button>
+                    }
                     <h5>{this.state.user.email}</h5>
                     <h5>{this.state.cohort.cohort}</h5>
                     {this.state.applicant.is_employed ?
