@@ -2,7 +2,7 @@
 
 import { Card } from "react-bootstrap";
 import React, { Component } from 'react'
-import { faEdit, faTrash, faUser, faStar, faAddressBook } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faTrash, faUser, faStar, faBookmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import APIManager from "../../modules/APIManager";
 
@@ -50,7 +50,7 @@ class SearchDetailCard extends Component {
                         {(this.state.user.id !== this.props.interview.applicant.id && this.isFavorite(this.props.interview.id) === false) &&
                             <button onClick={() => this.props.addFavorite(this.props.interview.id)}><FontAwesomeIcon icon={faStar} /></button>}
 
-                        {(this.state.user.id !== this.props.interview.applicant.id && this.isFavorite(this.props.interview.id) === true) && <button onClick={() => this.props.deleteFavorite(this.props.interview.id)}><FontAwesomeIcon icon={faAddressBook} /></button>
+                        {(this.state.user.id !== this.props.interview.applicant.id && this.isFavorite(this.props.interview.id) === true) && <button onClick={() => this.props.deleteFavorite(this.props.interview.id)}><FontAwesomeIcon icon={faBookmark} /></button>
                         }
                     </Card.Title>
                     <Card.Body>
