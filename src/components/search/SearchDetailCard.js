@@ -54,6 +54,7 @@ class SearchDetailCard extends Component {
                         }
                     </Card.Title>
                     <Card.Body>
+                        <Card.Text>Company: {this.props.interview.company.name} ({this.props.interview.company.industry.industry})</Card.Text>
                         <Card.Text>Position: {this.props.interview.position}</Card.Text>
                         <Card.Text>Interview Type: {this.props.interview.interview_type}</Card.Text>
 
