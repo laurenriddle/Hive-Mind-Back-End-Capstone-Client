@@ -44,16 +44,15 @@ class Profile extends Component {
                     <h5>{this.state.user.email}</h5>
                     <h5>{this.state.cohort.cohort}</h5>
                     {this.state.applicant.is_employed ?
-                        <h5>Hired Status: Hired</h5>
+                        <h5>Employment Status: Hired</h5>
                         :
-                        <h5>Hired Status: Looking for Opportunities</h5>
+                        <h5>Employment Status: Looking for Opportunities</h5>
                     }
                     <h5>{this.state.applicant.jobtitle}</h5>
 
-                    {this.state.applicant.employer !== null ?
+                    {this.state.applicant.employer !== null && this.state.applicant.employer !== "" &&
                         <h5>Employer: {this.state.applicant.employer}</h5>
-                        :
-                        <></>
+                        
                     }
                     <a href={this.state.applicant.linkedin_profile} target="_blank" rel="noopener noreferrer">View LinkedIn Profile</a>
                 </Jumbotron>

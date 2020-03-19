@@ -31,20 +31,22 @@ class Navigation extends Component {
                             <Link className="nav-link" to="/myinterviews">My Interviews</Link>
                             <Link className="nav-link" to="/search">Search</Link>
                             <Link className="nav-link" to="/favorites">Favorites</Link>
-                            <Link className="nav-link" to={`/profile`}>Profile</Link>
                             <Form inline>
                                 <FormControl type="text" placeholder="First Name" className="mr-sm-2" id="firstname" onChange={this.handleInputChange} />
-                                <FormControl type="text" placeholder="Last Name" className="mr-sm-2" id="lastname" onChange={this.handleInputChange}/>
+                                <FormControl type="text" placeholder="Last Name" className="mr-sm-2" id="lastname" onChange={this.handleInputChange} />
                                 <Button variant="outline-primary" onClick={() => this.props.searchUsers(this.state.firstname, this.state.lastname)}>Search</Button>
                             </Form>
+                        </Nav>
+                        <Nav className="ml-auto">
+                            <Link className="nav-link" to={`/profile`}>Profile</Link>
                             <Link className="nav-link" to="/login" onClick={() => {
                                 // removes the token from session storage
                                 logout()
                                 // sets the user in state in the main app file to false so the navbar wont render
                                 this.props.loggedOut()
                             }}>Logout</Link>
-                        </Nav>
 
+                        </Nav>
                     </Navbar.Collapse>
                 </Navbar>
             )
