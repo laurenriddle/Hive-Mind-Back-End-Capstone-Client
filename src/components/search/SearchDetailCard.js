@@ -1,4 +1,4 @@
-// Purpose: To create the interivew card for the company details page. This is rendered by Search Detail
+// Purpose: To create the interivew card for the company details page. This is rendered by Search Details component
 
 import { Card } from "react-bootstrap";
 import { Link } from 'react-router-dom'
