@@ -1,6 +1,7 @@
-// Purpose: To create the interivew card for the company details page. This is rendered by Search Detail
+// Purpose: To create the interivew card for the company details page. This is rendered by Search Details component
 
 import { Card } from "react-bootstrap";
+import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
 import { faEdit, faTrash, faUser, faStar, faBookmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -41,7 +42,14 @@ class SearchDetailCard extends Component {
         return (
             <>
                 <Card>
-                    <Card.Title><a href={this.props.interview.applicant.linkedin_profile} rel="noopener noreferrer" target="_blank"><FontAwesomeIcon icon={faUser} /></a> {this.props.user.first_name} {this.props.user.last_name} {this.props.interview.date}
+                    <Card.Title>
+                        {this.state.user.id !== this.props.interview.applicant.id &&
+                            <Link to={`/profile/${this.props.interview.applicant.id}`}><FontAwesomeIcon icon={faUser} /></Link>
+                        }
+                        {this.state.user.id === this.props.interview.applicant.id &&
+                            <Link to={`/profile`}><FontAwesomeIcon icon={faUser} /></Link>
+                        }
+                        {this.props.user.first_name} {this.props.user.last_name} {this.props.interview.date}
                         {this.state.user.id === this.props.interview.applicant.id &&
                             <>
                                 <button onClick={() => { this.props.history.push(`/interview/${this.props.interview.id}/edit`) }}><FontAwesomeIcon icon={faEdit} /></button><button onClick={() => this.props.deleteInterview(this.props.interview.id)}><FontAwesomeIcon icon={faTrash} /></button>
