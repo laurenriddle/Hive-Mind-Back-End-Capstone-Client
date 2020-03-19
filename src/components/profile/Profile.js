@@ -14,7 +14,7 @@ class Profile extends Component {
     }
     componentDidMount() {
         // gets the applicant's information
-        APIManager.getAllAuth("applicants")
+        APIManager.getAllAuth("applicants?applicant=true")
             .then((applicant) => {
                 // sets the applicant in state so it can be displayed on the profile page
                 this.setState({
@@ -33,6 +33,8 @@ class Profile extends Component {
                     <h1>{this.state.user.first_name} {this.state.user.last_name}</h1>
                     <h3>AKA {this.state.user.username}</h3>
                     <h5>{this.state.applicant.aboutme}</h5>
+                    <h5>{this.state.applicant.location}</h5>
+
                     {this.state.applicant.image !== null ?
                         <img src={this.state.applicant.image} alt="user" className="profile-image"></img>
                         :
@@ -46,6 +48,8 @@ class Profile extends Component {
                         :
                         <h5>Hired Status: Looking for Opportunities</h5>
                     }
+                    <h5>{this.state.applicant.jobtitle}</h5>
+
                     {this.state.applicant.employer !== null ?
                         <h5>Employer: {this.state.applicant.employer}</h5>
                         :

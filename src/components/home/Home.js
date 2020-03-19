@@ -10,7 +10,7 @@ class Home extends Component {
     }
     componentDidMount() {
         // gets the applicant's information
-        APIManager.getAllAuth("applicants")
+        APIManager.getAllAuth("applicants?applicant=true")
             .then((applicant) => {
                 // sets the first name in state so it can be displayed on the home page
                 this.setState({
