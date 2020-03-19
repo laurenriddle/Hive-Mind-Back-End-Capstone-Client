@@ -1,5 +1,4 @@
-// Purpose: To create the search results form component, render result cards, and execute the logic associated 
-
+// Purpose: To create the search results list component and render result cards
 import React, { Component } from "react"
 import SearchUserCard from "./SearchUserCard";
 class SearchUsers extends Component {

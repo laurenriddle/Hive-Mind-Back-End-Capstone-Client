@@ -24,6 +24,8 @@ class Register extends Component {
         confirmpassword: "",
         aboutme: "",
         employer: "",
+        location: "",
+        jobtitle: "",
         image: null
     }
 
@@ -53,7 +55,9 @@ class Register extends Component {
             "linkedin_profile": this.state.linkedInProfile,
             "aboutme": this.state.aboutme,
             "image": this.state.image,
-            "employer": this.state.employer
+            "employer": this.state.employer,
+            "location": this.state.location,
+            "jobtitle": this.state.jobtitle
 
         }
 
@@ -170,6 +174,12 @@ class Register extends Component {
 
                     />
                     <input
+                        id="jobtitle"
+                        onChange={this.handleInputChange}
+                        placeholder="What is your job title?"
+
+                    />
+                    <input
                         id="linkedInProfile"
                         onChange={this.handleInputChange}
                         placeholder="LinkedIn Profile"
@@ -179,6 +189,12 @@ class Register extends Component {
                         id="aboutme"
                         onChange={this.handleInputChange}
                         placeholder="Tell everyone a little bit about yourself..."
+
+                    />
+                    <input
+                        id="location"
+                        onChange={this.handleInputChange}
+                        placeholder="Tell us where your located..."
 
                     />
 

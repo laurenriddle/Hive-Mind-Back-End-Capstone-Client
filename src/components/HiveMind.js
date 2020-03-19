@@ -38,11 +38,14 @@ class HiveMind extends Component {
     }
 
     searchUsers = (first,last) => {
+        // this function is called by the navbar when a user searches for other users. It makes a fetch call to the DB that gets all users with the name that the current user is searching for
         APIManager.getAllAuth(`applicants?user_first=${first}&&user_last=${last}`)
         .then((users) => {
+            // sets users in state so they can be passed to application views and then the searchUsers component
             this.setState({
                 users: users
             })
+            // push to search users
             this.props.history.push('/searchusers')
         })
     }
