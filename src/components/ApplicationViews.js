@@ -14,6 +14,7 @@ import Profile from "./profile/Profile";
 import ProfileEditForm from "./profile/ProfileEditForm";
 import MyFavorites from "./favorites/FavoritesList";
 import GenericProfile from "./profile/GenericUserProfilePage";
+import SearchUsers from "./search/SearchUsers";
 export default class ApplicationViews extends Component {
 
   render() {
@@ -166,6 +167,18 @@ export default class ApplicationViews extends Component {
           exact path="/profile/:profileId(\d+)" render={props => {
             if (isAuthenticated()) {
                 return <GenericProfile
+                {...props} {...this.props} />
+            } else {
+                return <Redirect to='/login' />
+              
+            }
+
+          }}
+         /> 
+         <Route
+          exact path="/searchusers" render={props => {
+            if (isAuthenticated()) {
+                return <SearchUsers
                 {...props} {...this.props} />
             } else {
                 return <Redirect to='/login' />

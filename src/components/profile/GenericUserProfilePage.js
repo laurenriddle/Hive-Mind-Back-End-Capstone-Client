@@ -45,7 +45,7 @@ class GenericProfile extends Component {
                 })
             })
         //  gets current logged in user
-        APIManager.getAllAuth("applicants")
+        APIManager.getAllAuth("applicants?applicant=true")
             .then((applicant) => {
                 // sets the applicant in state so it can be displayed on the profile page
                 this.setState({

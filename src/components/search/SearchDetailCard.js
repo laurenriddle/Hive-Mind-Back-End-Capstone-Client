@@ -14,7 +14,7 @@ class SearchDetailCard extends Component {
 
     componentDidMount() {
         // this gets the current user when the component mounts so that we can conditionally render the edit and delete buttons
-        APIManager.getAllAuth("applicants")
+        APIManager.getAllAuth("applicants?applicant=true")
             .then((user) => {
                 // sets the user in state
                 this.setState({

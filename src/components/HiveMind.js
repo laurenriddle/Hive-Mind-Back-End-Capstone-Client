@@ -5,10 +5,14 @@ import ApplicationViews from "./ApplicationViews";
 import '../index.css'
 import Navigation from "./nav/Navbar";
 import { isAuthenticated } from '../modules/SimpleAuth'
+import APIManager from "../modules/APIManager";
+import { withRouter } from "react-router";
+
 class HiveMind extends Component {
 
     state = {
-        user: false
+        user: false,
+        users: []
     }
 
 
@@ -33,15 +37,24 @@ class HiveMind extends Component {
         })
     }
 
+    searchUsers = (first,last) => {
+        APIManager.getAllAuth(`applicants?user_first=${first}&&user_last=${last}`)
+        .then((users) => {
+            this.setState({
+                users: users
+            })
+            this.props.history.push('/searchusers')
+        })
+    }
 
 
     render() {
         return (<>
-            <Navigation user={this.state.user} loggedOut={this.loggedOut} />
-            <ApplicationViews loggedIn={this.loggedIn} />
+            <Navigation searchUsers={this.searchUsers} user={this.state.user} loggedOut={this.loggedOut} />
+            <ApplicationViews users={this.state.users} loggedIn={this.loggedIn} />
         </>
         )
     };
 }
 
-export default HiveMind;
+export default withRouter(HiveMind);

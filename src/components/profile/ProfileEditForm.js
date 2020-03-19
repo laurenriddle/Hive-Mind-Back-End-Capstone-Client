@@ -18,6 +18,8 @@ class ProfileEditForm extends Component {
         cohort_id: null,
         image: null,
         aboutme: "",
+        jobtitle: "",
+        location: "",
         cohorts: []
     }
 
@@ -29,7 +31,7 @@ class ProfileEditForm extends Component {
 
     componentDidMount() {
         // gets applicants information to populate the form
-        APIManager.getAllAuth("applicants")
+        APIManager.getAllAuth("applicants?applicant=true")
             .then((applicant) => {
                 // sets the applicants information in state
                 this.setState({
@@ -42,7 +44,9 @@ class ProfileEditForm extends Component {
                     username: applicant[0].user.username,
                     cohort_id: applicant[0].cohort.id,
                     image: applicant[0].image,
-                    aboutme: applicant[0].aboutme
+                    aboutme: applicant[0].aboutme,
+                    jobtitle: applicant[0].jobtitle,
+                    location: applicant[0].location,
                 })
             })
 
@@ -69,7 +73,9 @@ class ProfileEditForm extends Component {
             username: this.state.username,
             cohort_id: this.state.cohort_id,
             image: this.state.image,
-            aboutme: this.state.aboutme
+            aboutme: this.state.aboutme,
+            jobtitle:  this.state.jobtitle,
+            location:  this.state.location,
         }
 
         // checks to see if the user filled out the entire form
@@ -118,6 +124,7 @@ class ProfileEditForm extends Component {
                     <FormControl
                         value={this.state.first_name}
                         id="first_name"
+                        placeholder="First Name"
                         required
                         onChange={this.handleInputChange}
                         type="text"></FormControl>
@@ -125,6 +132,7 @@ class ProfileEditForm extends Component {
                     <FormControl
                         value={this.state.last_name}
                         id="last_name"
+                        placeholder="Last Name"
                         required
                         onChange={this.handleInputChange}
                         type="text"></FormControl>
@@ -132,6 +140,7 @@ class ProfileEditForm extends Component {
                     <FormControl
                         value={this.state.username}
                         id="username"
+                        placeholder="Username"
                         required
                         onChange={this.handleInputChange}
                         type="text"></FormControl>
@@ -139,6 +148,7 @@ class ProfileEditForm extends Component {
                     <FormControl
                         value={this.state.email}
                         id="email"
+                        placeholder="Email"
                         required
                         onChange={this.handleInputChange}
                         type="text"></FormControl>
@@ -149,10 +159,17 @@ class ProfileEditForm extends Component {
                         placeholder="Tell everyone a little bit about yourself..."
                         onChange={this.handleInputChange}
                         type="text"></FormControl>
+                    <FormControl
+                        value={this.state.location}
+                        id="location"
+                        placeholder="Location"
+                        onChange={this.handleInputChange}
+                        type="text"></FormControl>
 
                     <FormControl
                         value={this.state.linkedin_profile}
                         id="linkedin_profile"
+                        placeholder="LinkedIn Profile"
                         onChange={this.handleInputChange}
                         type="text"></FormControl>
 
@@ -186,6 +203,12 @@ class ProfileEditForm extends Component {
                         value={this.state.employer}
                         id="employer"
                         placeholder="If you are employed, where are you working?"
+                        onChange={this.handleInputChange}
+                        type="text"></FormControl>
+                    <FormControl
+                        value={this.state.jobtitle}
+                        id="jobtitle"
+                        placeholder="If you are employed, what is you job title?"
                         onChange={this.handleInputChange}
                         type="text"></FormControl>
 
