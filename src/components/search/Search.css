@@ -1,4 +1,6 @@
 /* Search Companies Page */
+
+/* Search Box */
 .company-search-input-container {
     width: 40%;
     margin: 0 auto;
@@ -29,7 +31,7 @@
     border-color: #FEDA6A;
     color: #FEDA6A;
 }
-
+/* Company Cards */
 .company-results-card {
     background-color: #6A6A6A;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -59,6 +61,13 @@
     flex-wrap: wrap;
 }
 
+
+
+
+
+
+
+
 /* Company Details Page */
 
 /* Jubotron and New Survey Button */
@@ -74,7 +83,8 @@
     border-color: #FEDA6A;
 }
 .new-survey-button:hover {
-    margin: 10px;
+    margin-right: 30px;
+    margin-bottom: 30px;
     background-color: white;
     border-color: #FEDA6A;
     color: #FEDA6A;
@@ -83,7 +93,23 @@
     text-align: right;
 }
 
+/* Interview Cards */
 
+.interview-review-card {
+    background-color: #6A6A6A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+    padding: 15px;
+    width: 45%;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.interview-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
 /* Mobile Styles */
 @media screen and (max-width: 900px) {
@@ -105,5 +131,17 @@
         border-radius: 10px;
         
     }
+    .interview-review-card {
+        background-color: #6A6A6A;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        color: white;
+        padding: 15px;
+        width: 90%;
+        margin: 20px;
+        border-radius: 10px;
+        
+    }
+
+
     
 }

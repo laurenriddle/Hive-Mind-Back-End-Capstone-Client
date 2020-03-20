@@ -6,7 +6,7 @@ import React, { Component } from 'react'
 import { faEdit, faTrash, faStar, faBookmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import APIManager from "../../modules/APIManager";
-
+import "./Search.css"
 class SearchDetailCard extends Component {
     state = {
         user: {}
@@ -41,32 +41,32 @@ class SearchDetailCard extends Component {
     render() {
         return (
             <>
-                <Card>
+                <Card className="interview-review-card">
                     <Card.Title>
                         {this.state.user.id !== this.props.interview.applicant.id &&
                             <>
-                                <Link to={`/profile/${this.props.interview.applicant.id}`}><img src={this.props.interview.applicant.image} alt="profile" width="50" height="50"></img> </Link>
+                                <img src={this.props.interview.applicant.image} alt="profile" width="50" height="50" onClick={() => this.props.history.push(`/profile/${this.props.interview.applicant.id}`)}></img>
                                 <Link to={`/profile/${this.props.interview.applicant.id}`}>{this.props.user.first_name} {this.props.user.last_name} </Link>
                             </>
                         }
-                        
+
                         {this.state.user.id === this.props.interview.applicant.id &&
                             <>
-                                <Link to={`/profile`}><img src={this.props.interview.applicant.image} alt="profile" width="50" height="50"></img> </Link>
-                                <Link to={`/profile`}>{this.props.user.first_name} {this.props.user.last_name}</Link>
+                                <img src={this.props.interview.applicant.image} alt="profile" width="50" height="50" onClick={() => this.props.history.push(`/profile`)}></img>
+                                <Link to={`/profile`}> {this.props.user.first_name} {this.props.user.last_name} </Link>
                             </>
                         }
                         {this.props.interview.date}
 
                         {this.state.user.id === this.props.interview.applicant.id &&
                             <>
-                                <button onClick={() => { this.props.history.push(`/interview/${this.props.interview.id}/edit`) }}><FontAwesomeIcon icon={faEdit} /></button><button onClick={() => this.props.deleteInterview(this.props.interview.id)}><FontAwesomeIcon icon={faTrash} /></button>
+                                <FontAwesomeIcon icon={faEdit} onClick={() => { this.props.history.push(`/interview/${this.props.interview.id}/edit`) }} /> <FontAwesomeIcon icon={faTrash} onClick={() => this.props.deleteInterview(this.props.interview.id)} />
                             </>
                         }
                         {(this.state.user.id !== this.props.interview.applicant.id && this.isFavorite(this.props.interview.id) === false) &&
-                            <button onClick={() => this.props.addFavorite(this.props.interview.id)}><FontAwesomeIcon icon={faStar} /></button>}
+                            <FontAwesomeIcon icon={faStar} onClick={() => this.props.addFavorite(this.props.interview.id)} />}
 
-                        {(this.state.user.id !== this.props.interview.applicant.id && this.isFavorite(this.props.interview.id) === true) && <button onClick={() => this.props.deleteFavorite(this.props.interview.id)}><FontAwesomeIcon icon={faBookmark} /></button>
+                        {(this.state.user.id !== this.props.interview.applicant.id && this.isFavorite(this.props.interview.id) === true) && <FontAwesomeIcon icon={faBookmark} onClick={() => this.props.deleteFavorite(this.props.interview.id)} />
                         }
                     </Card.Title>
                     <Card.Body>
