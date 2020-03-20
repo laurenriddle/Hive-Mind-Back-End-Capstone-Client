@@ -44,12 +44,20 @@ class SearchDetailCard extends Component {
                 <Card>
                     <Card.Title>
                         {this.state.user.id !== this.props.interview.applicant.id &&
-                            <Link to={`/profile/${this.props.interview.applicant.id}`}><FontAwesomeIcon icon={faUser} /></Link>
+                            <>
+                                <Link to={`/profile/${this.props.interview.applicant.id}`}><img src={this.props.interview.applicant.image} alt="profile" width="50" height="50"></img> </Link>
+                                <Link to={`/profile/${this.props.interview.applicant.id}`}>{this.props.user.first_name} {this.props.user.last_name} </Link>
+                            </>
                         }
+                        
                         {this.state.user.id === this.props.interview.applicant.id &&
-                            <Link to={`/profile`}><FontAwesomeIcon icon={faUser} /></Link>
+                            <>
+                                <Link to={`/profile`}><img src={this.props.interview.applicant.image} alt="profile" width="50" height="50"></img> </Link>
+                                <Link to={`/profile`}>{this.props.user.first_name} {this.props.user.last_name}</Link>
+                            </>
                         }
-                        {this.props.user.first_name} {this.props.user.last_name} {this.props.interview.date}
+                        {this.props.interview.date}
+
                         {this.state.user.id === this.props.interview.applicant.id &&
                             <>
                                 <button onClick={() => { this.props.history.push(`/interview/${this.props.interview.id}/edit`) }}><FontAwesomeIcon icon={faEdit} /></button><button onClick={() => this.props.deleteInterview(this.props.interview.id)}><FontAwesomeIcon icon={faTrash} /></button>

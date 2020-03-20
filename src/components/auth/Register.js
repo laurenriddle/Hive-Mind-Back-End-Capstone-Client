@@ -26,7 +26,7 @@ class Register extends Component {
         employer: "",
         location: "",
         jobtitle: "",
-        image: null
+        image: "https://freesvg.org/img/icon_user_whiteongrey.png"
     }
 
     handleInputChange = (evt) => {

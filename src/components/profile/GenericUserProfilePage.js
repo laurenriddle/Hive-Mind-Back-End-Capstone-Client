@@ -119,6 +119,13 @@ class GenericProfile extends Component {
                 <Jumbotron>
                     <h1>{this.state.user.first_name} {this.state.user.last_name}</h1>
                     <h3>AKA {this.state.user.username}</h3>
+                    <h5>{this.state.applicant.jobtitle}
+                    {this.state.applicant.employer !== null && this.state.applicant.employer !== "" ?
+                       <> at {this.state.applicant.employer}</>
+                        :
+                        <></>
+                    }
+                    </h5>
                     <p>{this.state.applicant.aboutme}</p>
                     {this.state.applicant.image !== null ?
                         <img src={this.state.applicant.image} alt="user" className="profile-image"></img>
@@ -134,11 +141,6 @@ class GenericProfile extends Component {
                         <h5>Hired Status: Hired</h5>
                         :
                         <h5>Hired Status: Looking for Opportunities</h5>
-                    }
-                    {this.state.applicant.employer !== null ?
-                        <h5>Employer: {this.state.applicant.employer}</h5>
-                        :
-                        <></>
                     }
                     <a href={this.state.applicant.linkedin_profile} target="_blank" rel="noopener noreferrer">View LinkedIn Profile</a>
                 </Jumbotron>
