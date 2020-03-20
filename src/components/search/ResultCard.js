@@ -2,17 +2,16 @@
 
 import { Card } from "react-bootstrap";
 import React, {Component} from 'react'
-import { Button } from 'react-bootstrap'
-
-
+import { Link } from 'react-router-dom'
+import "./Search.css"
 class ResultCard extends Component {
 
     render() {
 
         return (
             <>
-            <Card>
-                <Card.Title>{this.props.company.name}<Button onClick={() => this.props.history.push(`/company/${this.props.company.id}`)}>View Interviews</Button></Card.Title>
+            <Card className="company-results-card">
+                 <Link className="view-interviews-link" to={`/company/${this.props.company.id}`}>{this.props.company.name} ({this.props.company.industry.industry})</Link>
             </Card>
 
             </>

@@ -45,19 +45,20 @@ class SearchResults extends Component {
                         placeholder="Enter company name to search..."></FormControl>
                     <Button onClick={() => this.searchCompanies(this.state.searchterms)} className="search-companies-button" variant="secondary"><FontAwesomeIcon icon={faSearch} /></Button>
                 </section>
+                <section className="company-search-results-container">
+                    {
+                        this.state.companies.length === 0 && this.state.searched === true &&
+                        <h2>No search results</h2>
+                    }
 
-                {
-                    this.state.companies.length === 0 && this.state.searched === true &&
-                    <h2>No search results</h2>
-                }
+                    {
+                        this.state.companies.map((company) => {
 
-                {
-                    this.state.companies.map((company) => {
+                            return <ResultCard {...this.props} key={company.id} company={company} />
 
-                        return <ResultCard {...this.props} key={company.id} company={company} />
-
-                    })
-                }
+                        })
+                    }
+                </section>
 
             </>
         )
