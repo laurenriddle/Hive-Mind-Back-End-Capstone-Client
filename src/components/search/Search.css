@@ -61,10 +61,29 @@
 
 /* Company Details Page */
 
+/* Jubotron and New Survey Button */
 .company-jumbo {
     background-color: #FEDA6A;
     color: white;
 }
+
+.new-survey-button {
+    margin-right: 30px;
+    margin-bottom: 30px;
+    background-color: #FEDA6A;
+    border-color: #FEDA6A;
+}
+.new-survey-button:hover {
+    margin: 10px;
+    background-color: white;
+    border-color: #FEDA6A;
+    color: #FEDA6A;
+}
+.new-survey-button-container {
+    text-align: right;
+}
+
+
 
 /* Mobile Styles */
 @media screen and (max-width: 900px) {
