@@ -1,8 +1,9 @@
-.logo {
-    color: white;
+#logo {
+    color: #FEDA6A;
+    font-family: Righteous;
 }
 
-.logo:hover {
+#logo:hover {
     color: rgba(255, 255, 255, 0.733);
     text-decoration: none;
 }

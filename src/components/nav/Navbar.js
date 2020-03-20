@@ -25,7 +25,7 @@ class Navigation extends Component {
                 <>
                     <div id="NavBar">
                         <Navbar collapseOnSelect expand="lg" variant="dark" className="NavBarColor">
-                            <Navbar.Brand eventKey="7" as={Link} className="logo" to="/">Hive Mind</Navbar.Brand>
+                            <Navbar.Brand eventKey="7" as={Link} id="logo" to="/">Hive Mind</Navbar.Brand>
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="mr-auto">
