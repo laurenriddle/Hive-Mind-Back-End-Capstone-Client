@@ -3,7 +3,7 @@
 import { Card } from "react-bootstrap";
 import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
-import { faEdit, faTrash, faUser, faStar, faBookmark } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faTrash, faStar, faBookmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import APIManager from "../../modules/APIManager";
 
