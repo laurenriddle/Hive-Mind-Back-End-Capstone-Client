@@ -3,7 +3,7 @@
 import React, { Component } from "react"
 import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap"
 import { Link } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import "./Navbar.css"
 import { logout, isAuthenticated } from '../../modules/SimpleAuth'
 

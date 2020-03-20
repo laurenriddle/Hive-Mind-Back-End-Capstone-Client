@@ -6,6 +6,7 @@ import { Button, FormControl } from 'react-bootstrap'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import ResultCard from './ResultCard'
+import "./Search.css"
 class SearchResults extends Component {
     state = {
         companies: [],
@@ -36,21 +37,26 @@ class SearchResults extends Component {
 
         return (
             <>
-                <FormControl
-                    id="searchterms"
-                    onChange={this.handleInputChange}
-                    type="text"
-                    placeholder="Enter company name to search..."></FormControl>
-                <Button onClick={() => this.searchCompanies(this.state.searchterms)}><FontAwesomeIcon icon={faSearch} /></Button>
-                {this.state.companies.length === 0 && this.state.searched === true &&
+                <section className="company-search-input-container">
+                    <FormControl
+                        id="searchterms"
+                        onChange={this.handleInputChange}
+                        type="text"
+                        placeholder="Enter company name to search..."></FormControl>
+                    <Button onClick={() => this.searchCompanies(this.state.searchterms)} className="search-companies-button" variant="secondary"><FontAwesomeIcon icon={faSearch} /></Button>
+                </section>
+
+                {
+                    this.state.companies.length === 0 && this.state.searched === true &&
                     <h2>No search results</h2>
                 }
 
-                {this.state.companies.map((company) => {
+                {
+                    this.state.companies.map((company) => {
 
-                    return <ResultCard {...this.props} key={company.id} company={company} />
+                        return <ResultCard {...this.props} key={company.id} company={company} />
 
-                })
+                    })
                 }
 
             </>

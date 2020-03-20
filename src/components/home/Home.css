@@ -1,3 +1,4 @@
+/* Home Page */
 .welcome-banner {
     text-align: center;
     color: #FEDA6A;
@@ -18,8 +19,11 @@
     margin: 0 auto;
     background-color: white;
     margin-top: 20px;
+}
 
-
+#home-button:focus {
+    box-shadow:0 0 0 0.2rem rgba(211, 211, 211, 0.698);
+    border-color: rgba(211, 211, 211, 0.726);
 }
 
 .home-button-container {
