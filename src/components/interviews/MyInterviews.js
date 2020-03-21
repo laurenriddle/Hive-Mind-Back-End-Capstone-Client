@@ -48,7 +48,7 @@ class MyInterviews extends Component {
             APIManager.delete("interviews", id)
                 .then(() => {
                     // gets all interviews for the specific user
-                   this.getAllInterviews()
+                    this.getAllInterviews()
 
                 })
         }
@@ -85,24 +85,25 @@ class MyInterviews extends Component {
 
         return (
             <>
-                {this.state.companies.length > 0 &&
-                    <>
-                        <label>Filter by Company:</label>
-                        <ButtonToolbar aria-label="Toolbar with button groups">
-                            <ButtonGroup className="mr-2" aria-label="First group">
-                                <Button onClick={() => this.getAllInterviews()}>All</Button>
+                <h1 className="my-favorites-header">My Interviews</h1>
+                <ButtonToolbar aria-label="Toolbar with button groups">
+                    <ButtonGroup className="filter-buttons-toolbar" aria-label="First group">
+                        <Button className="filter-buttons" variant="secondary" onClick={() => this.props.history.push('/interview/new')}>+ New</Button>
+                        {this.state.companies.length > 0 &&
+                            <>
+                                <Button variant="secondary" className="filter-buttons" onClick={() => this.getAllInterviews()}>All</Button>
                                 {this.state.companies.map((company) => {
-                                    return <Button key={company.id} onClick={() => this.filterInterviews(company.id)}>{company.name}</Button>
+                                    return <Button variant="secondary" className="filter-buttons" key={company.id} onClick={() => this.filterInterviews(company.id)}>{company.name}</Button>
                                 })}
-                            </ButtonGroup>
-                        </ButtonToolbar>
-                    </>
-                }
-                <Button onClick={() => this.props.history.push('/interview/new')}>+ New</Button>
-                {this.state.interviews.map((interview) => {
-                    return <InterviewCard {...this.props} key={interview.id} interview={interview} deleteInterview={this.deleteInterview} />
-                })}
-
+                            </>
+                        }
+                    </ButtonGroup>
+                </ButtonToolbar>
+                <section className="interview-cards-container">
+                    {this.state.interviews.map((interview) => {
+                        return <InterviewCard {...this.props} key={interview.id} interview={interview} deleteInterview={this.deleteInterview} />
+                    })}
+                </section>
             </>
         )
     }

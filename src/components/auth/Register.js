@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import { register, isAuthenticated } from "../../modules/SimpleAuth"
 import APIManager from "../../modules/APIManager"
 import './Auth.css'
-import { Button } from "react-bootstrap"
+import { Button, FormControl, Form } from "react-bootstrap"
 import { cloudName, uploadPreset } from '../../modules/Credentials';
 import "../profile/Profile.css"
 
@@ -120,9 +120,9 @@ class Register extends Component {
 
         return (
             <section className="register-form-container">
-                <form className="register-form" onSubmit={this.handleRegister}>
                     <h1 className="register-header">Register for Hive Mind!</h1>
-                    <input
+                <Form className="register-form" onSubmit={this.handleRegister}>
+                    <FormControl
                         id="userName"
                         onChange={this.handleInputChange}
                         placeholder="Username"
@@ -130,7 +130,7 @@ class Register extends Component {
 
 
 
-                    <input
+                    <FormControl
                         id="firstName"
                         onChange={this.handleInputChange}
                         placeholder="First Name"
@@ -138,14 +138,14 @@ class Register extends Component {
                     />
 
 
-                    <input
+                    <FormControl
                         id="lastName"
                         onChange={this.handleInputChange}
                         placeholder="Last Name"
 
                     />
 
-                    <input
+                    <FormControl
                         id="email"
                         onChange={this.handleInputChange}
                         placeholder="Email"
@@ -167,38 +167,38 @@ class Register extends Component {
                         <option value="False">Searching for Opportunities</option>
                     </select>
 
-                    <input
+                    <FormControl
                         id="employer"
                         onChange={this.handleInputChange}
                         placeholder="If you are working somewhere, where are you employed?"
 
                     />
-                    <input
+                    <FormControl
                         id="jobtitle"
                         onChange={this.handleInputChange}
                         placeholder="What is your job title?"
 
                     />
-                    <input
+                    <FormControl
                         id="linkedInProfile"
                         onChange={this.handleInputChange}
                         placeholder="LinkedIn Profile"
 
                     />
-                    <input
+                    <FormControl
                         id="aboutme"
                         onChange={this.handleInputChange}
                         placeholder="Tell everyone a little bit about yourself..."
 
                     />
-                    <input
+                    <FormControl
                         id="location"
                         onChange={this.handleInputChange}
                         placeholder="Tell us where your located..."
 
                     />
 
-                    <input
+                    <FormControl
                         id="password"
                         onChange={this.handleInputChange}
                         type="password"
@@ -206,7 +206,7 @@ class Register extends Component {
 
                     />
 
-                    <input
+                    <FormControl
                         id="confirmpassword"
                         onChange={this.handleInputChange}
                         type="password"
@@ -219,13 +219,13 @@ class Register extends Component {
                     }
 
                     <div className="upload_widget_container">
-                        <Button type="button" id="upload_widget" className="cloudinary-button" onClick={this.openCloudinaryWidget}>Choose File</Button>
+                        <Button  id="upload_widget" variant="secondary" onClick={this.openCloudinaryWidget}>Choose File</Button>
                     </div>
 
-                    <Button type="submit">
+                    <Button variant="secondary" type="submit">
                         Register
                     </Button>
-                </form>
+                </Form>
                 <Link to="/login">Already have an account? Click here to sign in!</Link>
             </section>
         )

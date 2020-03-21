@@ -25,6 +25,7 @@ class SearchResults extends Component {
         // gets all companies whose name matches the name in the search terms in state
         APIManager.getAllAuth(`companies?name=${terms}`)
             .then((companies) => {
+                // checks to make sure that the suer has actually entered search terms
                 if (this.state.searchterms !== "") {
                     // sets the companies in state so the result cards with the company names can be made
                     this.setState({
@@ -33,6 +34,7 @@ class SearchResults extends Component {
                         searched: true
                     })
                 } else {
+                    // if the user selected the search button, but did not enter search terms, render the no search results found header
                     this.setState({
                         // this boolean tells the render that the list of companies has been searched so that it can either display the results or a "no search results" header
                         searched: true,

@@ -1,34 +1,77 @@
 /* Login Page */
 
 
-.login-page-container, .register-form-container {
+.login-page-container {
     background-image: url('./Lauren_v4.png');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
-
+    text-align: center;
+    opacity: .9;
+}
+.register-form-container {
+    background-image: url('./Lauren_v4.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* height: 100vh; */
+    text-align: center;
+    opacity: .9;
 }
 
-/* .login-form {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-} */
+.login-form input, .register-form input, .register-form select {
+    margin: 0 auto;
+    width: 200px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.register-form select {
+    background-color: white;
+}
+
+
+
+.login-form {
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-form button {
+    background-color: #FEDA6A;
+    border-color: #FEDA6A;
+    margin-bottom: 20px;
+}
+
+
+.login-form button:hover {
+    background-color: white;
+    border-color: #FEDA6A;
+    color: #FEDA6A;
+}
 
 .login-header, .register-header {
     font-family: Righteous;
     font-style: normal;
     font-weight: normal;
-    font-size: 25px;
+    font-size: 30px;
     line-height: 31px;
     text-align: center;
     color: #FEDA6A;
-    /* width: 129px; */
-    /* height: 30px; */
 }
-/* .login-input {
 
-} */
+.login-page-container a {
+    color: #FEDA6A;
+    margin-top: 40px;
+    font-weight: bold;
+}
+
+.login-page-container a:hover {
+    color: white;
+    margin-top: 40px;
+    font-weight: bold;
+    text-decoration: none;
+}
 
 
 /* Register Page */
