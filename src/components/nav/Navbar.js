@@ -3,7 +3,7 @@
 import React, { Component } from "react"
 import { Nav, Navbar, Form, FormControl, Button } from "react-bootstrap"
 import { Link } from 'react-router-dom'
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import Logo from '../home/Hive_Loge.png'
 import "./Navbar.css"
 import { logout, isAuthenticated } from '../../modules/SimpleAuth'
 
@@ -25,7 +25,7 @@ class Navigation extends Component {
                 <>
                     <div id="NavBar">
                         <Navbar collapseOnSelect expand="lg" variant="dark" className="NavBarColor">
-                            <Navbar.Brand eventKey="7" as={Link} id="logo" to="/">Hive Mind</Navbar.Brand>
+                            <Navbar.Brand eventKey="7" as={Link} id="logo" to="/"><img src={Logo} height="40" width="40" alt="logo"></img> Hive Mind</Navbar.Brand>
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="mr-auto">

@@ -24,7 +24,8 @@
 }
 
 .filter-buttons-toolbar {
-    margin-left: 50px;
+    margin-right: 52px;
+    margin-left: auto;
 }
 
 .filter-buttons-label {
@@ -41,6 +42,8 @@
         margin: 0 auto;
         text-align: center;
         margin: 10px;
+        margin-right: auto;
+        margin-left: auto;
     }
     
 }

@@ -21,16 +21,26 @@ class SearchResults extends Component {
     }
 
     searchCompanies = (terms) => {
+
         // gets all companies whose name matches the name in the search terms in state
         APIManager.getAllAuth(`companies?name=${terms}`)
             .then((companies) => {
-                // sets the companies in state so the result cards with the company names can be made
-                this.setState({
-                    companies: companies,
-                    // this boolean tells the render that the list of companies has been searched so that it can either display the results or a "no search results" header
-                    searched: true
-                })
+                if (this.state.searchterms !== "") {
+                    // sets the companies in state so the result cards with the company names can be made
+                    this.setState({
+                        companies: companies,
+                        // this boolean tells the render that the list of companies has been searched so that it can either display the results or a "no search results" header
+                        searched: true
+                    })
+                } else {
+                    this.setState({
+                        // this boolean tells the render that the list of companies has been searched so that it can either display the results or a "no search results" header
+                        searched: true,
+                        companies: [],
+                    })
+                }
             })
+
     }
 
     render() {
@@ -48,7 +58,7 @@ class SearchResults extends Component {
                 <section className="company-search-results-container">
                     {
                         this.state.companies.length === 0 && this.state.searched === true &&
-                        <h2>No search results</h2>
+                        <h2 className="my-favorites-header">No search results ... Please try again!</h2>
                     }
 
                     {
