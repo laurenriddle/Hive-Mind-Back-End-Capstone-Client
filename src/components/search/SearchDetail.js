@@ -117,7 +117,7 @@ class CompanyDetail extends Component {
                     <p>{this.state.company.city} ({this.state.industry.industry})</p>
                 </Jumbotron>
                 <div className="new-survey-button-container">
-                <Button className="new-survey-button" onClick={() => this.props.history.push('/interview/new')}>New Survey</Button>
+                <Button className="new-survey-button" onClick={() => this.props.history.push('/interview/new')}>+ New Survey</Button>
                 </div>
                 <section className="interview-cards-container">
                 {this.state.interviews.map((interview) => {

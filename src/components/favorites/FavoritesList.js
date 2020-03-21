@@ -94,15 +94,19 @@ class MyFavorites extends Component {
         return (
             <>
                 <h1 className="my-favorites-header">My Favorites</h1>
-                <label  className="filter-buttons-label">Filter by Company:</label>
-                <section >
+                {this.state.companies.length === 0 &&
+                    <h3 className="my-favorites-header">Uh-Oh! Looks like you don't have any favorites right now!</h3>
+                }
+                <section className="filter-buttons-label">
                     <ButtonToolbar aria-label="Toolbar with button groups">
-                        <ButtonGroup className="mr-2 filter-buttons-toolbar" aria-label="First group">
-                            <Button className="filter-buttons" onClick={() => this.getAllFavorites()}>All</Button>
+                        <ButtonGroup className="filter-buttons-toolbar" aria-label="First group">
+                            {this.state.companies.length > 0 &&
+                                <Button className="filter-buttons" variant="secondary" onClick={() => this.getAllFavorites()}>All</Button>
+                            }
                             {this.state.companies.length > 0 &&
                                 <>
                                     {this.state.companies.map((company) => {
-                                        return <Button key={company.id} className="filter-buttons" onClick={() => this.filterFavorites(company.id)}>{company.name}</Button>
+                                        return <Button key={company.id} className="filter-buttons" variant="secondary" onClick={() => this.filterFavorites(company.id)}>{company.name}</Button>
                                     })}
                                 </>
                             }
