@@ -4,6 +4,7 @@ import React, { Component } from "react"
 import APIManager from '../../modules/APIManager'
 import {Button} from 'react-bootstrap'
 import "./Home.css"
+import Logo from "./Hive_Loge.png"
 class Home extends Component {
     state = {
         first_name: ""
@@ -22,6 +23,7 @@ class Home extends Component {
 
         return (
             <>
+                <center><img src={Logo} alt="logo" className="home-logo" width="300" height="300" ></img></center>
                 <h1 className="welcome-banner">Hello, {this.state.first_name}</h1>
                 <div className="home-button-container">
                 <Button id="home-button" onClick={() => this.props.history.push("/search")}>Search Companies</Button>

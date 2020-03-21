@@ -1,0 +1,34 @@
+/* Favorites Page */
+.favorites-list-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.my-favorites-header {
+    text-align: center;
+    color: #FEDA6A;
+    margin-top: 20px;
+    font-family: Righteous;
+}
+
+.filter-buttons {
+
+    background-color: #FEDA6A;
+    border-color: #FEDA6A;
+}
+
+.filter-buttons-toolbar {
+    margin: 0 auto;
+}
+
+.filter-buttons-label {
+    text-align: right;
+}
+/* Mobile Styles */
+
+@media screen and (max-width: 900px) {
+    
+
+    
+}

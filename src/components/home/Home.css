@@ -30,3 +30,8 @@
     display: flex;
     flex-direction: column;
 }
+
+.home-logo {
+    z-index: 100;
+    margin: 0 auto;
+}
