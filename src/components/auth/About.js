@@ -1,4 +1,4 @@
-// Purpose: To create the register form and execute the logic associated 
+// Purpose: To create the about form and execute the logic associated 
 
 import React, { Component } from "react"
 import { Link } from "react-router-dom"

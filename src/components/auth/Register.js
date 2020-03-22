@@ -64,7 +64,7 @@ class Register extends Component {
 
         }
     }
- 
+
 
     render() {
 
@@ -79,7 +79,6 @@ class Register extends Component {
                             onChange={this.handleInputChange}
                             placeholder="Username"
                         />
-
 
 
                         <FormControl
@@ -121,11 +120,9 @@ class Register extends Component {
                         />
 
 
-                        <Button variant="secondary" type="submit">
-                            Next
-                    </Button>
+                        <Button variant="secondary" type="submit">Next</Button>
+                    <p clasName="register-link"><Link  to="/login">Already have an account? Click here to sign in!</Link></p>
                     </Form>
-                <Link clasName="register-link" to="/login">Already have an account? Click here to sign in!</Link>
                 </section>
             </>
         )
