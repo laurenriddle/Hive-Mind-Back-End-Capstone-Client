@@ -7,7 +7,8 @@ import InterviewCard from "./InterviewCard"
 class MyInterviews extends Component {
     state = {
         interviews: [],
-        companies: []
+        companies: [],
+        filterId: ""
     }
 
     handleInputChange = (evt) => {
@@ -77,7 +78,7 @@ class MyInterviews extends Component {
                 this.setState({
                     interviews: interviews,
                     companies: companies
-                })
+                    })
             })
     }
 
@@ -89,16 +90,19 @@ class MyInterviews extends Component {
                 <ButtonToolbar aria-label="Toolbar with button groups">
                     <ButtonGroup className="filter-buttons-toolbar" aria-label="First group">
                         <Button className="filter-buttons" variant="secondary" onClick={() => this.props.history.push('/interview/new')}>+ New</Button>
+                        </ButtonGroup>
+                    </ButtonToolbar>
+                 
                         {this.state.companies.length > 0 &&
                             <>
-                                <Button variant="secondary" className="filter-buttons" onClick={() => this.getAllInterviews()}>All</Button>
+                            <label>All Interviews</label>
+                            <input type="radio" id="filterId" name="company" value="" onClick={() => this.getAllInterviews()}></input>
                                 {this.state.companies.map((company) => {
-                                    return <Button variant="secondary" className="filter-buttons" key={company.id} onClick={() => this.filterInterviews(company.id)}>{company.name}</Button>
+                                    return<> <label>{company.name}</label><input type="radio" id="filterId" name="company" value={company.id}onClick={() => this.filterInterviews(company.id)}></input>
+                                    </>
                                 })}
                             </>
                         }
-                    </ButtonGroup>
-                </ButtonToolbar>
                 <section className="interview-cards-container">
                     {this.state.interviews.map((interview) => {
                         return <InterviewCard {...this.props} key={interview.id} interview={interview} deleteInterview={this.deleteInterview} />
