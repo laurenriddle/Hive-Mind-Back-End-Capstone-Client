@@ -2,11 +2,8 @@
 
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
-import { register, isAuthenticated } from "../../modules/SimpleAuth"
-import APIManager from "../../modules/APIManager"
 import './Auth.css'
 import { Button, FormControl, Form } from "react-bootstrap"
-import { cloudName, uploadPreset } from '../../modules/Credentials';
 import "../profile/Profile.css"
 import Logo from "../home/Hive_Loge.png"
 
