@@ -4,6 +4,7 @@ import React, { Component } from "react"
 import APIManager from '../../modules/APIManager'
 import { Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap'
 import InterviewCard from "./InterviewCard"
+import "./Interviews.css"
 class MyInterviews extends Component {
     state = {
         interviews: [],
@@ -78,7 +79,7 @@ class MyInterviews extends Component {
                 this.setState({
                     interviews: interviews,
                     companies: companies
-                    })
+                })
             })
     }
 
@@ -90,19 +91,20 @@ class MyInterviews extends Component {
                 <ButtonToolbar aria-label="Toolbar with button groups">
                     <ButtonGroup className="filter-buttons-toolbar" aria-label="First group">
                         <Button className="filter-buttons" variant="secondary" onClick={() => this.props.history.push('/interview/new')}>+ New</Button>
-                        </ButtonGroup>
-                    </ButtonToolbar>
-                 
-                        {this.state.companies.length > 0 &&
-                            <>
-                            <label>All Interviews</label>
-                            <input type="radio" id="filterId" name="company" value="" onClick={() => this.getAllInterviews()}></input>
-                                {this.state.companies.map((company) => {
-                                    return<> <label>{company.name}</label><input type="radio" id="filterId" name="company" value={company.id}onClick={() => this.filterInterviews(company.id)}></input>
-                                    </>
-                                })}
-                            </>
-                        }
+                    </ButtonGroup>
+                </ButtonToolbar>
+                <div className="filter-radio-toolbar">
+                    {this.state.companies.length > 0 &&
+                        <>
+                            <span className="filterId"><input className="radio-buttons" type="radio" id="filterId" name="company" value="" onClick={() => this.getAllInterviews()}></input><label>All Interviews</label></span>
+                            
+                            {this.state.companies.map((company) => {
+                                return <> <span className="filterId"><input type="radio" className="radio-buttons" name="company" value={company.id} onClick={() => this.filterInterviews(company.id)}></input><label>{company.name}</label></span>
+                                </>
+                            })}
+                        </>
+                    }
+                </div>
                 <section className="interview-cards-container">
                     {this.state.interviews.map((interview) => {
                         return <InterviewCard {...this.props} key={interview.id} interview={interview} deleteInterview={this.deleteInterview} />

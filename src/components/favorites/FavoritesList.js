@@ -97,22 +97,18 @@ class MyFavorites extends Component {
                 {this.state.companies.length === 0 &&
                     <h3 className="my-favorites-header">Uh-Oh! Looks like you don't have any favorites right now!</h3>
                 }
-                <section className="filter-buttons-label">
-                    <ButtonToolbar aria-label="Toolbar with button groups">
-                        <ButtonGroup className="filter-buttons-toolbar" aria-label="First group">
-                            {this.state.companies.length > 0 &&
-                                <Button className="filter-buttons" variant="secondary" onClick={() => this.getAllFavorites()}>All</Button>
-                            }
-                            {this.state.companies.length > 0 &&
-                                <>
-                                    {this.state.companies.map((company) => {
-                                        return <Button key={company.id} className="filter-buttons" variant="secondary" onClick={() => this.filterFavorites(company.id)}>{company.name}</Button>
-                                    })}
+                    <div className="filter-radio-toolbar">
+                    {this.state.companies.length > 0 &&
+                        <>
+                            <span className="filterId"><input className="radio-buttons" type="radio" id="filterId" name="company" value="" onClick={() => this.getAllFavorites()}></input><label>All Favorites</label></span>
+                            
+                            {this.state.companies.map((company) => {
+                                return <> <span className="filterId"><input type="radio" className="radio-buttons" name="company" value={company.id} onClick={() => this.filterFavorites(company.id)}></input><label>{company.name}</label></span>
                                 </>
-                            }
-                        </ButtonGroup>
-                    </ButtonToolbar>
-                </section>
+                            })}
+                        </>
+                    }
+                </div>
                 <section className="favorites-list-container">
                     {this.state.interviews.map((interview) => {
                         return <SearchDetailCard {...this.props} key={interview.id} interview={interview.interview} favorites={this.state.interviews} deleteFavorite={this.deleteFavorite} user={interview.interview.applicant.user} />
