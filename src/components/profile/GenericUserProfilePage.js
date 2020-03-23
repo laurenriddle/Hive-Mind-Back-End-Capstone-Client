@@ -117,7 +117,12 @@ class GenericProfile extends Component {
         return (
             <>
                 <Jumbotron className="user-jumbo">
-                    <h1>{this.state.user.first_name} {this.state.user.last_name} <span className="username">@{this.state.user.username}</span></h1>
+                    {this.state.applicant.image !== null ?
+                        <img src={this.state.applicant.image} alt="user" className="profile-image"></img>
+                        :
+                        <FontAwesomeIcon icon={faUser} className="profile-image" />
+                    }
+                    <h2>{this.state.user.first_name} {this.state.user.last_name} <span className="username">@{this.state.user.username}</span></h2>
 
 
                     {/* {this.state.applicant.is_employed ?
@@ -142,11 +147,6 @@ class GenericProfile extends Component {
                     <h6>{this.state.user.email}</h6>
                     <a href={this.state.applicant.linkedin_profile} target="_blank" rel="noopener noreferrer" className="linkedin">View LinkedIn Profile</a>
                 </Jumbotron>
-                {this.state.applicant.image !== null ?
-                    <img src={this.state.applicant.image} alt="user" className="profile-image"></img>
-                    :
-                    <FontAwesomeIcon icon={faUser} className="profile-image" />
-                }
                 <section className="interview-cards-container">
                     {this.state.interviews.map((interview) => {
                         return <SearchDetailCard favorites={this.state.favorites} {...this.props} key={interview.id} interview={interview} user={interview.applicant.user} deleteInterview={this.deleteInterview} deleteFavorite={this.deleteFavorite} addFavorite={this.addFavorite} />

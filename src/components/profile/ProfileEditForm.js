@@ -62,6 +62,7 @@ class ProfileEditForm extends Component {
     }
 
     updateProfile = () => {
+
         // defines the applicant object that will be submitted to the DB
         const applicant = {
             linkedin_profile: this.state.linkedin_profile,
@@ -106,8 +107,12 @@ class ProfileEditForm extends Component {
             uploadPreset: uploadPreset
         }, (error, result) => {
             if (!error && result && result.event === "success") {
+                let position = 49
+                let size = "w_200,h_200,c_thumb,g_face/"
+                let newimage = result.info.url
+                let finalimage = newimage.substring(0, position) + size + newimage.substring(position);
                 this.setState({
-                    image: result.info.url
+                    image: finalimage
                 })
             }
         }
