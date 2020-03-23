@@ -19,4 +19,4 @@ class SearchUserCard extends Component {
         )
     }
 }
-export default SearchUserCard
+export default SearchUserCard;

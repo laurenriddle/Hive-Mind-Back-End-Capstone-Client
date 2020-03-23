@@ -1,4 +1,4 @@
-.profile-image {
+/* .profile-image {
     border-radius: 360px;
     height: 7%;
     width: 7%;
@@ -7,4 +7,47 @@
 .pre-profile-img {
     height: 7%;
     width: 7%;
+} */
+
+.profile-image {
+    border-radius: 50%;
+    width: 30%;
+    z-index: +3;
+    margin-top:-70px
+}
+
+/* Generic User Profile */
+.user-jumbo {
+    background-color: #FEDA6A;
+    color: white;
+    margin-bottom: 0;
+    padding-bottom: 90px;
+}
+.username {
+    font-size: 20px;
+}
+
+.linkedin {
+    color: white;
+}
+.linkedin:hover {
+    color: #3F3F3F;
+    text-decoration: none;
+}
+.hr {
+    background-color:rgba(218, 187, 93, 0.466);
+}
+
+
+/* Mobile Styles */
+@media screen and (max-width: 900px) {
+    .user-jumbo {
+        background-color: #FEDA6A;
+        color: white;
+        margin-bottom: 0;
+        padding-bottom: 90px;
+        text-align: center;
+    }
+
+    
 }

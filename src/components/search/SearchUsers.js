@@ -11,7 +11,10 @@ class SearchUsers extends Component {
         return (
             <>
                 {this.props.users.length === 0 &&
-                    <h2>No search results</h2>
+                    <h1 className="search-results-header-no">Uh-Oh! No search results! Please try again!</h1>
+                }
+                {this.props.users.length > 0 &&
+                    <h1 className="search-results-header-yes">Search results:</h1>
                 }
                 <section className="company-search-results-container">
                     {this.props.users.map((user) => {

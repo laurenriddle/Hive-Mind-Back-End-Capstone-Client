@@ -2,7 +2,6 @@
 
 import React, { Component } from "react"
 import APIManager from '../../modules/APIManager'
-import { Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap'
 import SearchDetailCard from "../search/SearchDetailCard"
 import "./Favorites.css"
 class MyFavorites extends Component {

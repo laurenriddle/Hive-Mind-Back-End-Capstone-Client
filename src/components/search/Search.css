@@ -140,6 +140,22 @@ img {
 
 }
 
+/* Search Users */
+/* Search User Header */
+.search-results-header-no, .search-results-header-yes  {
+    color: #FEDA6A;
+    font-family: Righteous;
+}
+
+.search-results-header-no {
+    text-align: center;
+    margin-top: 20px;
+}
+.search-results-header-yes {
+    text-align: center;
+    margin-top: 20px;
+}
+
 /* Mobile Styles */
 @media screen and (max-width: 900px) {
     /* Search Companies Page */
