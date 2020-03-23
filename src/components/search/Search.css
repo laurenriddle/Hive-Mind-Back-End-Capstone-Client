@@ -92,6 +92,11 @@
 .new-survey-button-container {
     text-align: right;
 }
+.card-image {
+    border: 1px solid rgba(255, 255, 255, 0.753);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+}
 
 /* Interview Cards */
 
@@ -132,13 +137,7 @@
 .bolder {
     font-weight: bolder;
 }
-img {
-    /* border-radius: 200px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25); */
-    /* width:10%;
-    height: 5%; */
 
-}
 
 /* Search Users */
 /* Search User Header */

@@ -29,33 +29,41 @@ class Profile extends Component {
 
         return (
             <>
-                <Jumbotron>
+                <Jumbotron className="user-jumbo">
                     <h1>{this.state.user.first_name} {this.state.user.last_name}</h1>
-                    <h3>AKA {this.state.user.username}</h3>
-                    <h5>{this.state.applicant.aboutme}</h5>
-                    <h5>{this.state.applicant.location}</h5>
-
-                    {this.state.applicant.image !== null ?
-                        <img src={this.state.applicant.image} alt="user" className="profile-image"></img>
-                        :
-                        <FontAwesomeIcon icon={faUser} />
-                    }
-                    <Button onClick={() => this.props.history.push('/profile/edit')}>Edit</Button>
-                    <h5>{this.state.user.email}</h5>
-                    <h5>{this.state.cohort.cohort}</h5>
-                    {this.state.applicant.is_employed ?
-                        <h5>Employment Status: Hired</h5>
-                        :
-                        <h5>Employment Status: Looking for Opportunities</h5>
-                    }
+                    <h5>@{this.state.user.username}</h5>
                     <h5>{this.state.applicant.jobtitle}</h5>
 
                     {this.state.applicant.employer !== null && this.state.applicant.employer !== "" &&
                         <h5>Employer: {this.state.applicant.employer}</h5>
-                        
+
                     }
-                    <a href={this.state.applicant.linkedin_profile} target="_blank" rel="noopener noreferrer">View LinkedIn Profile</a>
                 </Jumbotron>
+                {this.state.applicant.image !== null ?
+                    <img src={this.state.applicant.image} alt="user" className="profile-image"></img>
+                    :
+                    <FontAwesomeIcon icon={faUser} />
+                }
+                    <section className="edit-button-container">
+                        <Button onClick={() => this.props.history.push('/profile/edit')} className="profile-button">Edit</Button>
+                    </section>
+                <section className="about">
+                    <h3 className="righteous">About</h3><hr className="hr" />
+                    <h6>{this.state.cohort.cohort}</h6>
+                    <h6>Location: {this.state.applicant.location}</h6>
+                    {this.state.applicant.is_employed ?
+                        <h6>Employment Status: Hired</h6>
+                        :
+                        <h6>Employment Status: Looking for Opportunities</h6>
+                    }
+                    <p> {this.state.applicant.aboutme}</p>
+                    {/* {this.state.user.id === this.state.loggedInUserId &&
+                        <Button onClick={() => this.props.history.push('/profile/edit')}>Edit</Button>
+                    } */}
+                    <h3 className="righteous">Contact</h3><hr className="hr" />
+                    <h6>{this.state.user.email}</h6>
+                    <a href={this.state.applicant.linkedin_profile} target="_blank" rel="noopener noreferrer" className="linkedin">View LinkedIn Profile</a>
+                </section>
             </>
         )
     }

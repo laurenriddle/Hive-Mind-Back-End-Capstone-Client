@@ -12,7 +12,7 @@ class SearchUserCard extends Component {
         return (
             <>
             <Card className="company-results-card">
-                <Card.Title><img src={this.props.applicant.image} alt="profile" width="50" height="50"></img>  <Link className="view-interviews-link"  to={`/profile/${this.props.applicant.id}`}>{this.props.applicant.user.first_name} {this.props.applicant.user.last_name} {this.props.applicant.location}</Link></Card.Title>
+                <Card.Title><img src={this.props.applicant.image} alt="profile" width="50" height="50" className="card-image"></img>  <Link className="view-interviews-link"  to={`/profile/${this.props.applicant.id}`}>{this.props.applicant.user.first_name} {this.props.applicant.user.last_name} {this.props.applicant.location}</Link></Card.Title>
             </Card>
 
             </>

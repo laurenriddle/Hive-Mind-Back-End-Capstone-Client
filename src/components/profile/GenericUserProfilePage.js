@@ -117,36 +117,43 @@ class GenericProfile extends Component {
         return (
             <>
                 <Jumbotron className="user-jumbo">
-                    {this.state.applicant.image !== null ?
-                        <img src={this.state.applicant.image} alt="user" className="profile-image"></img>
-                        :
-                        <FontAwesomeIcon icon={faUser} className="profile-image" />
-                    }
-                    <h2>{this.state.user.first_name} {this.state.user.last_name} <span className="username">@{this.state.user.username}</span></h2>
-
+                    <h1 className="righteous">{this.state.user.first_name} {this.state.user.last_name}</h1>
+                    <h5>@{this.state.user.username}</h5>
 
                     {/* {this.state.applicant.is_employed ?
                         <h5>Employment Status: Currently Employed</h5>
                         :
                         <h5>Employment Status: Looking for Opportunities</h5>
                     } */}
-                  <hr className="hr"/>  
-                    <h6>{this.state.applicant.jobtitle}
+                    <h5>{this.state.applicant.jobtitle}
                         {this.state.applicant.employer !== null && this.state.applicant.employer !== "" ?
                             <> at {this.state.applicant.employer}</>
                             :
                             <></>
                         }
-                    </h6>
+                    </h5>
+                    {/* <hr className="hr" />
+
+<hr className="hr" /> */}
+                </Jumbotron>
+                {this.state.applicant.image !== null ?
+                    <img src={this.state.applicant.image} alt="user" className="profile-image"></img>
+                    :
+                    <FontAwesomeIcon icon={faUser} className="profile-image" />
+                }
+
+                <section className="about">
+                    <h3 className="righteous">About</h3><hr className="hr" />
                     <h6>{this.state.cohort.cohort}</h6>
+                    <h5>Location: {this.state.applicant.location}</h5>
                     <p> {this.state.applicant.aboutme}</p>
                     {/* {this.state.user.id === this.state.loggedInUserId &&
                         <Button onClick={() => this.props.history.push('/profile/edit')}>Edit</Button>
                     } */}
-                    <hr className="hr"/>
+                    <h3 className="righteous">Contact</h3><hr className="hr" />
                     <h6>{this.state.user.email}</h6>
                     <a href={this.state.applicant.linkedin_profile} target="_blank" rel="noopener noreferrer" className="linkedin">View LinkedIn Profile</a>
-                </Jumbotron>
+                </section>
                 <section className="interview-cards-container">
                     {this.state.interviews.map((interview) => {
                         return <SearchDetailCard favorites={this.state.favorites} {...this.props} key={interview.id} interview={interview} user={interview.applicant.user} deleteInterview={this.deleteInterview} deleteFavorite={this.deleteFavorite} addFavorite={this.addFavorite} />

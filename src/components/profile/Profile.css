@@ -1,42 +1,65 @@
-/* .profile-image {
-    border-radius: 360px;
-    height: 7%;
-    width: 7%;
-}
-
-.pre-profile-img {
-    height: 7%;
-    width: 7%;
-} */
-
 .profile-image {
     border-radius: 50%;
-    width: 30%;
+    width: 15%;
     z-index: +3;
-    /* margin-top:-70px */
+    margin-top:-100px;
     border: 4px solid rgba(255, 255, 255, 0.753);
+    margin-left: 70px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
 }
 
-/* Generic User Profile */
-.user-jumbo {
+/* Generic User Profile and Personal Profile */
+.user-jumbo  {
     background-color: #FEDA6A;
     color: white;
     margin-bottom: 0;
-    padding-bottom: 90px;
+    padding-bottom: 120px;
 }
+
+.about {
+    background-color: #FEDA6A;
+    color: white;
+    padding: 20px;
+    margin: 50px;
+    border-radius: 10px;
+}
+
 .username {
     font-size: 20px;
+}
+
+.righteous {
+font-family: Righteous;
 }
 
 .linkedin {
     color: white;
 }
+
 .linkedin:hover {
     color: #3F3F3F;
     text-decoration: none;
 }
+
 .hr {
     background-color:rgba(218, 187, 93, 0.466);
+}
+
+.edit-button-container {
+text-align: right;
+}
+
+.profile-button {
+    background-color: #FEDA6A;
+    border: 1px solid #FEDA6A;
+    margin-right: 53px;
+}
+
+.profile-button:hover {
+    color: #FEDA6A;
+    border: 1px solid #FEDA6A;
+    background-color: white;
 }
 
 
@@ -50,5 +73,30 @@
         text-align: center;
     }
 
+    .profile-image {
+        border-radius: 50%;
+        width: 40%;
+        z-index: +3;
+        margin-top:-70px;
+        border: 4px solid rgba(255, 255, 255, 0.753);
+        margin-left: 30px;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    
+    }
+
+    .about {
+        background-color: #FEDA6A;
+        color: white;
+        padding: 20px;
+        margin: 20px;
+        border-radius: 10px;
+    }
+
+    .profile-button {
+        background-color: #FEDA6A;
+        border: 1px solid #FEDA6A;
+        margin-right: 21px;
+        margin-bottom: 20px;
+    }
     
 }
