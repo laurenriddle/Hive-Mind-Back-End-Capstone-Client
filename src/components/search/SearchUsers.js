@@ -2,25 +2,28 @@
 import React, { Component } from "react"
 import SearchUserCard from "./SearchUserCard";
 class SearchUsers extends Component {
-    
 
-   
+
+
 
     render() {
 
         return (
             <>
-                {this.props.users.length === 0 && 
-                    <h2>No search results</h2>
+                {this.props.users.length === 0 &&
+                    <h1 className="search-results-header-no">Uh-Oh! No search results! Please try again!</h1>
                 }
-
-                {this.props.users.map((user) => {
-
-                    return <SearchUserCard {...this.props} key={user.id} applicant={user} />
-
-                })
+                {this.props.users.length > 0 &&
+                    <h1 className="search-results-header-yes">Search results:</h1>
                 }
+                <section className="company-search-results-container">
+                    {this.props.users.map((user) => {
 
+                        return <SearchUserCard {...this.props} key={user.id} applicant={user} />
+
+                    })
+                    }
+                </section>
             </>
         )
     }

@@ -1,0 +1,191 @@
+/* Search Companies Page */
+
+/* Search Box */
+.company-search-input-container {
+    width: 40%;
+    margin: 0 auto;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+
+#searchterms:focus {
+    margin-right: 5px;
+    box-shadow:0 0 0 0.2rem rgba(211, 211, 211, 0.698);
+    border-color: rgba(211, 211, 211, 0.726);
+}
+
+#searchterms {
+    margin-right: 5px;
+   
+}
+
+.search-companies-button {
+    background-color: #FEDA6A;
+    border-color: #FEDA6A;
+}
+
+.search-companies-button:hover {
+    background-color: white;
+    border-color: #FEDA6A;
+    color: #FEDA6A;
+}
+/* Company Cards */
+.company-results-card {
+    background-color: #6A6A6A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+    padding: 15px;
+    width: 40%;
+    margin: 20px;
+    border-radius: 10px;
+    
+}
+
+.view-interviews-link {
+    font-size: 15px;
+    color: white;
+    font-weight: bolder;
+}
+
+.view-interviews-link:hover {
+    font-size: 15px;
+    color: #FEDA6A;
+    text-decoration: none;
+}
+
+.company-search-results-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+
+/* Company Details Page */
+
+/* Jubotron and New Survey Button */
+.company-jumbo {
+    background-color: #FEDA6A;
+    color: white;
+}
+
+.new-survey-button {
+    margin-right: 30px;
+    margin-bottom: 30px;
+    background-color: #FEDA6A;
+    border-color: #FEDA6A;
+}
+.new-survey-button:hover {
+    margin-right: 30px;
+    margin-bottom: 30px;
+    background-color: white;
+    border-color: #FEDA6A;
+    color: #FEDA6A;
+}
+.new-survey-button-container {
+    text-align: right;
+}
+.card-image {
+    border: 1px solid rgba(255, 255, 255, 0.753);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+}
+
+/* Interview Cards */
+
+.interview-review-card {
+    background-color: #6A6A6A;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    color: white;
+    padding: 15px;
+    width: 45%;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.interview-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.favorited {
+    color: #FEDA6A;
+    margin-left: 5px;
+}
+
+.favorite {
+    color: white;
+    margin-left: 5px;
+}
+
+.interview-card-username {
+    color: white;
+    margin-left: 10px;
+}
+
+.interview-card-username:hover {
+    color: #FEDA6A;
+    text-decoration: none;
+}
+.bolder {
+    font-weight: bolder;
+}
+
+
+/* Search Users */
+/* Search User Header */
+.search-results-header-no, .search-results-header-yes  {
+    color: #FEDA6A;
+    font-family: Righteous;
+}
+
+.search-results-header-no {
+    text-align: center;
+    margin-top: 20px;
+}
+.search-results-header-yes {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 900px) {
+    /* Search Companies Page */
+    .company-search-input-container {
+        width: 70%;
+        margin: 0 auto;
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .company-results-card {
+        background-color: #6A6A6A;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        color: white;
+        padding: 15px;
+        width: 90%;
+        margin: 20px;
+        border-radius: 10px;
+        
+    }
+    .interview-review-card {
+        background-color: #6A6A6A;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        color: white;
+        padding: 15px;
+        width: 90%;
+        margin: 20px;
+        border-radius: 10px;
+        
+    }
+
+
+    
+}

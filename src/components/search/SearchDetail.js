@@ -4,8 +4,8 @@
 import React, { Component } from "react"
 import APIManager from '../../modules/APIManager'
 import { Jumbotron, Button } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 import SearchDetailCard from './SearchDetailCard'
+import "./Search.css"
 class CompanyDetail extends Component {
     state = {
         company: {},
@@ -112,11 +112,14 @@ class CompanyDetail extends Component {
 
         return (
             <>
-                <Jumbotron>
+                <Jumbotron className="company-jumbo">
                     <h1>{this.state.company.name}</h1>
-                    <p>{this.state.industry.industry}</p>
+                    <p>{this.state.company.city} ({this.state.industry.industry})</p>
                 </Jumbotron>
-                <Link to="/interview/new"><Button>New Survey</Button></Link>
+                <div className="new-survey-button-container">
+                <Button className="new-survey-button" onClick={() => this.props.history.push('/interview/new')}>+ New Survey</Button>
+                </div>
+                <section className="interview-cards-container">
                 {this.state.interviews.map((interview) => {
                     return <SearchDetailCard favorites={this.state.favorites} {...this.props} key={interview.id} interview={interview} user={interview.applicant.user} deleteInterview={this.deleteInterview} deleteFavorite={this.deleteFavorite} addFavorite={this.addFavorite} />
                 })}
@@ -125,6 +128,7 @@ class CompanyDetail extends Component {
                         <h4>It looks like there are no interviews for this company yet. Would you like to add one?</h4>
                     </>
                 }
+                </section>
 
             </>
         )

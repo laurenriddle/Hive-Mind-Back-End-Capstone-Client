@@ -1,0 +1,49 @@
+/* Favorites Page */
+.favorites-list-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.my-favorites-header {
+    text-align: center;
+    color: #FEDA6A;
+    margin-top: 20px;
+    font-family: Righteous;
+}
+
+.filter-buttons {
+    background-color: #FEDA6A;
+    border-color: #FEDA6A;
+}
+
+.filter-buttons:hover {
+    background-color: white;
+    border-color: #FEDA6A;
+    color: #FEDA6A;
+}
+
+.filter-buttons-toolbar {
+    margin-right: 52px;
+    margin-left: auto;
+}
+
+.filter-buttons-label {
+    text-align: right;
+}
+
+
+
+/* Mobile Styles */
+
+@media screen and (max-width: 900px) {
+    
+    .filter-buttons-toolbar {
+        margin: 0 auto;
+        text-align: center;
+        margin: 10px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    
+}

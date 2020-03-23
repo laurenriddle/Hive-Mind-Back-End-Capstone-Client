@@ -3,10 +3,10 @@
 import { Card } from "react-bootstrap";
 import { Link } from 'react-router-dom'
 import React, { Component } from 'react'
-import { faEdit, faTrash, faUser, faStar, faBookmark } from '@fortawesome/free-solid-svg-icons'
+import { faEdit, faTrash, faStar } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import APIManager from "../../modules/APIManager";
-
+import "./Search.css"
 class SearchDetailCard extends Component {
     state = {
         user: {}
@@ -41,57 +41,58 @@ class SearchDetailCard extends Component {
     render() {
         return (
             <>
-                <Card>
+                <Card className="interview-review-card">
                     <Card.Title>
                         {this.state.user.id !== this.props.interview.applicant.id &&
                             <>
-                                <Link to={`/profile/${this.props.interview.applicant.id}`}><img src={this.props.interview.applicant.image} alt="profile" width="50" height="50"></img> </Link>
-                                <Link to={`/profile/${this.props.interview.applicant.id}`}>{this.props.user.first_name} {this.props.user.last_name} </Link>
+                                <img src={this.props.interview.applicant.image} alt="profile" width="50" height="50" onClick={() => this.props.history.push(`/profile/${this.props.interview.applicant.id}`)} className="card-image"></img>
+                                <Link to={`/profile/${this.props.interview.applicant.id}`} className="interview-card-username righteous">{this.props.user.first_name} {this.props.user.last_name} </Link>
                             </>
                         }
-                        
-                        {this.state.user.id === this.props.interview.applicant.id &&
-                            <>
-                                <Link to={`/profile`}><img src={this.props.interview.applicant.image} alt="profile" width="50" height="50"></img> </Link>
-                                <Link to={`/profile`}>{this.props.user.first_name} {this.props.user.last_name}</Link>
-                            </>
-                        }
-                        {this.props.interview.date}
 
                         {this.state.user.id === this.props.interview.applicant.id &&
                             <>
-                                <button onClick={() => { this.props.history.push(`/interview/${this.props.interview.id}/edit`) }}><FontAwesomeIcon icon={faEdit} /></button><button onClick={() => this.props.deleteInterview(this.props.interview.id)}><FontAwesomeIcon icon={faTrash} /></button>
+                                <img src={this.props.interview.applicant.image} alt="profile" width="50" height="50" onClick={() => this.props.history.push(`/profile`)} className="card-image"></img>
+                                <Link to={`/profile`} className="interview-card-username righteous"> {this.props.user.first_name} {this.props.user.last_name} </Link>
+                            </>
+                        }
+
+                        {this.state.user.id === this.props.interview.applicant.id &&
+                            <>
+                                <FontAwesomeIcon className="favorite" icon={faEdit} onClick={() => { this.props.history.push(`/interview/${this.props.interview.id}/edit`) }} /> <FontAwesomeIcon className="favorite" icon={faTrash} onClick={() => this.props.deleteInterview(this.props.interview.id)} />
                             </>
                         }
                         {(this.state.user.id !== this.props.interview.applicant.id && this.isFavorite(this.props.interview.id) === false) &&
-                            <button onClick={() => this.props.addFavorite(this.props.interview.id)}><FontAwesomeIcon icon={faStar} /></button>}
+                            <FontAwesomeIcon icon={faStar} className="favorite" onClick={() => this.props.addFavorite(this.props.interview.id)} />}
 
-                        {(this.state.user.id !== this.props.interview.applicant.id && this.isFavorite(this.props.interview.id) === true) && <button onClick={() => this.props.deleteFavorite(this.props.interview.id)}><FontAwesomeIcon icon={faBookmark} /></button>
+                        {(this.state.user.id !== this.props.interview.applicant.id && this.isFavorite(this.props.interview.id) === true) && <FontAwesomeIcon className="favorited" icon={faStar} onClick={() => this.props.deleteFavorite(this.props.interview.id)} />
                         }
+
                     </Card.Title>
                     <Card.Body>
-                        <Card.Text>Company: {this.props.interview.company.name} ({this.props.interview.company.industry.industry})</Card.Text>
-                        <Card.Text>Position: {this.props.interview.position}</Card.Text>
-                        <Card.Text>Interview Type: {this.props.interview.interview_type}</Card.Text>
+                        <Card.Text><span className="bolder">Interview Date:</span> {this.props.interview.date}</Card.Text>
+                        <Card.Text><span className="bolder">Company:</span> {this.props.interview.company.name} ({this.props.interview.company.industry.industry})</Card.Text>
+                        <Card.Text><span className="bolder">Position:</span> {this.props.interview.position}</Card.Text>
+                        <Card.Text><span className="bolder">Interview Type:</span> {this.props.interview.interview_type}</Card.Text>
 
                         {this.props.interview.in_person === true &&
-                            <Card.Text>In Person: Yes</Card.Text>}
+                            <Card.Text><span className="bolder">In Person:</span> Yes</Card.Text>}
                         {this.props.interview.in_person === false &&
-                            <Card.Text>In Person: No</Card.Text>}
+                            <Card.Text><span className="bolder">In Person:</span> No</Card.Text>}
 
                         {this.props.interview.offer === true &&
-                            <Card.Text>Offer Received: Yes</Card.Text>}
+                            <Card.Text><span className="bolder">Offer Received:</span> Yes</Card.Text>}
                         {this.props.interview.offer === false &&
-                            <Card.Text>Offer Received: No</Card.Text>}
+                            <Card.Text><span className="bolder">Offer Received:</span> No</Card.Text>}
 
                         {this.props.interview.code_challege === true &&
-                            <Card.Text>Coding Challenge: Yes</Card.Text>}
+                            <Card.Text><span className="bolder">Coding Challenge:</span> Yes</Card.Text>}
                         {this.props.interview.code_challege === false &&
-                            <Card.Text>Coding Challenge: No</Card.Text>}
+                            <Card.Text><span className="bolder">Coding Challenge:</span> No</Card.Text>}
 
-                        <Card.Text>Review: {this.props.interview.review}</Card.Text>
+                        <Card.Text><span className="bolder">Review:</span> {this.props.interview.review}</Card.Text>
 
-                        <Card.Text>Advice: {this.props.interview.advice}</Card.Text>
+                        <Card.Text><span className="bolder">Advice:</span> {this.props.interview.advice}</Card.Text>
                     </Card.Body>
                 </Card>
 

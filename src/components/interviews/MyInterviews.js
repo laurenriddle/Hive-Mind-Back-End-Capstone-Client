@@ -4,10 +4,12 @@ import React, { Component } from "react"
 import APIManager from '../../modules/APIManager'
 import { Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap'
 import InterviewCard from "./InterviewCard"
+import "./Interviews.css"
 class MyInterviews extends Component {
     state = {
         interviews: [],
-        companies: []
+        companies: [],
+        filterId: ""
     }
 
     handleInputChange = (evt) => {
@@ -48,7 +50,7 @@ class MyInterviews extends Component {
             APIManager.delete("interviews", id)
                 .then(() => {
                     // gets all interviews for the specific user
-                   this.getAllInterviews()
+                    this.getAllInterviews()
 
                 })
         }
@@ -85,24 +87,29 @@ class MyInterviews extends Component {
 
         return (
             <>
-                {this.state.companies.length > 0 &&
-                    <>
-                        <label>Filter by Company:</label>
-                        <ButtonToolbar aria-label="Toolbar with button groups">
-                            <ButtonGroup className="mr-2" aria-label="First group">
-                                <Button onClick={() => this.getAllInterviews()}>All</Button>
-                                {this.state.companies.map((company) => {
-                                    return <Button key={company.id} onClick={() => this.filterInterviews(company.id)}>{company.name}</Button>
-                                })}
-                            </ButtonGroup>
-                        </ButtonToolbar>
-                    </>
-                }
-                <Button onClick={() => this.props.history.push('/interview/new')}>+ New</Button>
-                {this.state.interviews.map((interview) => {
-                    return <InterviewCard {...this.props} key={interview.id} interview={interview} deleteInterview={this.deleteInterview} />
-                })}
-
+                <h1 className="my-favorites-header">My Interviews</h1>
+                <ButtonToolbar aria-label="Toolbar with button groups">
+                    <ButtonGroup className="filter-buttons-toolbar" aria-label="First group">
+                        <Button className="filter-buttons" variant="secondary" onClick={() => this.props.history.push('/interview/new')}>+ New</Button>
+                    </ButtonGroup>
+                </ButtonToolbar>
+                <div className="filter-radio-toolbar">
+                    {this.state.companies.length > 0 &&
+                        <>
+                            <span className="filterId"><input className="radio-buttons" type="radio" id="filterId" name="company" value="" onClick={() => this.getAllInterviews()}></input><label>All Interviews</label></span>
+                            
+                            {this.state.companies.map((company) => {
+                                return <> <span className="filterId"><input type="radio" className="radio-buttons" name="company" value={company.id} onClick={() => this.filterInterviews(company.id)}></input><label>{company.name}</label></span>
+                                </>
+                            })}
+                        </>
+                    }
+                </div>
+                <section className="interview-cards-container">
+                    {this.state.interviews.map((interview) => {
+                        return <InterviewCard {...this.props} key={interview.id} interview={interview} deleteInterview={this.deleteInterview} />
+                    })}
+                </section>
             </>
         )
     }

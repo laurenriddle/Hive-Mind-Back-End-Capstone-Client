@@ -11,12 +11,12 @@ class SearchUserCard extends Component {
 
         return (
             <>
-            <Card>
-                <Card.Title><img src={this.props.applicant.image} alt="profile" width="100" height="100"></img><Link to={`/profile/${this.props.applicant.id}`}>{this.props.applicant.user.first_name} {this.props.applicant.user.last_name}</Link></Card.Title>
+            <Card className="company-results-card">
+                <Card.Title><img src={this.props.applicant.image} alt="profile" width="50" height="50" className="card-image"></img>  <Link className="view-interviews-link"  to={`/profile/${this.props.applicant.id}`}>{this.props.applicant.user.first_name} {this.props.applicant.user.last_name} {this.props.applicant.location}</Link></Card.Title>
             </Card>
 
             </>
         )
     }
 }
-export default SearchUserCard
+export default SearchUserCard;

@@ -15,6 +15,7 @@ import ProfileEditForm from "./profile/ProfileEditForm";
 import MyFavorites from "./favorites/FavoritesList";
 import GenericProfile from "./profile/GenericUserProfilePage";
 import SearchUsers from "./search/SearchUsers";
+import About from "./auth/About";
 export default class ApplicationViews extends Component {
 
   render() {
@@ -182,6 +183,18 @@ export default class ApplicationViews extends Component {
                 {...props} {...this.props} />
             } else {
                 return <Redirect to='/login' />
+              
+            }
+
+          }}
+         /> 
+         <Route
+          exact path="/about" render={props => {
+            if (isAuthenticated()) {
+              return <Redirect to='/' />
+            } else {
+              return <About
+              {...props} {...this.props} />
               
             }
 

@@ -1,10 +1,11 @@
 // Purpose: To create the login form and execute the logic associated 
 
 import React, { Component } from "react"
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import "./Auth.css"
 import { login, isAuthenticated } from "../../modules/SimpleAuth"
-import {Button} from 'react-bootstrap'
+import { Button, FormControl, Form } from 'react-bootstrap'
+import Logo from "../home/Hive_Loge.png"
 
 class Login extends Component {
 
@@ -47,32 +48,33 @@ class Login extends Component {
 
         return (
             <section className="login-page-container">
-            <form className="login-form" onSubmit={this.handleLogin}>
+                <center><img src={Logo} alt="logo" className="home-logo" width="300" height="300" ></img></center>
                 <h1 className="login-header">Hive Mind</h1>
-                <input
-                    id="username"
-                    className="login-input"
-                    label="Username"
-                    placeholder="Username"
-                    onChange={this.handleInputChange}
+                <Form className="login-form" onSubmit={this.handleLogin}>
+                    <FormControl
+                        id="username"
+                        className="login-input"
+                        label="Username"
+                        placeholder="Username"
+                        onChange={this.handleInputChange}
 
-                />
+                    ></FormControl>
 
 
-                <input
-                    id="password"
-                    label="Password"
-                    className="login-input"
-                    placeholder="Password"
-                    onChange={this.handleInputChange}
-                    type="password"
-                />
+                    <FormControl
+                        id="password"
+                        label="Password"
+                        className="login-input"
+                        placeholder="Password"
+                        onChange={this.handleInputChange}
+                        type="password"
+                    ></FormControl>
 
-                <Button type="submit">
-                    Sign in
+                    <Button type="submit" variant="secondary">
+                        Sign in
               </Button>
-              <Link to="/register">Not a member? Click here to sign up!</Link>
-            </form>
+                </Form>
+                <Link to="/register">Not a member? Click here to sign up!</Link>
             </section>
         )
     }

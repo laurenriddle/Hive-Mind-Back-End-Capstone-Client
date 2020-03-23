@@ -1,8 +1,17 @@
-.logo {
-    color: white;
+/* Nav Bar */
+
+#logo {
+    color: #FEDA6A;
+    font-family: Righteous;
 }
 
-.logo:hover {
-    color: rgba(255, 255, 255, 0.733);
+#logo:hover {
+    color: rgba(254, 217, 106, 0.794);
     text-decoration: none;
 }
+
+#NavBar {
+    background-color: #3F3F3F;
+}
+
+
