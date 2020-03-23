@@ -29,6 +29,11 @@ class Navigation extends Component {
                             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                             <Navbar.Collapse id="responsive-navbar-nav">
                                 <Nav className="mr-auto">
+                                    <Form inline>
+                                        <FormControl type="text" placeholder="First Name" className="mr-sm-2" id="firstname" onChange={this.handleInputChange} />
+                                        <FormControl type="text" placeholder="Last Name" className="mr-sm-2" id="lastname" onChange={this.handleInputChange} />
+                                        <Button variant="outline-primary" eventKey="6" onClick={() => this.props.searchUsers(this.state.firstname, this.state.lastname)}>Search</Button>
+                                    </Form>
                                     <Nav.Link eventKey="1" as={Link} to="/myinterviews">
                                         My Interviews
                                     </Nav.Link>
@@ -38,11 +43,6 @@ class Navigation extends Component {
                                     <Nav.Link eventKey="3" as={Link} to="/favorites">
                                         Favorites
                                     </Nav.Link>
-                                    <Form inline>
-                                        <FormControl type="text" placeholder="First Name" className="mr-sm-2" id="firstname" onChange={this.handleInputChange} />
-                                        <FormControl type="text" placeholder="Last Name" className="mr-sm-2" id="lastname" onChange={this.handleInputChange} />
-                                        <Button variant="outline-primary" eventKey="6" onClick={() => this.props.searchUsers(this.state.firstname, this.state.lastname)}>Search</Button>
-                                    </Form>
                                 </Nav>
                                 <Nav className="ml-auto">
                                     <Nav.Link eventKey="4" as={Link} to="/profile">

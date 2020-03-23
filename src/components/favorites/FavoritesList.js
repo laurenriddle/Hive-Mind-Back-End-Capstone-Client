@@ -118,4 +118,4 @@ class MyFavorites extends Component {
         )
     }
 }
-export default MyFavorites
+export default MyFavorites;
