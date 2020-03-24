@@ -6,7 +6,7 @@ import "./Auth.css"
 import { login, isAuthenticated } from "../../modules/SimpleAuth"
 import { Button, FormControl, Form, InputGroup } from 'react-bootstrap'
 import Logo from "../home/Hive_Loge.png"
-import { faLock} from '@fortawesome/free-solid-svg-icons'
+import { faLock } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Login extends Component {
@@ -50,35 +50,27 @@ class Login extends Component {
 
         return (
             <section className="login-page-container">
-                <center><img src={Logo} alt="logo" className="home-logo" width="300" height="300" ></img></center>
+                <center><img src={Logo} alt="logo" className="home-logo" width="275" height="275" ></img></center>
                 <h1 className="login-header">Hive Mind</h1>
                 <Form className="login-form" onSubmit={this.handleLogin}>
-                    <InputGroup className="login-input" >
-                        <InputGroup.Prepend>
-                            <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
-                        </InputGroup.Prepend>
-                        <FormControl
-                            id="username"
 
-                            label="Username"
-                            placeholder="Username"
-                            onChange={this.handleInputChange}
+                    <FormControl
+                        id="username"
 
-                        ></FormControl>
-                    </InputGroup>
+                        label="Username"
+                        placeholder="Username"
+                        onChange={this.handleInputChange}
 
-                    <InputGroup className="login-input" >
-                        <InputGroup.Prepend>
-                            <InputGroup.Text id="basic-addon1"><FontAwesomeIcon icon={faLock}/></InputGroup.Text>
-                        </InputGroup.Prepend>
-                        <FormControl
-                            id="password"
-                            label="Password"
-                            placeholder="Password"
-                            onChange={this.handleInputChange}
-                            type="password"
-                        ></FormControl>
-                    </InputGroup>
+                    ></FormControl>
+
+                    <FormControl
+                        id="password"
+                        label="Password"
+                        placeholder="Password"
+                        onChange={this.handleInputChange}
+                        type="password"
+                    ></FormControl>
+
 
 
                     <Button type="submit" variant="secondary">

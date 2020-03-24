@@ -1,22 +1,36 @@
 /* Login Page */
 
 
-.login-page-container, .register-form-container {
+.login-page-container, .register-form-container, .about-form-container {
     background-image: url('./Lauren_v4.png');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     height: 100vh;
     text-align: center;
     opacity: .9;
     vertical-align: middle;
 }
 
+.about-form-container {
+    background-image: url('./Lauren_v4.png');
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100%;
+    text-align: center;
+    opacity: .9;
+    vertical-align: middle;
+}
 
-.login-input, .register-form input, .register-form select {
+
+.login-form input, .register-form input, .register-form select, .register-form textarea {
     margin: 0 auto;
     width: 200px;
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+.login-input {
+    margin-bottom: 20px;
 }
 
 .register-form select {

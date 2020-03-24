@@ -102,7 +102,7 @@ class About extends Component {
     render() {
 
         return (
-            <section className="register-form-container">
+            <section className="about-form-container">
                 <center><img src={Logo} alt="logo" className="home-logo" width="300" height="300" ></img></center>
                 <h1 className="register-header">Tell us about yourself!</h1>
                 <Form className="register-form" onSubmit={this.handleRegister}>
@@ -144,6 +144,7 @@ class About extends Component {
                     <FormControl
                         id="aboutme"
                         onChange={this.handleInputChange}
+                        as="textarea"
                         placeholder="Tell everyone a little bit about yourself..."
 
                     />

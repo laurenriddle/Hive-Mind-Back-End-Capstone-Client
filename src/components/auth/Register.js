@@ -71,7 +71,7 @@ class Register extends Component {
         return (
             <>
                 <section className="register-form-container">
-                    <center><img src={Logo} alt="logo" className="home-logo" width="300" height="300" ></img></center>
+                    <center><img src={Logo} alt="logo" className="home-logo" width="275" height="275" ></img></center>
                     <h1 className="register-header">Register for Hive Mind!</h1>
                     <Form className="register-form" onSubmit={this.pushToAbout}>
                         <FormControl
