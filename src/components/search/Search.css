@@ -52,7 +52,7 @@
 .view-interviews-link:hover {
     font-size: 15px;
     color: #FEDA6A;
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 
 .company-search-results-container {
@@ -132,7 +132,7 @@
 
 .interview-card-username:hover {
     color: #FEDA6A;
-    text-decoration: none;
+    /* text-decoration: none; */
 }
 .bolder {
     font-weight: bolder;

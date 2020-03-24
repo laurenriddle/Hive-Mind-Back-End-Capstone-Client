@@ -46,14 +46,14 @@ class SearchDetailCard extends Component {
                         {this.state.user.id !== this.props.interview.applicant.id &&
                             <>
                                 <img src={this.props.interview.applicant.image} alt="profile" width="50" height="50" onClick={() => this.props.history.push(`/profile/${this.props.interview.applicant.id}`)} className="card-image"></img>
-                                <Link to={`/profile/${this.props.interview.applicant.id}`} className="interview-card-username righteous">{this.props.user.first_name} {this.props.user.last_name} </Link>
+                                <Link to={`/profile/${this.props.interview.applicant.id}`} className="interview-card-username "> {this.props.user.first_name} {this.props.user.last_name} </Link>
                             </>
                         }
 
                         {this.state.user.id === this.props.interview.applicant.id &&
                             <>
                                 <img src={this.props.interview.applicant.image} alt="profile" width="50" height="50" onClick={() => this.props.history.push(`/profile`)} className="card-image"></img>
-                                <Link to={`/profile`} className="interview-card-username righteous"> {this.props.user.first_name} {this.props.user.last_name} </Link>
+                                <Link to={`/profile`} className="interview-card-username "> {this.props.user.first_name} {this.props.user.last_name} </Link>
                             </>
                         }
 

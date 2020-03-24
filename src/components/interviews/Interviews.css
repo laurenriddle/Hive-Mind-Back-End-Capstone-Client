@@ -14,7 +14,84 @@
     background-color: #FEDA6A;
 }
 
+/* Interview Form */
 
+.interview-form {
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 30px;
+}
+.interview-form select  {
+    margin: 0 auto;
+    width: 70%;
+    margin-bottom: 20px;
+    background-color: white;
+}
+.interview-form a  {
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: white;
+}
+.interview-form a:hover  {
+    margin: 0 auto;
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: #FEDA6A;
+}
+hr {
+    background-color: #FEDA6A;
+}
+
+.interview-form input, .interview-form textarea, .interview-form select {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.interview-form radio {
+    margin-top: 15px;
+}
+
+.create-int-button {
+    background-color: #FEDA6A;
+    border-color: #FEDA6A;
+    margin-bottom: 30px;
+
+}
+
+.create-int-button-container {
+    text-align: center;
+}
+
+.create-int-button:hover {
+    background-color: white;
+    border-color: #FEDA6A;
+    color: #FEDA6A;
+}
+
+.new-int-form-container {
+    background-color: #676767;
+    width: 50%;
+    margin: 0 auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 #676767;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+    
+
+}
+.yellow {
+    color: #FEDA6A;
+    text-align: center;
+}
+.input-group {
+    margin: 0 auto;
+}
 /* Mobile Styles */
 
 @media screen and (max-width: 900px) {
@@ -30,5 +107,16 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+    }
+    .new-int-form-container {
+        background-color: #676767;
+        width: 90%;
+        margin: 0 auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px 0 #676767;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        color: white;
+    
     }
 }

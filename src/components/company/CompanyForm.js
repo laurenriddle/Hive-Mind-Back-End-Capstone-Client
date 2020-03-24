@@ -3,7 +3,9 @@
 import React, { Component } from "react"
 import { Link } from 'react-router-dom'
 import APIManager from '../../modules/APIManager'
-import { Button, FormControl, Form } from 'react-bootstrap'
+import { Button, FormControl, Form, InputGroup } from 'react-bootstrap'
+import "../interviews/Interviews.css"
+import "./Company.css"
 class NewCompanyForm extends Component {
     state = {
         name: "",
@@ -99,38 +101,43 @@ class NewCompanyForm extends Component {
 
         return (
             <>
-                <Form>
+                <section className="new-int-form-container">
+                    <Form className="interview-form">
+                        <h2 className="righteous yellow">New Company</h2><hr />
+                        <FormControl
+                            id="name"
+                            onChange={this.handleInputChange}
+                            placeholder="Company"
+                            type="text"></FormControl>
 
-                    <FormControl
-                        id="name"
-                        onChange={this.handleInputChange}
-                        placeholder="Company"
-                        type="text"></FormControl>
+                        <FormControl
+                            id="city"
+                            placeholder="Enter a city (i.e. Nashville, TN)"
+                            onChange={this.handleInputChange}
+                            type="text"></FormControl>
+                        <InputGroup>
+                            <select
+                                onChange={this.handleInputChange}
+                                id="industry_id">
+                                <option key="0" value="">Select an Industry</option>
+                                {this.state.industries.map((industry) => {
+                                    return <option key={industry.id} value={industry.id}>{industry.industry}</option>
+                                })}
 
-                    <FormControl
-                        id="city"
-                        placeholder="Enter a city (i.e. Nashville, TN)"
-                        onChange={this.handleInputChange}
-                        type="text"></FormControl>
-                    <select
-                        onChange={this.handleInputChange}
-                        id="industry_id">
-                        <option key="0" value="">Select an Industry</option>
-                        {this.state.industries.map((industry) => {
-                            return <option key={industry.id} value={industry.id}>{industry.industry}</option>
-                        })}
-
-                    </select>
+                            </select>
+                        </InputGroup><hr />
 
 
-                </Form>
-                <Button onClick={() => this.createCompany()}>Create Company</Button>
-                {this.props.location.state === undefined ?
-                    <Link to="/interview/new">Cancel</Link>
-                    :
-                    <Link to={`/interview/${this.props.location.state.interviewId}/edit`}>Cancel</Link>
-                }
-
+                    </Form>
+                    <section className="create-int-button-container">
+                        <Button className="create-int-button" onClick={() => this.createCompany()}>Create Company</Button>
+                        {this.props.location.state === undefined ?
+                            <Button className="create-int-button company-button" onClick={() => this.props.history.push("/interview/new")}>Cancel</Button>
+                            :
+                            <Button className="create-int-button company-button" onClick={() => this.props.history.push(`/interview/${this.props.location.state.interviewId}/edit`)}>Cancel</Button>
+                        }
+                    </section>
+                </section>
             </>
         )
     }

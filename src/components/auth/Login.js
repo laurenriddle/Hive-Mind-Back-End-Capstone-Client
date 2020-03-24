@@ -4,8 +4,10 @@ import React, { Component } from "react"
 import { Link } from 'react-router-dom'
 import "./Auth.css"
 import { login, isAuthenticated } from "../../modules/SimpleAuth"
-import { Button, FormControl, Form } from 'react-bootstrap'
+import { Button, FormControl, Form, InputGroup } from 'react-bootstrap'
 import Logo from "../home/Hive_Loge.png"
+import { faLock} from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Login extends Component {
 
@@ -51,24 +53,33 @@ class Login extends Component {
                 <center><img src={Logo} alt="logo" className="home-logo" width="300" height="300" ></img></center>
                 <h1 className="login-header">Hive Mind</h1>
                 <Form className="login-form" onSubmit={this.handleLogin}>
-                    <FormControl
-                        id="username"
-                        className="login-input"
-                        label="Username"
-                        placeholder="Username"
-                        onChange={this.handleInputChange}
+                    <InputGroup className="login-input" >
+                        <InputGroup.Prepend>
+                            <InputGroup.Text id="basic-addon1">@</InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl
+                            id="username"
 
-                    ></FormControl>
+                            label="Username"
+                            placeholder="Username"
+                            onChange={this.handleInputChange}
 
+                        ></FormControl>
+                    </InputGroup>
 
-                    <FormControl
-                        id="password"
-                        label="Password"
-                        className="login-input"
-                        placeholder="Password"
-                        onChange={this.handleInputChange}
-                        type="password"
-                    ></FormControl>
+                    <InputGroup className="login-input" >
+                        <InputGroup.Prepend>
+                            <InputGroup.Text id="basic-addon1"><FontAwesomeIcon icon={faLock}/></InputGroup.Text>
+                        </InputGroup.Prepend>
+                        <FormControl
+                            id="password"
+                            label="Password"
+                            placeholder="Password"
+                            onChange={this.handleInputChange}
+                            type="password"
+                        ></FormControl>
+                    </InputGroup>
+
 
                     <Button type="submit" variant="secondary">
                         Sign in

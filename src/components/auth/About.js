@@ -23,7 +23,7 @@ class About extends Component {
         employer: "",
         location: "",
         jobtitle: "",
-        image: "https://freesvg.org/img/icon_user_whiteongrey.png"
+        image: "http://res.cloudinary.com/dkjfqmbsu/image/upload/w_200,h_200,c_thumb,g_face/v1585064058/ujymlgu6eae61jziwy9a.png"
     }
 
     handleInputChange = (evt) => {
