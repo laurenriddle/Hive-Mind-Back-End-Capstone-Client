@@ -113,7 +113,7 @@ class CompanyDetail extends Component {
         return (
             <>
                 <Jumbotron className="company-jumbo">
-                    <h1>{this.state.company.name}</h1>
+                    <h1 className="righteous">{this.state.company.name}</h1>
                     <p>{this.state.company.city} ({this.state.industry.industry})</p>
                 </Jumbotron>
                 <div className="new-survey-button-container">

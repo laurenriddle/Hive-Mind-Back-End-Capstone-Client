@@ -14,4 +14,14 @@
     background-color: #3F3F3F;
 }
 
+.user-search-button {
+    border: 1px solid #FEDA6A;
+    color: #FEDA6A;
+}
+
+.user-search-button:hover {
+    border: 1px solid #FEDA6A;
+    color: white;
+    background-color: #FEDA6A;
+}
 
