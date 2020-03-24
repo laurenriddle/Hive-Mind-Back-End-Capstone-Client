@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import { register, isAuthenticated } from "../../modules/SimpleAuth"
 import APIManager from "../../modules/APIManager"
 import './Auth.css'
-import { Button, FormControl, Form } from "react-bootstrap"
+import { Button, FormControl, Form, InputGroup } from "react-bootstrap"
 import { cloudName, uploadPreset } from '../../modules/Credentials';
 import "../profile/Profile.css"
 import Logo from "../home/Hive_Loge.png"
@@ -74,7 +74,7 @@ class About extends Component {
                 })
         } else {
             // these alerts will be triggered if a field is not filled out or the passwords do not match 
-           if (this.state.cohort === "") {
+            if (this.state.cohort === "") {
                 alert('Please select a cohort.')
             } else if (this.state.employmentStatus === "") {
                 alert('Please select an employment status.')
@@ -103,25 +103,27 @@ class About extends Component {
 
         return (
             <section className="about-form-container">
-                <center><img src={Logo} alt="logo" className="home-logo" width="300" height="300" ></img></center>
+                <center><img src={Logo} alt="logo" className="home-logo" width="200" height="200" ></img></center>
                 <h1 className="register-header">Tell us about yourself!</h1>
                 <Form className="register-form" onSubmit={this.handleRegister}>
-                  
-                    <select id="cohort"
-                        onChange={this.handleInputChange}>
+                    <InputGroup>
+                        <select id="cohort"
+                            onChange={this.handleInputChange}>
 
-                        <option value="">Select a Cohort</option>
-                        {this.state.cohorts.map((cohort) => {
-                            return <option key={cohort.id} value={cohort.id}>{cohort.cohort}</option>
-                        })}
-                    </select>
-
-                    <select id="employmentStatus"
-                        onChange={this.handleInputChange}>
-                        <option value="">Select Employment Status</option>
-                        <option value="True">Hired</option>
-                        <option value="False">Searching for Opportunities</option>
-                    </select>
+                            <option value="">Select a Cohort</option>
+                            {this.state.cohorts.map((cohort) => {
+                                return <option key={cohort.id} value={cohort.id}>{cohort.cohort}</option>
+                            })}
+                        </select>
+                    </InputGroup>
+                    <InputGroup>
+                        <select id="employmentStatus"
+                            onChange={this.handleInputChange}>
+                            <option value="">Select Employment Status</option>
+                            <option value="True">Hired</option>
+                            <option value="False">Searching for Opportunities</option>
+                        </select>
+                    </InputGroup>
 
                     <FormControl
                         id="employer"
@@ -156,7 +158,7 @@ class About extends Component {
                     />
 
                     {this.state.image !== null &&
-                        <img src={this.state.image} alt="user" className="pre-profile-img"></img>
+                        <img src={this.state.image} alt="user" className="pre-profile-img" width="75"></img>
                     }
 
                     <div className="upload_widget_container">
@@ -167,7 +169,6 @@ class About extends Component {
                         Register
                     </Button>
                 </Form>
-                <Link to="/login">Already have an account? Click here to sign in!</Link>
             </section>
         )
     }

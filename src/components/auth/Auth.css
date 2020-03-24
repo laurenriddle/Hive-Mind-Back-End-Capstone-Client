@@ -1,8 +1,8 @@
 /* Login Page */
 
 
-.login-page-container, .register-form-container, .about-form-container {
-    background-image: url('./Lauren_v4.png');
+.login-page-container, .register-form-container {
+    background-image: url('./background.png');
     background-size: cover;
     background-repeat: repeat;
     height: 100vh;
@@ -20,11 +20,13 @@
     opacity: .9;
     vertical-align: middle;
 }
-
+.about-form-container .pre-profile-img {
+    width: 10%;
+}
 
 .login-form input, .register-form input, .register-form select, .register-form textarea {
     margin: 0 auto;
-    width: 200px;
+    width: 30%;
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -52,7 +54,7 @@
 }
 
 
-.login-form button:hover {
+.login-form button:hover, .register-form button:hover {
     background-color: white;
     border-color: #FEDA6A;
     color: #FEDA6A;
@@ -79,12 +81,15 @@
     margin-top: 40px;
     font-weight: bold;
     text-decoration: none;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 .register-link {
     margin-bottom: 80px;
 }
-
+.home-logo {
+    width: 20%;
+    height: 20%;
+}
 
 /* Register Page */
 
@@ -97,6 +102,30 @@
         text-align: center;
         opacity: .9;
 
+    }
+
+    .login-form input, .register-form input, .register-form select, .register-form textarea {
+        margin: 0 auto;
+        width: 80%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .about-form-container .pre-profile-img {
+        width: 25%;
+    }
+
+    .login-page-container, .register-form-container {
+        background-image: url('./Lauren_v4.png');
+        background-size: cover;
+        background-repeat: repeat;
+        height: 100vh;
+        text-align: center;
+        opacity: .9;
+        vertical-align: middle;
+    }
+    .home-logo {
+        width: 60%;
+        height: 60%;
     }
     
 }

@@ -50,7 +50,7 @@ class Login extends Component {
 
         return (
             <section className="login-page-container">
-                <center><img src={Logo} alt="logo" className="home-logo" width="275" height="275" ></img></center>
+                <center><img src={Logo} alt="logo"  width="275" height="275" ></img></center>
                 <h1 className="login-header">Hive Mind</h1>
                 <Form className="login-form" onSubmit={this.handleLogin}>
 
