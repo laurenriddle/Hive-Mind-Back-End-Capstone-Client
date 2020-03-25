@@ -35,3 +35,7 @@ Coming soon to Hive Mind will be the ability for user's to message each other pr
 <img src="./git.png" alt="Logo" width="75" height="75" />
 <img src="./tableplus.png" alt="Logo" width="75" height="75" />
 <img src="./postman.png" alt="Logo" width="90" height="75" />
+
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![](./postman.png)  |  ![](./postman.png)
