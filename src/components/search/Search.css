@@ -24,12 +24,14 @@
 .search-companies-button {
     background-color: #FEDA6A;
     border-color: #FEDA6A;
+    font-weight: bold;
 }
 
 .search-companies-button:hover {
     background-color: white;
     border-color: #FEDA6A;
     color: #FEDA6A;
+    font-weight: bold;
 }
 /* Company Cards */
 .company-results-card {
@@ -81,6 +83,7 @@
     margin-bottom: 30px;
     background-color: #FEDA6A;
     border-color: #FEDA6A;
+    font-weight: bold;
 }
 .new-survey-button:hover {
     margin-right: 30px;
@@ -88,6 +91,7 @@
     background-color: white;
     border-color: #FEDA6A;
     color: #FEDA6A;
+    font-weight: bold;
 }
 .new-survey-button-container {
     text-align: right;

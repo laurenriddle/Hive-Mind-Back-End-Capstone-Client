@@ -15,12 +15,14 @@
 .filter-buttons {
     background-color: #FEDA6A;
     border-color: #FEDA6A;
+    font-weight: bold;
 }
 
 .filter-buttons:hover {
     background-color: white;
     border-color: #FEDA6A;
     color: #FEDA6A;
+    font-weight: bold;
 }
 
 .filter-buttons-toolbar {

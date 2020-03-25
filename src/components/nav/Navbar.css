@@ -17,12 +17,14 @@
 .user-search-button {
     border: 1px solid #FEDA6A;
     color: #FEDA6A;
+    font-weight: bold;
 }
 
 .user-search-button:hover {
     border: 1px solid #FEDA6A;
     color: white;
     background-color: #FEDA6A;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 900px) {

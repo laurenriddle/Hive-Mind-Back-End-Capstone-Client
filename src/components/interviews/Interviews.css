@@ -60,6 +60,7 @@ hr {
     background-color: #FEDA6A;
     border-color: #FEDA6A;
     margin-bottom: 30px;
+    font-weight: bold;
 
 }
 
@@ -71,6 +72,7 @@ hr {
     background-color: white;
     border-color: #FEDA6A;
     color: #FEDA6A;
+    font-weight: bold;
 }
 
 .new-int-form-container {

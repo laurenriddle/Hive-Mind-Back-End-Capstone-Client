@@ -54,12 +54,14 @@ text-align: right;
     background-color: #FEDA6A;
     border: 1px solid #FEDA6A;
     margin-right: 53px;
+    font-weight: bold;
 }
 
 .profile-button:hover {
     color: #FEDA6A;
     border: 1px solid #FEDA6A;
     background-color: white;
+    font-weight: bold;
 }
 
 #upload_widget {
