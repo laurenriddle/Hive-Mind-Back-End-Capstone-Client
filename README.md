@@ -27,28 +27,28 @@ As a student who is about to graduate, when the job search process began, one th
 3. Never signed up for Hive Mind before? No problem! Click the register a new account link and complete your registration. 
 4. Now that you are logged in, you will be taken to the home page. From here, you can choose to search for interviews by company, create a new interview survey, or you can click on the navigation bar at the top of the page and choose to view your favorites, view your interviews, view your profile, or search for other user's profiles. 
 
-<div align="center"><img src="./HomePage.png" alt="Home Page" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./HomePageNav.png" alt="Home Page Nave" width="216" height="438"/></div>
+<div align="center"><img src="./readmeimg/HomePage.png" alt="Home Page" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/HomePageNav.png" alt="Home Page Nave" width="216" height="438"/></div>
 
 5. If you choose to create an interview, you will be taken to the new interview form (Note: If you do not see the company that you want in the companies dropdown, click the "Add a company" link to add it to the database). Once you have filled out the form and submitted it, you will be taken to the "My Interviews" page that displays a list of interview surveys you have created. When you are viewing your interviews, you will be able to filter them by company using the filter buttons and you will also be able to select the "New" button to create another survey.
 
-<div align="center"><img src="./NewInterview.png" alt="New Interview" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./MyInterviews.png" alt="My Interviews" width="216" height="438"/></div>
+<div align="center"><img src="./readmeimg/NewInterview.png" alt="New Interview" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/MyInterviews.png" alt="My Interviews" width="216" height="438"/></div>
 
 6. If you choose to search interviews by company, you will be taken to a page with an input. Type the name of the company you want to search for into the input box and click the search button. If the company that you want is in the database, it will appear in the search results. To view the interviews for that company, click the company name to go to the company details page. Once you are on the company details page, you will be able to view and favorite interviews for that company.
 
 
-<div align="center"><img src="./SearchCompanies.png" alt="Search Companies" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./CompanyDetail.png" alt="Company Detail" width="216" height="438"/></div>
+<div align="center"><img src="./readmeimg/SearchCompanies.png" alt="Search Companies" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/CompanyDetail.png" alt="Company Detail" width="216" height="438"/></div>
 
 7. If you choose "Favorites" from the navigation bar, you will be presented with a list of your favorited interviews and buttons to filter them by company. Click the star on any of the favorite cards to delete that favorite and click any of the filter buttons to filter favorites by company.  
 
-<div align="center"><img src="./Favorites.png" alt="Favorites" width="216" height="438"/></div>
+<div align="center"><img src="./readmeimg/Favorites.png" alt="Favorites" width="216" height="438"/></div>
 
 8. If you choose "Profile" from the navigation bar, you will be taken to a view of your profile information with an button that allows you to edit it. Click the edit button to make changes to your profile. 
 
-<div align="center"><img src="./Profile.png" alt="Profile" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./EditProfile.png" alt="Edit Profile" width="216" height="438"/></div>
+<div align="center"><img src="./readmeimg/Profile.png" alt="Profile" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/EditProfile.png" alt="Edit Profile" width="216" height="438"/></div>
 
 9. If you wish to view another user's profile and the interview surveys that they have created, you can enter their name into the form in the navigation bar and select search. The search results will show up below the navbar. Click on the user's name to view their profile and interviews.
 
-<div align="center"><img src="./UserSearch.png" alt="User Search" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserSearchResults.png" alt="User Search Results" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserProfileSearch.png" alt="User Profile Search" width="216" height="438"/></div>
+<div align="center"><img src="./readmeimg/UserSearch.png" alt="User Search" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/UserSearchResults.png" alt="User Search Results" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/UserProfileSearch.png" alt="User Profile Search" width="216" height="438"/></div>
 
 
 ## What's next for Hive Mind?
@@ -64,9 +64,9 @@ Coming soon to Hive Mind will be the ability for user's to message each other pr
 ![Mockups](./mockups.png)
 
 ## Tech Stack 
-<div align="center"><img src="./react.png" alt="React.js" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./django.png" alt="Django" width="125" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./python.png" alt="Python" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./javascriptyellow.png" alt="Javascript" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./cloudinary.png" alt="Cloudinary" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./css3.png" alt="CSS" width="75" height="100" /></div>
+<div align="center"><img src="./readmeimg/react.png" alt="React.js" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/django.png" alt="Django" width="125" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/python.png" alt="Python" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/javascriptyellow.png" alt="Javascript" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/cloudinary.png" alt="Cloudinary" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/css3.png" alt="CSS" width="75" height="100" /></div>
 
 
-<div align="center"><img src="./reactBootstrap.svg" alt="React Bootstrap" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./github.png" alt="GitHub" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./git.png" alt="Git" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./tableplus.png" alt="TablePlus" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./postman.png" alt="Postman" width="90" height="75"/></div>
+<div align="center"><img src="./readmeimg/reactBootstrap.svg" alt="React Bootstrap" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/github.png" alt="GitHub" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/git.png" alt="Git" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/tableplus.png" alt="TablePlus" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/postman.png" alt="Postman" width="90" height="75"/></div>
 
 ©2019 - Lauren Riddle
