@@ -20,7 +20,7 @@ As a student who is about to graduate, when the job search process began, one th
 1. Run `npm start` to verify that installation was successful and start the application.
 1. Go to http://localhost:3000/ to view the app. 
 
-## How do you use Hive Mind? 
+## What can you do with Hive Mind? 
 
 1. After completing the setup above, in the browser, navigate to http://localhost:3000.
 2. If you are a returning user, login to Hive Mind with your account information. 
