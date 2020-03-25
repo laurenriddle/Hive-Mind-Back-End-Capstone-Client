@@ -38,9 +38,13 @@ As a student who is about to graduate, when the job search process began, one th
 
 <div align="center"><img src="./SearchCompanies.png" alt="Search Companies" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./CompanyDetail.png" alt="Company Detail" width="216" height="438"/></div>
 
-7. If you choose "Favorites" from the navigation bar, you will be presented with a list of your favorites and buttons to filter them by company. Click the star on any of the favorite cards to delete that favorite and click any of the filter buttons to filter favorites by company.  
+7. If you choose "Favorites" from the navigation bar, you will be presented with a list of your favorited interviews and buttons to filter them by company. Click the star on any of the favorite cards to delete that favorite and click any of the filter buttons to filter favorites by company.  
 
 <div align="center"><img src="./Favorites.png" alt="Favorites" width="216" height="438"/></div>
+
+8. If you choose "Profile" from the navigation bar, you will be taken to a view of your profile information with an button that allows you to edit it. Click the edit button to make changes to your profile. 
+
+<div align="center"><img src="./Profile.png" alt="Profile" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./EditProfile.png" alt="Edit Profile" width="216" height="438"/></div>
 
 ## What's next for Hive Mind?
 Coming soon to Hive Mind will be the ability for user's to message each other privately or publicy so that they can chat about interviews, companies, and their job searches. User's will also be able to follow each other and see a feed of the posts that have been created by the people they are following. 
