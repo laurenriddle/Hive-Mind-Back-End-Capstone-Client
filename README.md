@@ -58,10 +58,10 @@ Coming soon to Hive Mind will be the ability for user's to message each other pr
 ## Hive Mind Documentation 
 
 ### Entity Relationship Diagram
-![ERD](./erd.png)
+![ERD](./readmeimg/erd.png)
 
 ### Mockups
-![Mockups](./mockups.png)
+![Mockups](./readmeimg/mockups.png)
 
 ## Tech Stack 
 <div align="center"><img src="./readmeimg/react.png" alt="React.js" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/django.png" alt="Django" width="125" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/python.png" alt="Python" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/javascriptyellow.png" alt="Javascript" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/cloudinary.png" alt="Cloudinary" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./readmeimg/css3.png" alt="CSS" width="75" height="100" /></div>
