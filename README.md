@@ -25,7 +25,7 @@ As a student who is about to graduate, when the job search process began, one th
 1. After completing the setup above, in the browser, navigate to http://localhost:3000.
 2. If you are a returning user, login to Hive Mind with your account information. 
 3. Never signed up for Hive Mind before? No problem! Click the register a new account link and complete your registration. 
-4. Now that you are logged in, you will be taken to the home page. From here, you can choose to search for interviews by company, create a new interview survey, or you can click on the navigation bar at the top of the page and choose to view your favorites, view your interviews, or view your profile. 
+4. Now that you are logged in, you will be taken to the home page. From here, you can choose to search for interviews by company, create a new interview survey, or you can click on the navigation bar at the top of the page and choose to view your favorites, view your interviews, view your profile, or search for other user's profiles. 
 
 <div align="center"><img src="./HomePage.png" alt="Home Page" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./HomePageNav.png" alt="Home Page Nave" width="216" height="438"/></div>
 
@@ -48,7 +48,7 @@ As a student who is about to graduate, when the job search process began, one th
 
 9. If you wish to view another user's profile and the interview surveys that they have created, you can enter their name into the form in the navigation bar and select search. The search results will show up below the navbar. Click on the user's name to view their profile and interviews.
 
-<div align="center"><img src="./UserSearch.png" alt="User Search" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserSearchResults.png" alt="User Search Results" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserProfileSearch.png" alt="User Profile Search" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserProfileInterviews.png" alt="User Profile Interview" width="216" height="438"/></div>
+<div align="center"><img src="./UserSearch.png" alt="User Search" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserSearchResults.png" alt="User Search Results" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserProfileSearch.png" alt="User Profile Search" width="216" height="438"/></div>
 
 
 ## What's next for Hive Mind?
