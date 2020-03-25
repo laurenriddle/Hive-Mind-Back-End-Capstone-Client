@@ -1,4 +1,4 @@
-<div align="center"><img src="./Logo.png" alt="Logo" width="300" height="320" /></div>
+<div align="center"><img src="./Logo.png" alt="Logo" width="300" height="350" /></div>
 
 
 ## What is Hive Mind?
