@@ -29,9 +29,14 @@ As a student who is about to graduate, when the job search process began, one th
 
 <div align="center"><img src="./HomePage.png" alt="Home Page" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./HomePageNav.png" alt="Home Page Nave" width="216" height="438"/></div>
 
-5. If you choose to create an interview, you will be taken to the new interview form. Once you have filled it out and submitted it, you will be taken to the kist of interview surveys that you have created. When you are viewing your interviews, you will be able to filter them by company using the filter buttons and you will also be able to select the "new" button to create another survey.
+5. If you choose to create an interview, you will be taken to the new interview form (Note: If you do not see the company that you want in the companies dropdown, click the "Add a company" link to add it to the database). Once you have filled it out and submitted it, you will be taken to the list of interview surveys that you have created. When you are viewing your interviews, you will be able to filter them by company using the filter buttons and you will also be able to select the "new" button to create another survey.
 
 <div align="center"><img src="./NewInterview.png" alt="New Interview" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./MyInterviews.png" alt="My Interviews" width="216" height="438"/></div>
+
+6. If you choose to search interviews by company, you will be taken to a page with an input. Type the name of the company you want to search for into the inout box and click the search button. If the company that you want is in the database, it will appear in the search results. To view the interviews for that company, click the company name.
+
+
+<div align="center"><img src="./SearchCompanies.png" alt="Search Companies" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./CompanyDetail.png" alt="Company Detail" width="216" height="438"/></div>
 
 ## What's next for Hive Mind?
 Coming soon to Hive Mind will be the ability for user's to message each other privately or publicy so that they can chat about interviews, companies, and their job searches. User's will also be able to follow each other and see a feed of the posts that have been created by the people they are following. 
