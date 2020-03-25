@@ -7,9 +7,6 @@ Hive Mind is a social media platform that allows Nashville Software School stude
 ## Why was Hive Mind created?
 As a student who is about to graduate, when the job search process began, one thing that I quickly realized is that it can be hard to know exactly how to prepare for interviews with different companies. Each company has a different way of interviewing, different questions that they ask, and different code challenges and trying to guess the best way to prepare for these interviews can be nerve wracking. This is why I decided to create Hive Mind - a solution to ease the stress that students face during their job search by helping them feel more prepared for the interview process.
 
-## What's next for Hive Mind?
-Coming soon to Hive Mind will be the ability for user's to message each other privately or publicy so that they can chat about interviews, companies, and their job searches. User's will also be able to follow each other and see a feed of the posts that have been created by the people they are following. 
-
 ## Want to use Hive Mind? Follow the instructions bellow to run the application.
 
 1. If you haven't already done so, please go to the API for this app and complete the setup instructions, then return here and complete the client-side setup to start the app. The API can be found here: https://github.com/laurenriddle/Hive-Mind-Back-End-Capstone-Api
@@ -23,5 +20,18 @@ Coming soon to Hive Mind will be the ability for user's to message each other pr
 1. Run `npm start` to verify that installation was successful and start the application.
 1. Go to http://localhost:3000/ to view the app. 
 
+## What's next for Hive Mind?
+Coming soon to Hive Mind will be the ability for user's to message each other privately or publicy so that they can chat about interviews, companies, and their job searches. User's will also be able to follow each other and see a feed of the posts that have been created by the people they are following. 
+
 ## Technologies 
-<img src="./Hive_Loge.png" alt="Logo" width="150" height="100" />
+<img src="./react.png" alt="Logo" width="150" height="100" />
+<img src="./django.png" alt="Logo" width="150" height="100" />
+<img src="./python.png" alt="Logo" width="150" height="100" />
+<img src="./javascriptyellow.png" alt="Logo" width="150" height="100" />
+<img src="./cloudinary.png" alt="Logo" width="150" height="100" />
+<img src="./css3.png" alt="Logo" width="150" height="100" />
+<img src="./reactBootstrap.png" alt="Logo" width="150" height="100" />
+<img src="./github.png" alt="Logo" width="150" height="100" />
+<img src="./git.png" alt="Logo" width="150" height="100" />
+<img src="./tableplus.png" alt="Logo" width="150" height="100" />
+<img src="./postman.png" alt="Logo" width="150" height="100" />
