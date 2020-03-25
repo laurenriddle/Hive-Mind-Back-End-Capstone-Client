@@ -48,7 +48,7 @@ As a student who is about to graduate, when the job search process began, one th
 
 9. If you wish to view another user's profile and the interview surveys that they have created, you can enter their name into the form in the navigation bar and select search. The search results will show up below the navbar. Click on the user's name to view their profile and interviews.
 
-<div align="center"><img src="./UserSearch.png" alt="User Search" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserSearchResults.png" alt="User Search Results" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserProfileSearch.png" alt="User Profile Search" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserProfileInterview.png" alt="User Profile Interview" width="216" height="438"/></div>
+<div align="center"><img src="./UserSearch.png" alt="User Search" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserSearchResults.png" alt="User Search Results" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserProfileSearch.png" alt="User Profile Search" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserProfileInterviews.png" alt="User Profile Interview" width="216" height="438"/></div>
 
 
 ## What's next for Hive Mind?
