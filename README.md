@@ -1,4 +1,4 @@
-<div align="center"><h1>Welcome to Hive Mind!</h1 style="font-family: 'Righteous'; color: #FEDA6A;"><img src="./Hive_Loge.png" alt="Logo" width="320" height="300" /></div>
+<div align="center"><p style="font-family: 'Righteous'; color: #FEDA6A; font-size: 35px;">Welcome to Hive Mind!</p ><img src="./Hive_Loge.png" alt="Logo" width="320" height="300" /></div>
 
 
 ## What is Hive Mind?
