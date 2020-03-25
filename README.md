@@ -46,6 +46,11 @@ As a student who is about to graduate, when the job search process began, one th
 
 <div align="center"><img src="./Profile.png" alt="Profile" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./EditProfile.png" alt="Edit Profile" width="216" height="438"/></div>
 
+9. If you wish to view another user's profile and the interview surveys that they have created, you can enter their name into the form in the navigation bar and select search. The search results will show up below the navbar. Click on the user's name to view their profile and interviews.
+
+<div align="center"><img src="./UserSearch.png" alt="User Search" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserSearchResults.png" alt="User Search Results" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserProfileSearch.png" alt="User Profile Search" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./UserProfileInterview.png" alt="User Profile Interview" width="216" height="438"/></div>
+
+
 ## What's next for Hive Mind?
 Coming soon to Hive Mind will be the ability for user's to message each other privately or publicy so that they can chat about interviews, companies, and their job searches. User's will also be able to follow each other and see a feed of the posts that have been created by the people they are following. 
 
