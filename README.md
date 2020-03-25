@@ -58,7 +58,7 @@ Coming soon to Hive Mind will be the ability for user's to message each other pr
 ## Hive Mind Documentation 
 
 ### Entity Relationship Diagram
-![ERD](./readmeimg/erd.png)
+![ERD](./readmeimg/erd2.png)
 
 ### Mockups
 ![Mockups](./readmeimg/mockups.png)
