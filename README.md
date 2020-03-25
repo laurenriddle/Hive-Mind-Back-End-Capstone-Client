@@ -20,7 +20,7 @@ As a student who is about to graduate, when the job search process began, one th
 1. Run `npm start` to verify that installation was successful and start the application.
 1. Go to http://localhost:3000/ to view the app. 
 
-## What can you do with Hive Mind? 
+## How do you use Hive Mind? 
 
 1. After completing the setup above, in the browser, navigate to http://localhost:3000.
 2. If you are a returning user, login to Hive Mind with your account information. 
@@ -28,6 +28,10 @@ As a student who is about to graduate, when the job search process began, one th
 4. Now that you are logged in, you will be taken to the home page. From here, you can choose to search for interviews by company, create a new interview survey, or you can click on the navigation bar at the top of the page and choose to view your favorites, view your interviews, or view your profile. 
 
 <div align="center"><img src="./HomePage.png" alt="Home Page" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./HomePageNav.png" alt="Home Page Nave" width="216" height="438"/></div>
+
+5. If you choose to create an interview, you will be taken to the new interview form. Once you have filled it out and submitted it, you will be taken to the kist of interview surveys that you have created. When you are viewing your interviews, you will be able to filter them by company using the filter buttons and you will also be able to select the "new" button to create another survey.
+
+<div align="center"><img src="./NewInterview.png" alt="New Interview" width="216" height="438"/>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./MyInterviews.png" alt="My Interviews" width="216" height="438"/></div>
 
 ## What's next for Hive Mind?
 Coming soon to Hive Mind will be the ability for user's to message each other privately or publicy so that they can chat about interviews, companies, and their job searches. User's will also be able to follow each other and see a feed of the posts that have been created by the people they are following. 
