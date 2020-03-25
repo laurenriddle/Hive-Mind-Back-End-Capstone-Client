@@ -48,27 +48,28 @@ class Login extends Component {
 
         return (
             <section className="login-page-container">
-                <center><img src={Logo} alt="logo" className="home-logo" width="300" height="300" ></img></center>
+                <center><img src={Logo} alt="logo"  width="275" height="275" ></img></center>
                 <h1 className="login-header">Hive Mind</h1>
                 <Form className="login-form" onSubmit={this.handleLogin}>
+
                     <FormControl
                         id="username"
-                        className="login-input"
+
                         label="Username"
                         placeholder="Username"
                         onChange={this.handleInputChange}
 
                     ></FormControl>
 
-
                     <FormControl
                         id="password"
                         label="Password"
-                        className="login-input"
                         placeholder="Password"
                         onChange={this.handleInputChange}
                         type="password"
                     ></FormControl>
+
+
 
                     <Button type="submit" variant="secondary">
                         Sign in

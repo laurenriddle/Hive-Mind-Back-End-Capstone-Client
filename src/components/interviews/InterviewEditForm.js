@@ -3,7 +3,8 @@
 import React, { Component } from "react"
 import { Link } from 'react-router-dom'
 import APIManager from '../../modules/APIManager'
-import { Button, FormControl, FormLabel, Form } from 'react-bootstrap'
+import { Button, FormControl, FormLabel, Form, InputGroup } from 'react-bootstrap'
+import "./Interviews.css"
 class EditInterviewForm extends Component {
     state = {
         company: "",
@@ -33,7 +34,7 @@ class EditInterviewForm extends Component {
                     companies: companies
                 })
             })
-        
+
         // gets the single interview we want to edit
         APIManager.getOne("interviews", this.props.match.params.interviewId)
             .then((interview) => {
@@ -101,104 +102,119 @@ class EditInterviewForm extends Component {
 
         return (
             <>
-                <Form>
-                    <select
-                        onChange={this.handleInputChange} value={this.state.company}
-                        id="company">
-                        <option key="0" value="">Select Company</option>
-                        {this.state.companies.map((company) => {
-                            return <option key={company.id} value={company.id}>{company.name} ({company.city})</option>
-                        })}
+                <section className="new-int-form-container">
+                    <Form className="interview-form">
+                        <h2 className="righteous yellow">Edit Interview</h2><hr />
+                        <InputGroup>
+                            <select
+                                onChange={this.handleInputChange} value={this.state.company}
+                                id="company">
+                                <option key="0" value="">Select Company</option>
+                                {this.state.companies.map((company) => {
+                                    return <option key={company.id} value={company.id}>{company.name} ({company.city})</option>
+                                })}
 
-                    </select>
-                    <Link to={{ pathname:"/company/new", state: {
-                        interviewId: this.props.match.params.interviewId
-                    } 
-                    }}>Don't see your company? Add a new one here!</Link>
+                            </select>
+                        </InputGroup>
+                        <Link to={{
+                            pathname: "/company/new", state: {
+                                interviewId: this.props.match.params.interviewId
+                            }
+                        }}>Don't see your company? Add a new one here!</Link>
 
-                    <FormControl
-                        value={this.state.position}
-                        id="position"
-                        onChange={this.handleInputChange}
-                        placeholder="What position did you apply for?"
-                        type="text"></FormControl>
-
-                    <FormControl
-                        value={this.state.date}
-                        id="date"
-                        onChange={this.handleInputChange}
-                        type="date"></FormControl>
-
-                    <FormControl
-                        value={this.state.interview_type}
-                        id="interview_type"
-                        onChange={this.handleInputChange}
-                        placeholder="Interview Type (i.e. second interview - technical, first interview - behavioral)"
-                        type="text"></FormControl>
-
-                    <FormLabel>Was this interview in person?</FormLabel>
-                    <fieldset>
-                        <input
-                            checked={this.state.in_person === true || this.state.in_person === "True"}
-                            id="in_person"
+                        <FormControl
+                            value={this.state.position}
+                            id="position"
                             onChange={this.handleInputChange}
-                            type="radio" name="inperson" value="True"></input>
-                        <FormLabel>Yes</FormLabel>
-                        <input
-                            checked={this.state.in_person === false || this.state.in_person === "False"}
-                            id="in_person"
-                            onChange={this.handleInputChange}
-                            type="radio" name="inperson" value="False"></input>
-                        <FormLabel>No</FormLabel>
-                    </fieldset>
+                            placeholder="What position did you apply for?"
+                            type="text"></FormControl>
 
-                    <FormLabel>Was there a code challenge?</FormLabel>
-                    <fieldset>
-                        <input
-                            checked={this.state.code_challege === true || this.state.code_challege === "True"}
-                            id="code_challege"
+                        <FormControl
+                            value={this.state.date}
+                            id="date"
                             onChange={this.handleInputChange}
-                            type="radio" name="codechallenge" value="True"></input>
-                        <FormLabel>Yes</FormLabel>
-                        <input
-                            checked={this.state.code_challege === false || this.state.code_challege === "False"}
-                            id="code_challege"
-                            onChange={this.handleInputChange}
-                            type="radio" name="codechallenge" value="False"></input>
-                        <FormLabel>No</FormLabel>
-                    </fieldset>
+                            type="date"></FormControl>
 
-                    <FormLabel>Did you recieve and offer from this company as a result of this interview?</FormLabel>
-                    <fieldset>
-                        <input
-                            checked={this.state.offer === true || this.state.offer === "True"}
-                            id="offer"
+                        <FormControl
+                            value={this.state.interview_type}
+                            id="interview_type"
                             onChange={this.handleInputChange}
-                            type="radio" name="offer" value="True"></input>
-                        <FormLabel>Yes</FormLabel>
-                        <input
-                            checked={this.state.offer === false || this.state.offer === "False"}
-                            id="offer"
+                            placeholder="Interview Type (i.e. second interview - technical, first interview - behavioral)"
+                            type="text"></FormControl><hr/>
+
+                        <FormLabel>Was this interview in person?</FormLabel>
+                        <InputGroup className="input-group">
+                            <span className="filterId"> <input
+                                className="radio-buttons"
+                                checked={this.state.in_person === true || this.state.in_person === "True"}
+                                id="in_person"
+                                onChange={this.handleInputChange}
+                                type="radio" name="inperson" value="True"></input>
+                                <FormLabel>Yes</FormLabel></span>
+                            <span className="filterId"><input
+                                className="radio-buttons"
+                                checked={this.state.in_person === false || this.state.in_person === "False"}
+                                id="in_person"
+                                onChange={this.handleInputChange}
+                                type="radio" name="inperson" value="False"></input>
+                                <FormLabel>No</FormLabel></span>
+                        </InputGroup>
+
+                        <FormLabel>Was there a code challenge?</FormLabel>
+                        <InputGroup className="input-group">
+                            <span className="filterId"><input
+                                className="radio-buttons"
+                                checked={this.state.code_challege === true || this.state.code_challege === "True"}
+                                id="code_challege"
+                                onChange={this.handleInputChange}
+                                type="radio" name="codechallenge" value="True"></input>
+                                <FormLabel>Yes</FormLabel></span>
+                            <span className="filterId"> <input
+                                className="radio-buttons"
+                                checked={this.state.code_challege === false || this.state.code_challege === "False"}
+                                id="code_challege"
+                                onChange={this.handleInputChange}
+                                type="radio" name="codechallenge" value="False"></input>
+                                <FormLabel>No</FormLabel></span>
+                        </InputGroup>
+
+                        <FormLabel>Did you recieve an offer from this company as a result of this interview?</FormLabel>
+                        <InputGroup className="input-group">
+                            <span className="filterId"> <input
+                                className="radio-buttons"
+                                checked={this.state.offer === true || this.state.offer === "True"}
+                                id="offer"
+                                onChange={this.handleInputChange}
+                                type="radio" name="offer" value="True"></input>
+                                <FormLabel>Yes</FormLabel></span>
+                            <span className="filterId">  <input
+                                className="radio-buttons"
+                                checked={this.state.offer === false || this.state.offer === "False"}
+                                id="offer"
+                                onChange={this.handleInputChange}
+                                type="radio" name="offer" value="False"></input>
+                                <FormLabel>No</FormLabel></span>
+                        </InputGroup><hr/>
+                        <FormControl
+                            value={this.state.review}
+                            id="review"
+                            placeholder="Please provide a brief review of this company (i.e. Tech Stack, Culture, etc)..."
                             onChange={this.handleInputChange}
-                            type="radio" name="offer" value="False"></input>
-                        <FormLabel>No</FormLabel>
-                    </fieldset>
-                    <FormControl
-                        value={this.state.review}
-                        id="review"
-                        placeholder="Please provide a brief review of this company (i.e. Tech Stack, Culture, etc)..."
-                        onChange={this.handleInputChange}
-                        as="textarea" rows="5" ></FormControl>
+                            as="textarea" rows="5" ></FormControl>
 
-                    <FormControl
-                        value={this.state.advice}
-                        id="advice"
-                        placeholder='Please provide advice for anyone interviewing with this company...'
-                        onChange={this.handleInputChange}
-                        as="textarea" rows="5" ></FormControl>
+                        <FormControl
+                            value={this.state.advice}
+                            id="advice"
+                            placeholder='Please provide advice for anyone interviewing with this company...'
+                            onChange={this.handleInputChange}
+                            as="textarea" rows="5" ></FormControl><hr/>
 
-                </Form>
-                <Button onClick={() => this.updateInterview()}>Save Changes</Button>
+                    </Form>
+                    <section className="create-int-button-container">
+                    <Button className="create-int-button" onClick={() => this.updateInterview()}>Save Changes</Button>
+                    <Button className="create-int-button company-button" onClick={() => this.props.history.push(`/myinterviews`)}>Cancel</Button>
+                    </section>
+                </section>
             </>
         )
     }

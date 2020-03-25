@@ -2,7 +2,7 @@
 
 import React, { Component } from "react"
 import APIManager from '../../modules/APIManager'
-import { Button, FormControl, FormLabel, Form } from 'react-bootstrap'
+import { Button, FormControl, FormLabel, Form, InputGroup } from 'react-bootstrap'
 import { cloudName, uploadPreset } from '../../modules/Credentials';
 import "./Profile.css"
 
@@ -75,8 +75,8 @@ class ProfileEditForm extends Component {
             cohort_id: this.state.cohort_id,
             image: this.state.image,
             aboutme: this.state.aboutme,
-            jobtitle:  this.state.jobtitle,
-            location:  this.state.location,
+            jobtitle: this.state.jobtitle,
+            location: this.state.location,
         }
 
         // checks to see if the user filled out the entire form
@@ -125,106 +125,115 @@ class ProfileEditForm extends Component {
 
         return (
             <>
-                <Form>
-                    <FormControl
-                        value={this.state.first_name}
-                        id="first_name"
-                        placeholder="First Name"
-                        required
-                        onChange={this.handleInputChange}
-                        type="text"></FormControl>
-
-                    <FormControl
-                        value={this.state.last_name}
-                        id="last_name"
-                        placeholder="Last Name"
-                        required
-                        onChange={this.handleInputChange}
-                        type="text"></FormControl>
-
-                    <FormControl
-                        value={this.state.username}
-                        id="username"
-                        placeholder="Username"
-                        required
-                        onChange={this.handleInputChange}
-                        type="text"></FormControl>
-
-                    <FormControl
-                        value={this.state.email}
-                        id="email"
-                        placeholder="Email"
-                        required
-                        onChange={this.handleInputChange}
-                        type="text"></FormControl>
-
-                    <FormControl
-                        value={this.state.aboutme}
-                        id="aboutme"
-                        placeholder="Tell everyone a little bit about yourself..."
-                        onChange={this.handleInputChange}
-                        type="text"></FormControl>
-                    <FormControl
-                        value={this.state.location}
-                        id="location"
-                        placeholder="Location"
-                        onChange={this.handleInputChange}
-                        type="text"></FormControl>
-
-                    <FormControl
-                        value={this.state.linkedin_profile}
-                        id="linkedin_profile"
-                        placeholder="LinkedIn Profile"
-                        onChange={this.handleInputChange}
-                        type="text"></FormControl>
-
-                    <select
-                        onChange={this.handleInputChange} value={this.state.cohort_id}
-                        id="cohort_id">
-                        <option key="0" value="">Select Cohort</option>
-                        {this.state.cohorts.map((cohort) => {
-                            return <option key={cohort.id} value={cohort.id}>{cohort.cohort}</option>
-                        })}
-
-                    </select>
-
-
-                    <FormLabel>Are you currently working somewhere?</FormLabel>
-                    <fieldset>
-                        <input
-                            checked={this.state.is_employed === true || this.state.is_employed === "True"}
-                            id="is_employed"
+                <section className="new-int-form-container">
+                    <Form className="interview-form">
+                        <h2 className="righteous yellow">Edit Profile</h2><hr />
+                        <FormControl
+                            value={this.state.first_name}
+                            id="first_name"
+                            placeholder="First Name"
+                            required
                             onChange={this.handleInputChange}
-                            type="radio" name="is_employed" value="True"></input>
-                        <FormLabel>Yes</FormLabel>
-                        <input
-                            checked={this.state.is_employed === false || this.state.is_employed === "False"}
-                            id="is_employed"
-                            onChange={this.handleInputChange}
-                            type="radio" name="is_employed" value="False"></input>
-                        <FormLabel>No</FormLabel>
-                    </fieldset>
-                    <FormControl
-                        value={this.state.employer}
-                        id="employer"
-                        placeholder="If you are employed, where are you working?"
-                        onChange={this.handleInputChange}
-                        type="text"></FormControl>
-                    <FormControl
-                        value={this.state.jobtitle}
-                        id="jobtitle"
-                        placeholder="If you are employed, what is you job title?"
-                        onChange={this.handleInputChange}
-                        type="text"></FormControl>
+                            type="text"></FormControl>
 
-                </Form>
-                {this.state.image !== null && 
-                    <img src={this.state.image} alt="user" className="pre-profile-img"></img>
-                }
-                <div className="upload_widget_container">
-                    <Button type="button" id="upload_widget" className="cloudinary-button" onClick={this.openCloudinaryWidget}>Choose File</Button>
-                </div>
-                <Button onClick={() => this.updateProfile()}>Save Changes</Button>
+                        <FormControl
+                            value={this.state.last_name}
+                            id="last_name"
+                            placeholder="Last Name"
+                            required
+                            onChange={this.handleInputChange}
+                            type="text"></FormControl>
+
+                        <FormControl
+                            value={this.state.username}
+                            id="username"
+                            placeholder="Username"
+                            required
+                            onChange={this.handleInputChange}
+                            type="text"></FormControl>
+
+                        <FormControl
+                            value={this.state.email}
+                            id="email"
+                            placeholder="Email"
+                            required
+                            onChange={this.handleInputChange}
+                            type="text"></FormControl>
+
+                        <FormControl
+                            value={this.state.aboutme}
+                            id="aboutme"
+                            placeholder="Tell everyone a little bit about yourself..."
+                            onChange={this.handleInputChange}
+                            type="text"></FormControl>
+                        <FormControl
+                            value={this.state.location}
+                            id="location"
+                            placeholder="Location"
+                            onChange={this.handleInputChange}
+                            type="text"></FormControl>
+
+                        <FormControl
+                            value={this.state.linkedin_profile}
+                            id="linkedin_profile"
+                            placeholder="LinkedIn Profile"
+                            onChange={this.handleInputChange}
+                            type="text"></FormControl>
+
+                        <select
+                            onChange={this.handleInputChange} value={this.state.cohort_id}
+                            id="cohort_id">
+                            <option key="0" value="">Select Cohort</option>
+                            {this.state.cohorts.map((cohort) => {
+                                return <option key={cohort.id} value={cohort.id}>{cohort.cohort}</option>
+                            })}
+
+                        </select><hr />
+
+
+                        <FormLabel>Are you currently working somewhere?</FormLabel>
+                        <InputGroup>
+                            <span className="filterId"> <input
+                                className="radio-buttons"
+                                checked={this.state.is_employed === true || this.state.is_employed === "True"}
+                                id="is_employed"
+                                onChange={this.handleInputChange}
+                                type="radio" name="is_employed" value="True"></input>
+                                <FormLabel>Yes</FormLabel></span>
+                            <span className="filterId"><input
+                                className="radio-buttons"
+                                checked={this.state.is_employed === false || this.state.is_employed === "False"}
+                                id="is_employed"
+                                onChange={this.handleInputChange}
+                                type="radio" name="is_employed" value="False"></input>
+                                <FormLabel>No</FormLabel></span>
+                        </InputGroup>
+                        <FormControl
+                            value={this.state.employer}
+                            id="employer"
+                            placeholder="If you are employed, where are you working?"
+                            onChange={this.handleInputChange}
+                            type="text"></FormControl>
+                        <FormControl
+                            value={this.state.jobtitle}
+                            id="jobtitle"
+                            placeholder="If you are employed, what is you job title?"
+                            onChange={this.handleInputChange}
+                            type="text"></FormControl><hr />
+
+                        <section className="create-int-button-container">
+                            {this.state.image !== null &&
+                                <img src={this.state.image} alt="user" className="pre-profile-img"></img>
+                            }
+                            <div className="upload_widget_container">
+                                <Button type="button" id="upload_widget" className="cloudinary-button create-int-button" onClick={this.openCloudinaryWidget}>Choose File</Button><hr />
+                            </div>
+                        </section>
+                    </Form>
+                    <section className="create-int-button-container">
+                        <Button className="create-int-button" onClick={() => this.updateProfile()}>Save Changes</Button>
+                    </section>
+                </section>
             </>
         )
     }

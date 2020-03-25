@@ -30,7 +30,7 @@ class Profile extends Component {
         return (
             <>
                 <Jumbotron className="user-jumbo">
-                    <h1>{this.state.user.first_name} {this.state.user.last_name}</h1>
+                    <h1 className="righteous">{this.state.user.first_name} {this.state.user.last_name}</h1>
                     <h5>@{this.state.user.username}</h5>
                     <h5>{this.state.applicant.jobtitle}</h5>
 

@@ -14,4 +14,29 @@
     background-color: #3F3F3F;
 }
 
+.user-search-button {
+    border: 1px solid #FEDA6A;
+    color: #FEDA6A;
+    font-weight: bold;
+}
+
+.user-search-button:hover {
+    border: 1px solid #FEDA6A;
+    color: white;
+    background-color: #FEDA6A;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 900px) {
+    #firstname, #lastname {
+        margin-bottom: 10px;
+    }
+
+    #firstname {
+        margin-top: 10px;
+    }
+    
+
+}
+
 

@@ -2,24 +2,47 @@
 
 
 .login-page-container, .register-form-container {
-    background-image: url('./Lauren_v4.png');
+    background-image: url('./background.png');
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     height: 100vh;
     text-align: center;
     opacity: .9;
     vertical-align: middle;
 }
 
+.about-form-container {
+    background-image: url('./background.png');
+    background-size: cover;
+    background-repeat: repeat;
+    height: 100%;
+    text-align: center;
+    opacity: .9;
+    vertical-align: middle;
+}
+.about-form-container .pre-profile-img {
+    width: 10%;
+}
 
-.login-form input, .register-form input, .register-form select {
+.login-form input, .register-form input, .register-form select, .register-form textarea {
     margin: 0 auto;
-    width: 200px;
+    width: 20%;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-.register-form select {
+.about-form input, .about-form select, .about-form textarea {
+    margin: 0 auto;
+    width: 20%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.login-input {
+    margin-bottom: 20px;
+}
+
+.register-form select, .about-form select {
     background-color: white;
 }
 
@@ -31,17 +54,19 @@
     margin-top: 20px;
 }
 
-.login-form button, .register-form button {
+.login-form button, .register-form button, .about-form button {
     background-color: #FEDA6A;
     border-color: #FEDA6A;
     margin-bottom: 15px;
+    font-weight: bold;
 }
 
 
-.login-form button:hover {
+.login-form button:hover, .register-form button:hover, .about-form button:hover {
     background-color: white;
     border-color: #FEDA6A;
     color: #FEDA6A;
+    font-weight: bold;
 }
 
 .login-header, .register-header {
@@ -65,11 +90,16 @@
     margin-top: 40px;
     font-weight: bold;
     text-decoration: none;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 .register-link {
     margin-bottom: 80px;
 }
+.home-logo {
+    width: 20%;
+    height: 20%;
+}
+
 /* Register Page */
 
 @media screen and (max-width: 900px) {
@@ -81,6 +111,47 @@
         text-align: center;
         opacity: .9;
 
+    }
+
+    .login-form input, .register-form input, .register-form select, .register-form textarea {
+        margin: 0 auto;
+        width: 50%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .about-form input, .about-form select, .about-form textarea {
+        margin: 0 auto;
+        width: 80%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .about-form-container .pre-profile-img {
+        width: 25%;
+    }
+
+    .login-page-container, .register-form-container {
+        background-image: url('./Lauren_v4.png');
+        background-size: cover;
+        background-repeat: repeat;
+        height: 100vh;
+        text-align: center;
+        opacity: .9;
+        vertical-align: middle;
+    }
+    .home-logo {
+        width: 60%;
+        height: 60%;
+    }
+
+    .about-form-container {
+        background-image: url('./Lauren_v4.png');
+        background-size: cover;
+        background-repeat: repeat;
+        height: 100%;
+        text-align: center;
+        opacity: .9;
+        vertical-align: middle;
     }
     
 }

@@ -32,7 +32,7 @@ class Navigation extends Component {
                                     <Form inline>
                                         <FormControl type="text" placeholder="First Name" className="mr-sm-2" id="firstname" onChange={this.handleInputChange} />
                                         <FormControl type="text" placeholder="Last Name" className="mr-sm-2" id="lastname" onChange={this.handleInputChange} />
-                                        <Button variant="outline-primary" eventKey="6" onClick={() => this.props.searchUsers(this.state.firstname, this.state.lastname)}>Search</Button>
+                                        <Button className="user-search-button" variant="outline-primary" eventKey="6" onClick={() => this.props.searchUsers(this.state.firstname, this.state.lastname)}>Search</Button>
                                     </Form>
                                     <Nav.Link eventKey="1" as={Link} to="/myinterviews">
                                         My Interviews

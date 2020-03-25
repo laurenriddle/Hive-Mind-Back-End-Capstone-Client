@@ -54,14 +54,22 @@ text-align: right;
     background-color: #FEDA6A;
     border: 1px solid #FEDA6A;
     margin-right: 53px;
+    font-weight: bold;
 }
 
 .profile-button:hover {
     color: #FEDA6A;
     border: 1px solid #FEDA6A;
     background-color: white;
+    font-weight: bold;
 }
 
+#upload_widget {
+    margin-top: 10px;
+    padding: 1px 10px;
+    border: 1px solid #474B4F;
+    font-size: small;
+}
 
 /* Mobile Styles */
 @media screen and (max-width: 900px) {
