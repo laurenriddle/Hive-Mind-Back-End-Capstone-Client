@@ -1,5 +1,5 @@
 # Welcome to Hive Mind!
-<div style="text-align:center;"><img src="./Hive_Loge.png" alt="Logo" width="420" height="400" /></div>
+<div style="text-align:center"><img src="./Hive_Loge.png" alt="Logo" width="320" height="300" /></div>
 
 ## What is Hive Mind?
 Hive Mind is a social media platform that allows Nashville Software School students and alumni to create and share interview "surveys" for interviews that they have had with specific companies. These surveys include information that can be used by students to prepare for their own interviews with specific companies. With Hive Mind, students are able to create their own interview surveys, search for other student's interview surveys by company, save other user's surveys to a favorites board, customize personal profile information, and view other's profiles. 
