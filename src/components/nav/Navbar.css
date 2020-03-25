@@ -25,3 +25,16 @@
     background-color: #FEDA6A;
 }
 
+@media screen and (max-width: 900px) {
+    #firstname, #lastname {
+        margin-bottom: 10px;
+    }
+
+    #firstname {
+        margin-top: 10px;
+    }
+    
+
+}
+
+
