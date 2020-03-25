@@ -25,13 +25,13 @@ Coming soon to Hive Mind will be the ability for user's to message each other pr
 
 ## Technologies 
 <img src="./react.png" alt="Logo" width="75" height="75" />
-<img src="./django.png" alt="Logo" width="75" height="75" />
+<img src="./django.png" alt="Logo" width="125" height="75" />
 <img src="./python.png" alt="Logo" width="75" height="75" />
 <img src="./javascriptyellow.png" alt="Logo" width="75" height="75" />
 <img src="./cloudinary.png" alt="Logo" width="75" height="75" />
-<img src="./css3.png" alt="Logo" width="75" height="75" />
+<img src="./css3.png" alt="Logo" width="75" height="100" />
 <img src="./reactBootstrap.svg" alt="Logo" width="75" height="75" />
 <img src="./github.png" alt="Logo" width="75" height="75" />
 <img src="./git.png" alt="Logo" width="75" height="75" />
 <img src="./tableplus.png" alt="Logo" width="75" height="75" />
-<img src="./postman.png" alt="Logo" width="75" height="75" />
+<img src="./postman.png" alt="Logo" width="90" height="75" />
