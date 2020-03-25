@@ -1,7 +1,6 @@
 // Purpose: To create the new company form and execute the logic associated 
 
 import React, { Component } from "react"
-import { Link } from 'react-router-dom'
 import APIManager from '../../modules/APIManager'
 import { Button, FormControl, Form, InputGroup } from 'react-bootstrap'
 import "../interviews/Interviews.css"

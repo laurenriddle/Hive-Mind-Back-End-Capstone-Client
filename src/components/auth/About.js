@@ -1,7 +1,6 @@
 // Purpose: To create the about form and execute the logic associated 
 
 import React, { Component } from "react"
-import { Link } from "react-router-dom"
 import { register, isAuthenticated } from "../../modules/SimpleAuth"
 import APIManager from "../../modules/APIManager"
 import './Auth.css'

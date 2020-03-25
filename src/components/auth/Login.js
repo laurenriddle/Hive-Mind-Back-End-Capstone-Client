@@ -4,10 +4,8 @@ import React, { Component } from "react"
 import { Link } from 'react-router-dom'
 import "./Auth.css"
 import { login, isAuthenticated } from "../../modules/SimpleAuth"
-import { Button, FormControl, Form, InputGroup } from 'react-bootstrap'
+import { Button, FormControl, Form } from 'react-bootstrap'
 import Logo from "../home/Hive_Loge.png"
-import { faLock } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class Login extends Component {
 
