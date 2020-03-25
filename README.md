@@ -23,7 +23,7 @@ As a student who is about to graduate, when the job search process began, one th
 ## What's next for Hive Mind?
 Coming soon to Hive Mind will be the ability for user's to message each other privately or publicy so that they can chat about interviews, companies, and their job searches. User's will also be able to follow each other and see a feed of the posts that have been created by the people they are following. 
 
-## Technologies 
+## Tech Stack 
 <div align="center"><img src="./react.png" alt="Logo" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./django.png" alt="Logo" width="125" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./python.png" alt="Logo" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./javascriptyellow.png" alt="Logo" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./cloudinary.png" alt="Logo" width="75" height="75" />&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<img src="./css3.png" alt="Logo" width="75" height="100" /></div>
 
 
