@@ -12,7 +12,7 @@
 }
 
 .about-form-container {
-    background-image: url('./Lauren_v4.png');
+    background-image: url('./background.png');
     background-size: cover;
     background-repeat: repeat;
     height: 100%;
@@ -26,7 +26,14 @@
 
 .login-form input, .register-form input, .register-form select, .register-form textarea {
     margin: 0 auto;
-    width: 30%;
+    width: 20%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.about-form input, .about-form select, .about-form textarea {
+    margin: 0 auto;
+    width: 20%;
     margin-top: 15px;
     margin-bottom: 15px;
 }
@@ -35,7 +42,7 @@
     margin-bottom: 20px;
 }
 
-.register-form select {
+.register-form select, .about-form select {
     background-color: white;
 }
 
@@ -47,14 +54,14 @@
     margin-top: 20px;
 }
 
-.login-form button, .register-form button {
+.login-form button, .register-form button, .about-form button {
     background-color: #FEDA6A;
     border-color: #FEDA6A;
     margin-bottom: 15px;
 }
 
 
-.login-form button:hover, .register-form button:hover {
+.login-form button:hover, .register-form button:hover, .about-form button:hover {
     background-color: white;
     border-color: #FEDA6A;
     color: #FEDA6A;
@@ -106,6 +113,13 @@
 
     .login-form input, .register-form input, .register-form select, .register-form textarea {
         margin: 0 auto;
+        width: 50%;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+
+    .about-form input, .about-form select, .about-form textarea {
+        margin: 0 auto;
         width: 80%;
         margin-top: 15px;
         margin-bottom: 15px;
@@ -126,6 +140,16 @@
     .home-logo {
         width: 60%;
         height: 60%;
+    }
+
+    .about-form-container {
+        background-image: url('./Lauren_v4.png');
+        background-size: cover;
+        background-repeat: repeat;
+        height: 100%;
+        text-align: center;
+        opacity: .9;
+        vertical-align: middle;
     }
     
 }

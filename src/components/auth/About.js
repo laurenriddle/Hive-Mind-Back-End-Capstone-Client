@@ -89,8 +89,12 @@ class About extends Component {
             uploadPreset: uploadPreset
         }, (error, result) => {
             if (!error && result && result.event === "success") {
+                let position = 49
+                let size = "w_200,h_200,c_thumb,g_face/"
+                let newimage = result.info.url
+                let finalimage = newimage.substring(0, position) + size + newimage.substring(position);
                 this.setState({
-                    image: result.info.url
+                    image: finalimage
                 })
             }
         }
@@ -105,7 +109,7 @@ class About extends Component {
             <section className="about-form-container">
                 <center><img src={Logo} alt="logo" className="home-logo" width="200" height="200" ></img></center>
                 <h1 className="register-header">Tell us about yourself!</h1>
-                <Form className="register-form" onSubmit={this.handleRegister}>
+                <Form className="about-form" onSubmit={this.handleRegister}>
                     <InputGroup>
                         <select id="cohort"
                             onChange={this.handleInputChange}>
