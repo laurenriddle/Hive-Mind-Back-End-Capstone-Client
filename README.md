@@ -23,7 +23,7 @@ As a student who is about to graduate, when the job search process began, one th
 ## What can you do with Hive Mind? 
 
 1. After completing the setup above, in the browser, navigate to http://localhost:3000.
-2. If you are a returning user, login to Hive Mind with your account information. 
+2. If you are a returning user, log in to Hive Mind with your account information. 
 3. Never signed up for Hive Mind before? No problem! Click the register a new account link and complete your registration. 
 4. Now that you are logged in, you will be taken to the home page. From here, you can choose to search for interviews by company, create a new interview survey, or you can click on the navigation bar at the top of the page and choose to view your favorites, view your interviews, view your profile, or search for other user's profiles. 
 

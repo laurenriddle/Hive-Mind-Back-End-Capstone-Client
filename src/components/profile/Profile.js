@@ -32,12 +32,14 @@ class Profile extends Component {
                 <Jumbotron className="user-jumbo">
                     <h1 className="righteous">{this.state.user.first_name} {this.state.user.last_name}</h1>
                     <h5>@{this.state.user.username}</h5>
-                    <h5>{this.state.applicant.jobtitle}</h5>
-
+                    <h5>{this.state.applicant.jobtitle} 
                     {this.state.applicant.employer !== null && this.state.applicant.employer !== "" &&
-                        <h5>Employer: {this.state.applicant.employer}</h5>
+                        <> at {this.state.applicant.employer}
+                        </>
 
                     }
+                    </h5>
+
                 </Jumbotron>
                 {this.state.applicant.image !== null ?
                     <img src={this.state.applicant.image} alt="user" className="profile-image"></img>
