@@ -16,6 +16,7 @@ import MyFavorites from "./favorites/FavoritesList";
 import GenericProfile from "./profile/GenericUserProfilePage";
 import SearchUsers from "./search/SearchUsers";
 import About from "./auth/About";
+import MyFriends from "./friends/MyFriendsList"
 export default class ApplicationViews extends Component {
 
   render() {
@@ -180,6 +181,18 @@ export default class ApplicationViews extends Component {
           exact path="/searchusers" render={props => {
             if (isAuthenticated()) {
                 return <SearchUsers
+                {...props} {...this.props} />
+            } else {
+                return <Redirect to='/login' />
+              
+            }
+
+          }}
+         /> 
+         <Route
+          exact path="/myfriends" render={props => {
+            if (isAuthenticated()) {
+                return <MyFriends
                 {...props} {...this.props} />
             } else {
                 return <Redirect to='/login' />

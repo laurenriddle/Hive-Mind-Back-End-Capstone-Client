@@ -48,7 +48,7 @@ class Profile extends Component {
 
                     }
                     </h5>
-                    <Link class="friends-following">{this.state.friends.length} Following</Link>
+                    <Link class="friends-following" onClick={() => this.props.history.push('/myfriends')}>{this.state.friends.length} Following</Link>
 
                 </Jumbotron>
                 {this.state.applicant.image !== null ?

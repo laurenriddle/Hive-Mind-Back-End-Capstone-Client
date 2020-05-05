@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 class SearchUserCard extends Component {
 
     render() {
-
+        console.log(this.props.applicant)
         return (
             <>
             <Card className="company-results-card">
