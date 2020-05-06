@@ -56,7 +56,7 @@ class MyFriends extends Component {
 
                 <section className="favorites-list-container">
                     {this.state.friends.map((friend) => {
-                        return <SearchUserCard {...this.props} key={friend.id} applicant={friend.friend} />
+                        return <SearchUserCard {...this.props} key={friend.id} applicant={friend.friend} friend={true} deleteFriend={this.deleteFriend}/>
                     })}
                 </section>
             </>
