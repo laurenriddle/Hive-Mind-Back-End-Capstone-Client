@@ -3,7 +3,7 @@
 import { Card, Button } from "react-bootstrap";
 import React, {Component} from 'react'
 import { Link } from "react-router-dom";
-import APIManager from '../../modules/APIManager'
+
 
 class SearchUserCard extends Component {
     

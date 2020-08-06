@@ -1,7 +1,7 @@
 // Purpose: To create the USERS search results list component and render result cards
 import React, { Component } from "react"
 import SearchUserCard from "./SearchUserCard";
-import APIManager from "../../modules/APIManager";
+
 
 class SearchUsers extends Component {
 
