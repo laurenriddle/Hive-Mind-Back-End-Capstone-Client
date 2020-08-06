@@ -16,6 +16,7 @@ class GenericProfile extends Component {
         interviews: [],
         favorites: [],
         loggedInUserId: null,
+        isFriend: false
     }
 
     componentDidMount() {
@@ -51,6 +52,20 @@ class GenericProfile extends Component {
                 this.setState({
                     loggedInUserId: applicant[0].user.id,
                 })
+            })
+        // gets all of the user's friends
+        APIManager.getAllAuth("friends?applicant=true")
+        .then((friends) => {
+            friends.forEach((friend) => {
+                // checks to see if this user profile is a friend
+                if(this.state.user.id === friend.friend.user.id) {
+                    // sets the friends in state so it can be displayed on the profile page
+                    this.setState({
+                        isFriend: true
+                    })
+            }
+            })
+                
             })
     }
 
@@ -112,6 +127,37 @@ class GenericProfile extends Component {
         }
     }
 
+      deleteFriend = (id) => {
+        // get the friend so that you have the relationship ID
+        APIManager.getAllAuth(`friends?friend=${id}&&applicant=true`)
+            .then((relationship) => {
+                // make a DELETE request to the DB for the selected friend
+                APIManager.delete("friends", relationship[0].id)
+                    .then(() => {
+                        // gets all friends for the specific user
+                    this.setState({
+                        isFriend: false
+                    })
+
+                    })
+
+            })
+    }
+
+     addNewFriend = (friendId) => {
+        const newfriend = {
+            friend_id: friendId
+        }
+
+        APIManager.post("friends", newfriend)
+        .then(() => {
+            this.setState({
+                isFriend: true
+            })
+            
+        })
+    }
+
     render() {
 
         return (
@@ -120,11 +166,6 @@ class GenericProfile extends Component {
                     <h1 className="righteous">{this.state.user.first_name} {this.state.user.last_name}</h1>
                     <h5>@{this.state.user.username}</h5>
 
-                    {/* {this.state.applicant.is_employed ?
-                        <h5>Employment Status: Currently Employed</h5>
-                        :
-                        <h5>Employment Status: Looking for Opportunities</h5>
-                    } */}
                     <h5>{this.state.applicant.jobtitle}
                         {this.state.applicant.employer !== null && this.state.applicant.employer !== "" ?
                             <> at {this.state.applicant.employer}</>
@@ -132,9 +173,14 @@ class GenericProfile extends Component {
                             <></>
                         }
                     </h5>
-                    {/* <hr className="hr" />
-
-<hr className="hr" /> */}
+                    
+                        {this.state.isFriend ?
+                            <h5 onClick={() => { this.deleteFriend(this.state.user.id) }}>Unfollow</h5>
+                            :
+                            <h5 onClick={() => { this.addNewFriend(this.state.user.id) }}> + Follow </h5>
+                        }
+                    
+                    
                 </Jumbotron>
                 {this.state.applicant.image !== null ?
                     <img src={this.state.applicant.image} alt="user" className="profile-image"></img>

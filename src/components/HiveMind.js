@@ -14,14 +14,17 @@ class HiveMind extends Component {
         user: false,
         users: [],
         searchFirstName: "",
-        searchLastName: ""
+        searchLastName: "",
+        addedfriend: false,
+        friends: []
     }
 
 
     componentDidMount() {
         // checks to see if there is anyone logged in when the app loads
         this.setState({
-            user: isAuthenticated()
+            user: isAuthenticated(),
+            addedfriend: false
         })
     }
     
@@ -54,23 +57,23 @@ class HiveMind extends Component {
         })
     }
 
-    addNewFriend = (friendId) => {
-        const newfriend = {
-            friend_id: friendId
-        }
+    // addNewFriend = (friendId) => {
+    //     const newfriend = {
+    //         friend_id: friendId
+    //     }
 
-        APIManager.post("friends", newfriend)
-        .then(() => {
-            this.searchUsers(this.state.searchFirstName, this.state.searchLastName)
-        })
-
-    }
+    //     APIManager.post("friends", newfriend)
+    //     .then(() => {
+    //         this.searchUsers(this.state.searchFirstName, this.state.searchLastName)
+            
+    //     })
+    // }
 
 
     render() {
         return (<>
             <Navigation searchUsers={this.searchUsers} user={this.state.user} loggedOut={this.loggedOut} />
-            <ApplicationViews users={this.state.users} loggedIn={this.loggedIn} addNewFriend={this.addNewFriend}/>
+            <ApplicationViews users={this.state.users} loggedIn={this.loggedIn} addNewFriend={this.addNewFriend} searchedFirstName={this.state.searchFirstName} searchedLastName={this.state.searchLastName} />
         </>
         )
     };
