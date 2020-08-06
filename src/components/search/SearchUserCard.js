@@ -14,7 +14,7 @@ class SearchUserCard extends Component {
             
             <Card className="company-results-card">
                 <Card.Title><img src={this.props.applicant.image} alt="profile" width="50" height="50" className="card-image"></img>  <Link className="view-interviews-link"  to={`/profile/${this.props.applicant.id}`}>{this.props.applicant.user.first_name} {this.props.applicant.user.last_name}</Link></Card.Title>
-                {this.props.isFriendList ? <Button onClick={() => this.props.deleteFriend(this.props.applicant.id)}>Unfollow</Button> : <></>}
+                {this.props.isFriendList ? <Button className="unfollow-button" onClick={() => this.props.deleteFriend(this.props.applicant.id)}>Unfollow</Button> : <></>}
          </Card>
 
             )

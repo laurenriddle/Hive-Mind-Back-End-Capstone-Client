@@ -118,4 +118,30 @@ font-family: Righteous;
         margin-bottom: 20px;
     }
     
+    
+    .unfollow-button {
+    background-color: #FEDA6A;
+    border: 1px solid #FEDA6A;
+    font-weight: bold;
+    }
+
+    .unfollow-button:hover {
+        color: #FEDA6A;
+        border: 1px solid #FEDA6A;
+        background-color: white;
+        font-weight: bold;
+    }
+
+}
+ .unfollow-button {
+    background-color: #FEDA6A;
+    border: 1px solid #FEDA6A;
+    font-weight: bold;
+    }
+
+.unfollow-button:hover {
+    color: #FEDA6A;
+    border: 1px solid #FEDA6A;
+    background-color: white;
+    font-weight: bold;
 }
