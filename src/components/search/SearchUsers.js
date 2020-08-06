@@ -4,31 +4,7 @@ import SearchUserCard from "./SearchUserCard";
 import APIManager from "../../modules/APIManager";
 
 class SearchUsers extends Component {
-//     state ={
-//         friends: []
-//     }
 
-//     componentDidMount() {
-//         APIManager.getAllAuth("friends?applicant=True")
-//         .then((friends) => {
-            
-//             this.setState({
-//                 friends: friends
-//             })
-               
-//         })
-//     }
-
-//   getAllFriends = () => {
-//         APIManager.getAllAuth("friends?applicant=True")
-//         .then((friends) => {
-            
-//             this.setState({
-//                 friends: friends
-//             })
-               
-//         })
-//     }
     render() {
 
         return (

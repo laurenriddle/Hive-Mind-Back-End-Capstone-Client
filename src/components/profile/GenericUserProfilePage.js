@@ -145,6 +145,7 @@ class GenericProfile extends Component {
     }
 
      addNewFriend = (friendId) => {
+        //  adds a new friend relationship
         const newfriend = {
             friend_id: friendId
         }
@@ -174,11 +175,21 @@ class GenericProfile extends Component {
                         }
                     </h5>
                     
-                        {this.state.isFriend ?
+                        {this.state.isFriend && this.state.user.id !== this.state.loggedInUserId
+                        ?
                             <h5 onClick={() => { this.deleteFriend(this.state.user.id) }}>Unfollow</h5>
                             :
-                            <h5 onClick={() => { this.addNewFriend(this.state.user.id) }}> + Follow </h5>
+                            <></>
                         }
+                    
+                        {!this.state.isFriend && this.state.user.id !== this.state.loggedInUserId
+                        ?
+                        
+                            <h5 onClick={() => { this.addNewFriend(this.state.user.id) }}> + Follow </h5>
+                            :
+                            <></>
+                        }
+                
                     
                     
                 </Jumbotron>

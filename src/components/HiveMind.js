@@ -13,10 +13,7 @@ class HiveMind extends Component {
     state = {
         user: false,
         users: [],
-        searchFirstName: "",
-        searchLastName: "",
-        addedfriend: false,
-        friends: []
+        addedfriend: false
     }
 
 
@@ -57,23 +54,12 @@ class HiveMind extends Component {
         })
     }
 
-    // addNewFriend = (friendId) => {
-    //     const newfriend = {
-    //         friend_id: friendId
-    //     }
-
-    //     APIManager.post("friends", newfriend)
-    //     .then(() => {
-    //         this.searchUsers(this.state.searchFirstName, this.state.searchLastName)
-            
-    //     })
-    // }
 
 
     render() {
         return (<>
             <Navigation searchUsers={this.searchUsers} user={this.state.user} loggedOut={this.loggedOut} />
-            <ApplicationViews users={this.state.users} loggedIn={this.loggedIn} addNewFriend={this.addNewFriend} searchedFirstName={this.state.searchFirstName} searchedLastName={this.state.searchLastName} />
+            <ApplicationViews users={this.state.users} loggedIn={this.loggedIn}  />
         </>
         )
     };
