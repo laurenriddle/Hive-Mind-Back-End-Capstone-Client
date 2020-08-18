@@ -6,11 +6,13 @@ import { Button, Jumbotron } from 'react-bootstrap'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './Profile.css'
+import { Link } from "react-router-dom";
 class Profile extends Component {
     state = {
         applicant: {},
         user: {},
-        cohort: {}
+        cohort: {},
+        friends:[]
     }
     componentDidMount() {
         // gets the applicant's information
@@ -23,6 +25,13 @@ class Profile extends Component {
                     cohort: applicant[0].cohort
                 })
             })
+        APIManager.getAllAuth("friends?applicant=true")
+        .then((friends) => {
+            // sets the friends in state so it can be displayed on the profile page
+            this.setState({
+                friends: friends
+            })
+        })
     }
 
     render() {
@@ -39,6 +48,7 @@ class Profile extends Component {
 
                     }
                     </h5>
+                    <Link class="friends-following" onClick={() => this.props.history.push('/myfriends')}>{this.state.friends.length} Following</Link>
 
                 </Jumbotron>
                 {this.state.applicant.image !== null ?

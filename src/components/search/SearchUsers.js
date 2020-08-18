@@ -1,10 +1,9 @@
-// Purpose: To create the search results list component and render result cards
+// Purpose: To create the USERS search results list component and render result cards
 import React, { Component } from "react"
 import SearchUserCard from "./SearchUserCard";
+
+
 class SearchUsers extends Component {
-
-
-
 
     render() {
 
@@ -19,7 +18,7 @@ class SearchUsers extends Component {
                 <section className="company-search-results-container">
                     {this.props.users.map((user) => {
 
-                        return <SearchUserCard {...this.props} key={user.id} applicant={user} />
+                        return <SearchUserCard {...this.props} key={user.id} applicant={user} refreshState={this.getAllFriends} isFriendList={false}/>
 
                     })
                     }

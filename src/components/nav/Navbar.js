@@ -19,6 +19,8 @@ class Navigation extends Component {
         this.setState(stateToChange)
     }
 
+
+
     render() {
         if (isAuthenticated()) {
             return (

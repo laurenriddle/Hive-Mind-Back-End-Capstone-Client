@@ -47,7 +47,7 @@ font-family: Righteous;
 }
 
 .edit-button-container {
-text-align: right;
+    text-align: right;
 }
 
 .profile-button {
@@ -69,6 +69,17 @@ text-align: right;
     padding: 1px 10px;
     border: 1px solid #474B4F;
     font-size: small;
+}
+
+.friends-following {
+    font-size: 1.25rem;
+    color: white;
+}
+
+.friends-following:hover {
+    font-size: 1.25rem;
+    color: white;
+    text-decoration: underline;
 }
 
 /* Mobile Styles */
@@ -107,4 +118,30 @@ text-align: right;
         margin-bottom: 20px;
     }
     
+    
+    .unfollow-button {
+    background-color: #FEDA6A;
+    border: 1px solid #FEDA6A;
+    font-weight: bold;
+    }
+
+    .unfollow-button:hover {
+        color: #FEDA6A;
+        border: 1px solid #FEDA6A;
+        background-color: white;
+        font-weight: bold;
+    }
+
+}
+ .unfollow-button {
+    background-color: #FEDA6A;
+    border: 1px solid #FEDA6A;
+    font-weight: bold;
+    }
+
+.unfollow-button:hover {
+    color: #FEDA6A;
+    border: 1px solid #FEDA6A;
+    background-color: white;
+    font-weight: bold;
 }
